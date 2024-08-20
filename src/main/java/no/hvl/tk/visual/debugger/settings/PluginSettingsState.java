@@ -15,7 +15,7 @@ import org.jetbrains.annotations.Nullable;
     storages = {@Storage("visualDebuggerPluginSettings.xml")})
 public class PluginSettingsState implements PersistentStateComponent<PluginSettingsState> {
 
-  private DebuggingVisualizerOption visualizerOption = DebuggingVisualizerOption.WEB_UI;
+  private DebuggingVisualizerOption visualizerOption = DebuggingVisualizerOption.EMBEDDED;
   private Integer visualisationDepth = 0;
   private Integer savedDebugSteps = 3;
 

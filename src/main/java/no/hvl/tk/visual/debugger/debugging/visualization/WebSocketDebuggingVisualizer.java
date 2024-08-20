@@ -61,7 +61,7 @@ public class WebSocketDebuggingVisualizer extends DebuggingInfoVisualizerBase {
   }
 
   private void initUI() {
-    final var launchEmbeddedBrowserButton = new JButton("Launch embedded browser (experimental)");
+    final var launchEmbeddedBrowserButton = new JButton("Launch embedded browser (experimentalzzz)");
     final var launchBrowserButton =
         new JButton(String.format("Launch browser (%s)", ServerConstants.UI_SERVER_URL));
     launchEmbeddedBrowserButton.addActionListener(
