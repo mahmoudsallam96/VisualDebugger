@@ -1,21 +1,11 @@
 package no.hvl.tk.visual.debugger.debugging.visualization;
 
-import no.hvl.tk.visual.debugger.debugging.stackframe.StackFrameAnalyzer;
-import no.hvl.tk.visual.debugger.domain.ObjectDiagram;
-
 public interface DebuggingInfoVisualizer {
+    void addMetadata(String fileName, Integer line);
 
-  void doVisualization(ObjectDiagram diagram);
+    void debuggingActivated();
 
-  void reprintDiagram();
+    void debuggingDeactivated();
 
-  void addMetadata(String fileName, Integer line, StackFrameAnalyzer stackFrame);
-
-  ObjectDiagram getObjectWithChildren(String objectId);
-
-  void debuggingActivated();
-
-  void debuggingDeactivated();
-
-  void sessionStopped();
+    void sessionStopped();
 }

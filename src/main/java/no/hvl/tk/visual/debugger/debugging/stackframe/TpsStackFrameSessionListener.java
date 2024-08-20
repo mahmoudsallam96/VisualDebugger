@@ -36,7 +36,7 @@ public class TpsStackFrameSessionListener implements XDebugSessionListener {
     private JPanel userInterface;
 
     private final XDebugSession debugSession;
-    private DebuggingInfoVisualizer debuggingVisualizer;
+    private TpsRouteDebuggingVisualizer tpsRouteDebuggingVisualizer;
 
     public TpsStackFrameSessionListener(@NotNull XDebugProcess debugProcess) {
         this.debugSession = debugProcess.getSession();
@@ -64,7 +64,7 @@ public class TpsStackFrameSessionListener implements XDebugSessionListener {
 
     @Override
     public void sessionStopped() {
-        this.debuggingVisualizer.sessionStopped();
+        this.tpsRouteDebuggingVisualizer.sessionStopped();
     }
 
     @Override
@@ -78,12 +78,6 @@ public class TpsStackFrameSessionListener implements XDebugSessionListener {
         }
         StackFrameProxyImpl stackFrame = getStackFrameProxy();
 
-        StackFrameAnalyzer stackFrameAnalyzer =
-                new StackFrameAnalyzer(
-                        new StackFrameProxyImplAdapter(stackFrame),
-                        PluginSettingsState.getInstance().getVisualisationDepth(),
-                        SharedState.getManuallyExploredObjects(),
-                        PluginSettingsState.getInstance().isShowNullValues());
 
         // todo: hint: this one should return the tps route or state
         TpsStackFrameAnalyzer tpsStackFrameAnalyzer =
@@ -96,10 +90,10 @@ public class TpsStackFrameSessionListener implements XDebugSessionListener {
         if (debugSession.getCurrentPosition() != null) {
             String fileName = debugSession.getCurrentPosition().getFile().getNameWithoutExtension();
             int line = debugSession.getCurrentPosition().getLine() + 1;
-            debuggingVisualizer.addMetadata(fileName, line, stackFrameAnalyzer);
+            tpsRouteDebuggingVisualizer.addMetadata(fileName, line);
         }
 
-        this.debuggingVisualizer.doVisualization(tpsStackFrameAnalyzer.analyze());
+        this.tpsRouteDebuggingVisualizer.visualize(tpsStackFrameAnalyzer.analyze());
     }
 
     @NotNull
@@ -122,7 +116,7 @@ public class TpsStackFrameSessionListener implements XDebugSessionListener {
         if (!SharedState.isDebuggingActive()) {
             this.resetUIAndAddActivateDebuggingButton();
         } else {
-            this.debuggingVisualizer.debuggingActivated();
+            this.tpsRouteDebuggingVisualizer.debuggingActivated();
         }
         final var uiContainer = new SimpleToolWindowPanel(false, true);
 
@@ -153,7 +147,7 @@ public class TpsStackFrameSessionListener implements XDebugSessionListener {
                 actionEvent -> {
                     SharedState.setDebuggingActive(true);
                     this.userInterface.remove(activateButton);
-                    this.debuggingVisualizer.debuggingActivated();
+                    this.tpsRouteDebuggingVisualizer.debuggingActivated();
                     this.userInterface.revalidate();
                 });
         this.userInterface.add(activateButton, BorderLayout.NORTH);
@@ -164,19 +158,13 @@ public class TpsStackFrameSessionListener implements XDebugSessionListener {
 
     @NotNull
     public DebuggingInfoVisualizer getOrCreateDebuggingInfoVisualizer() {
-        if (this.debuggingVisualizer == null) {
-            switch (PluginSettingsState.getInstance().getVisualizerOption()) {
-                case EMBEDDED -> this.debuggingVisualizer = new TpsRouteDebuggingVisualizer(this.userInterface);
-                default -> {
-                    LOGGER.warn("Unrecognized debugging visualizer chosen. Defaulting to web visualizer!");
-                    this.debuggingVisualizer = new TpsRouteDebuggingVisualizer(this.userInterface);
-                }
-            }
+        if (this.tpsRouteDebuggingVisualizer == null) {
+            this.tpsRouteDebuggingVisualizer = new TpsRouteDebuggingVisualizer(this.userInterface);
         }
-        return this.debuggingVisualizer;
+        return tpsRouteDebuggingVisualizer;
     }
 
-    public void reprintDiagram() {
-        this.debuggingVisualizer.reprintDiagram();
+    public void reprintRoute() {
+        this.tpsRouteDebuggingVisualizer.reprintRoute();
     }
 }

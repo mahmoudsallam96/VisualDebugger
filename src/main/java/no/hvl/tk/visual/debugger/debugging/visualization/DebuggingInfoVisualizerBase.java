@@ -1,46 +1,37 @@
 package no.hvl.tk.visual.debugger.debugging.visualization;
 
 import no.hvl.tk.visual.debugger.SharedState;
-import no.hvl.tk.visual.debugger.debugging.stackframe.StackFrameAnalyzer;
-import no.hvl.tk.visual.debugger.domain.*;
 
 public abstract class DebuggingInfoVisualizerBase implements DebuggingInfoVisualizer {
+    private TpsDebugData route;
 
-  private ObjectDiagram diagram;
-  private StackFrameAnalyzer analyzer;
+    protected DebuggingInfoVisualizerBase() {
+        this.route = new TpsDebugData("adsf");
+    }
 
-  protected DebuggingInfoVisualizerBase() {
-    this.diagram = new ObjectDiagram();
-  }
+    @Override
+    public void addMetadata(String fileName, Integer line) {
+        SharedState.setDebugLine(line);
+        SharedState.setDebugFileName(fileName);
+    }
 
-  @Override
-  public void addMetadata(String fileName, Integer line, StackFrameAnalyzer stackFrameAnalyzer) {
-    SharedState.setDebugLine(line);
-    SharedState.setDebugFileName(fileName);
-    this.analyzer = stackFrameAnalyzer;
-  }
+    public void reprintRoute() {
+        this.visualizeFurther(route);
+    }
 
-  @Override
-  public void reprintDiagram() {
-    this.doVisualizationFurther(diagram);
-  }
 
-  protected abstract void doVisualizationFurther(ObjectDiagram diagram);
+    protected abstract void visualizeFurther(TpsDebugData route);
 
-  @Override
-  public void sessionStopped() {
-    SharedState.getManuallyExploredObjects().clear();
-  }
 
-  @Override
-  public ObjectDiagram getObjectWithChildren(String objectID) {
-    SharedState.getManuallyExploredObjects().add(objectID);
-    return analyzer.getChildren(objectID);
-  }
+    @Override
+    public void sessionStopped() {
+        SharedState.getManuallyExploredObjects().clear();
+    }
 
-  @Override
-  public void doVisualization(ObjectDiagram diagram) {
-    this.diagram = diagram;
-    this.doVisualizationFurther(diagram);
-  }
+
+    // todo: implement
+    public void visualize(TpsDebugData route) {
+        this.route = route;
+        this.visualizeFurther(route);
+    }
 }

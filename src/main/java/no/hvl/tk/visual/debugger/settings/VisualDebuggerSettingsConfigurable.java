@@ -6,7 +6,6 @@ import com.intellij.openapi.util.Disposer;
 import jakarta.websocket.Session;
 import javax.swing.*;
 import no.hvl.tk.visual.debugger.SharedState;
-import no.hvl.tk.visual.debugger.server.VisualDebuggingAPIServerStarter;
 import org.jetbrains.annotations.Nls;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
@@ -82,7 +81,7 @@ public class VisualDebuggerSettingsConfigurable implements SearchableConfigurabl
 
   private void sendUpdatedConfig() {
     for (Session client : SharedState.getWebsocketClients()) {
-      VisualDebuggingAPIServerStarter.sendUIConfig(client);
+//      VisualDebuggingAPIServerStarter.sendUIConfig(client);
     }
   }
 
@@ -91,7 +90,7 @@ public class VisualDebuggerSettingsConfigurable implements SearchableConfigurabl
     if (newDepth != settings.getVisualisationDepth()) {
       settings.setVisualisationDepth(newDepth);
       if (SharedState.getDebugListener() != null) {
-        SharedState.getDebugListener().reprintDiagram();
+        SharedState.getDebugListener().reprintRoute();
       }
     }
   }

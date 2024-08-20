@@ -41,12 +41,19 @@ public class SharedState {
      */
     private static String lastPlantUMLDiagram = "";
 
+    // todo: add docs
+    private static String lastRouteStringRepresentation = "";
+
     public static String getLastPlantUMLDiagram() {
         return lastPlantUMLDiagram;
     }
 
     public static void setLastPlantUMLDiagram(final String diagram) {
         lastPlantUMLDiagram = diagram;
+    }
+
+    public static void setLastRouteStringRepresentation(final String routeString) {
+        lastRouteStringRepresentation = routeString;
     }
 
     public static boolean isDebuggingActive() {
