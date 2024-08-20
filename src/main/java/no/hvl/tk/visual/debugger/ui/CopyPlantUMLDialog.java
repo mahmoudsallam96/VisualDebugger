@@ -9,7 +9,7 @@ import java.nio.charset.StandardCharsets;
 import javax.swing.*;
 import net.sourceforge.plantuml.FileFormat;
 import no.hvl.tk.visual.debugger.SharedState;
-import no.hvl.tk.visual.debugger.debugging.visualization.PlantUmlDebuggingVisualizer;
+import no.hvl.tk.visual.debugger.debugging.visualization.TpsRouteDebuggingVisualizer;
 import org.jetbrains.annotations.Nullable;
 
 public class CopyPlantUMLDialog extends DialogWrapper {
@@ -64,7 +64,7 @@ public class CopyPlantUMLDialog extends DialogWrapper {
   private static String getSVGData() {
     try {
       return new String(
-          PlantUmlDebuggingVisualizer.toImage(SharedState.getLastPlantUMLDiagram(), FileFormat.SVG),
+          TpsRouteDebuggingVisualizer.toImage(SharedState.getLastPlantUMLDiagram(), FileFormat.SVG),
           StandardCharsets.UTF_8);
     } catch (final IOException e) {
       LOGGER.error(e);

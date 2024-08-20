@@ -3,122 +3,130 @@ package no.hvl.tk.visual.debugger;
 import jakarta.websocket.Session;
 import java.util.HashSet;
 import java.util.Set;
-import no.hvl.tk.visual.debugger.debugging.stackframe.StackFrameSessionListener;
+import no.hvl.tk.visual.debugger.debugging.stackframe.TpsStackFrameSessionListener;
 import org.glassfish.grizzly.http.server.HttpServer;
 import org.glassfish.tyrus.server.Server;
 
 public class SharedState {
 
-  private static final Set<String> manuallyExploredObjects = new HashSet<>();
+    private static final Set<String> manuallyExploredObjects = new HashSet<>();
 
-  private SharedState() {}
+    private SharedState() {
+    }
 
-  // UI / Debug API related
-  private static HttpServer uiServer;
-  private static Server debugAPIServer;
+    // UI / Debug API related
+    private static HttpServer uiServer;
+    private static Server debugAPIServer;
 
-  /** All currently connected websocket client which will get updated. */
-  private static final Set<Session> websocketClients = new HashSet<>();
+    /**
+     * All currently connected websocket client which will get updated.
+     */
+    private static final Set<Session> websocketClients = new HashSet<>();
 
-  /** Last diagram JSON for newly connecting clients. */
-  private static String lastDiagramJSON = "";
+    /**
+     * Last diagram JSON for newly connecting clients.
+     */
+    private static String lastDiagramJSON = "";
 
-  private static String debugFileName;
-  private static Integer debugLine;
+    private static String debugFileName;
+    private static Integer debugLine;
 
-  private static boolean debuggingActive = false;
+    private static boolean debuggingActive = false;
 
-  private static boolean embeddedBrowserActive = false;
-  private static StackFrameSessionListener debugSessionListener;
+    private static boolean embeddedBrowserActive = false;
+    private static TpsStackFrameSessionListener tpsDebugSessionListener;
 
-  /** Last plant UML diagram input needed for the print function. */
-  private static String lastPlantUMLDiagram = "";
+    /**
+     * Last plant UML diagram input needed for the print function.
+     */
+    private static String lastPlantUMLDiagram = "";
 
-  public static String getLastPlantUMLDiagram() {
-    return lastPlantUMLDiagram;
-  }
+    public static String getLastPlantUMLDiagram() {
+        return lastPlantUMLDiagram;
+    }
 
-  public static void setLastPlantUMLDiagram(final String diagram) {
-    lastPlantUMLDiagram = diagram;
-  }
+    public static void setLastPlantUMLDiagram(final String diagram) {
+        lastPlantUMLDiagram = diagram;
+    }
 
-  public static boolean isDebuggingActive() {
-    return debuggingActive;
-  }
+    public static boolean isDebuggingActive() {
+        return debuggingActive;
+    }
 
-  public static void setDebuggingActive(final boolean debuggingActive) {
-    SharedState.debuggingActive = debuggingActive;
-  }
+    public static void setDebuggingActive(final boolean debuggingActive) {
+        SharedState.debuggingActive = debuggingActive;
+    }
 
-  public static StackFrameSessionListener getDebugListener() {
-    return debugSessionListener;
-  }
+    public static TpsStackFrameSessionListener getDebugListener() {
+        return tpsDebugSessionListener;
+    }
 
-  public static void setDebugListener(final StackFrameSessionListener debugSessionListener) {
-    SharedState.debugSessionListener = debugSessionListener;
-  }
 
-  public static Server getDebugAPIServer() {
-    return debugAPIServer;
-  }
+    public static void setDebugListener(final TpsStackFrameSessionListener debugSessionListener) {
+        SharedState.tpsDebugSessionListener = debugSessionListener;
+    }
 
-  public static void setDebugAPIServer(final Server debugAPIServer) {
-    SharedState.debugAPIServer = debugAPIServer;
-  }
+    public static Server getDebugAPIServer() {
+        return debugAPIServer;
+    }
 
-  public static Set<Session> getWebsocketClients() {
-    return websocketClients;
-  }
+    public static void setDebugAPIServer(final Server debugAPIServer) {
+        SharedState.debugAPIServer = debugAPIServer;
+    }
 
-  public static void addWebsocketClient(final Session clientSession) {
-    websocketClients.add(clientSession);
-  }
+    public static Set<Session> getWebsocketClients() {
+        return websocketClients;
+    }
 
-  public static void removeWebsocketClient(final Session clientSession) {
-    websocketClients.remove(clientSession);
-  }
+    public static void addWebsocketClient(final Session clientSession) {
+        websocketClients.add(clientSession);
+    }
 
-  public static String getLastDiagramJSON() {
-    return lastDiagramJSON;
-  }
+    public static void removeWebsocketClient(final Session clientSession) {
+        websocketClients.remove(clientSession);
+    }
 
-  public static void setLastDiagramJSON(final String diagramJSON) {
-    SharedState.lastDiagramJSON = diagramJSON;
-  }
+    public static String getLastDiagramJSON() {
+        return lastDiagramJSON;
+    }
 
-  public static void setUIServer(final HttpServer server) {
-    SharedState.uiServer = server;
-  }
+    public static void setLastDiagramJSON(final String diagramJSON) {
+        SharedState.lastDiagramJSON = diagramJSON;
+    }
 
-  public static HttpServer getUiServer() {
-    return uiServer;
-  }
+    public static void setUIServer(final HttpServer server) {
+        SharedState.uiServer = server;
+    }
 
-  public static String getDebugFileName() {
-    return debugFileName;
-  }
+    public static HttpServer getUiServer() {
+        return uiServer;
+    }
 
-  public static Integer getDebugLine() {
-    return debugLine;
-  }
+    public static String getDebugFileName() {
+        return debugFileName;
+    }
 
-  public static void setDebugFileName(String lastDebugFileName) {
-    SharedState.debugFileName = lastDebugFileName;
-  }
+    public static Integer getDebugLine() {
+        return debugLine;
+    }
 
-  public static void setDebugLine(Integer lastDebugLine) {
-    SharedState.debugLine = lastDebugLine;
-  }
+    public static void setDebugFileName(String lastDebugFileName) {
+        SharedState.debugFileName = lastDebugFileName;
+    }
 
-  public static Set<String> getManuallyExploredObjects() {
-    return manuallyExploredObjects;
-  }
+    public static void setDebugLine(Integer lastDebugLine) {
+        SharedState.debugLine = lastDebugLine;
+    }
 
-  public static boolean isEmbeddedBrowserActive() {
-    return embeddedBrowserActive;
-  }
+    public static Set<String> getManuallyExploredObjects() {
+        return manuallyExploredObjects;
+    }
 
-  public static void setEmbeddedBrowserActive(boolean embeddedBrowserActive) {
-    SharedState.embeddedBrowserActive = embeddedBrowserActive;
-  }
+    public static boolean isEmbeddedBrowserActive() {
+        return embeddedBrowserActive;
+    }
+
+    public static void setEmbeddedBrowserActive(boolean embeddedBrowserActive) {
+        SharedState.embeddedBrowserActive = embeddedBrowserActive;
+    }
 }
