@@ -1,0 +1,4990 @@
+{
+  "execution_context": {
+    "planning_id": "tps-7t7znbwr",
+    "common_constraints": {
+      "fc_docking_time": 300000,
+      "emballage_unloading_time": 600000,
+      "cost_per_kilometer": 0.67,
+      "cost_per_driver_working_hour": 55.7,
+      "cost_per_driver_hour_without_work": 30.0,
+      "cost_per_driver_not_used": 320.0,
+      "cost_per_dummy_driver_used": 0.0,
+      "cost_per_truck_used": 210.0,
+      "minimum_schedule_duration": 14400000,
+      "maximum_schedule_duration_by_start_time": {
+        "1723413600000": 36000000,
+        "1723431600000": 43200000
+      },
+      "break_duration_by_working_duration": {
+        "16200000": 1800000,
+        "27000000": 3600000,
+        "43200000": 5400000
+      },
+      "truck_capacity": 34000000,
+      "location_driving_durations": [
+        {
+          "origin_location_id": "NL-HUB-ALM",
+          "destination_location_id": "NL-HUB-DOI",
+          "driving_duration_by_time": {
+            "1723413600000": 4246000
+          },
+          "distance": 69195,
+          "driving_duration_by_range": {}
+        },
+        {
+          "origin_location_id": "NL-HUB-DEV",
+          "destination_location_id": "NL-HUB-ALM",
+          "driving_duration_by_time": {
+            "1723413600000": 2400000
+          },
+          "distance": 42690,
+          "driving_duration_by_range": {}
+        },
+        {
+          "origin_location_id": "NL-HUB-ALM",
+          "destination_location_id": "NL-HUB-DEV",
+          "driving_duration_by_time": {
+            "1723413600000": 2400000
+          },
+          "distance": 42690,
+          "driving_duration_by_range": {}
+        },
+        {
+          "origin_location_id": "NL-HUB-DVT",
+          "destination_location_id": "NL-HUB-ALM",
+          "driving_duration_by_time": {
+            "1723413600000": 6603000
+          },
+          "distance": 140150,
+          "driving_duration_by_range": {}
+        },
+        {
+          "origin_location_id": "NL-HUB-ALM",
+          "destination_location_id": "NL-HUB-DVT",
+          "driving_duration_by_time": {
+            "1723413600000": 6603000
+          },
+          "distance": 140150,
+          "driving_duration_by_range": {}
+        },
+        {
+          "origin_location_id": "NL-HUB-ENS",
+          "destination_location_id": "NL-HUB-ALM",
+          "driving_duration_by_time": {
+            "1723413600000": 1500000
+          },
+          "distance": 28954,
+          "driving_duration_by_range": {}
+        },
+        {
+          "origin_location_id": "NL-HUB-ALM",
+          "destination_location_id": "NL-HUB-ENS",
+          "driving_duration_by_time": {
+            "1723413600000": 1500000
+          },
+          "distance": 28954,
+          "driving_duration_by_range": {}
+        },
+        {
+          "origin_location_id": "NL-FC-APE",
+          "destination_location_id": "NL-HUB-ENS",
+          "driving_duration_by_time": {
+            "1723413600000": 3120000,
+            "1723437000000": 3240000,
+            "1723446000000": 3420000,
+            "1723470300000": 3480000,
+            "1723481100000": 2940000
+          },
+          "distance": 67501,
+          "driving_duration_by_range": {}
+        },
+        {
+          "origin_location_id": "NL-HUB-APE-1",
+          "destination_location_id": "NL-FC-APE",
+          "driving_duration_by_time": {
+            "1723413600000": 720000,
+            "1723437000000": 900000,
+            "1723446000000": 900000,
+            "1723470300000": 960000,
+            "1723481100000": 720000
+          },
+          "distance": 6159,
+          "driving_duration_by_range": {}
+        },
+        {
+          "origin_location_id": "NL-FC-APE",
+          "destination_location_id": "NL-HUB-APE-1",
+          "driving_duration_by_time": {
+            "1723413600000": 720000,
+            "1723437000000": 900000,
+            "1723446000000": 900000,
+            "1723470300000": 960000,
+            "1723481100000": 720000
+          },
+          "distance": 6159,
+          "driving_duration_by_range": {}
+        },
+        {
+          "origin_location_id": "NL-HUB-ZWO",
+          "destination_location_id": "NL-HUB-ALM",
+          "driving_duration_by_time": {
+            "1723413600000": 3000000
+          },
+          "distance": 46863,
+          "driving_duration_by_range": {}
+        },
+        {
+          "origin_location_id": "NL-HUB-ALM",
+          "destination_location_id": "NL-HUB-ZWO",
+          "driving_duration_by_time": {
+            "1723413600000": 2650000
+          },
+          "distance": 46863,
+          "driving_duration_by_range": {}
+        },
+        {
+          "origin_location_id": "NL-HUB-DOI",
+          "destination_location_id": "NL-FC-APE",
+          "driving_duration_by_time": {
+            "1723413600000": 3000000,
+            "1723437000000": 3000000,
+            "1723446000000": 3300000,
+            "1723470300000": 3600000,
+            "1723481100000": 3000000
+          },
+          "distance": 58588,
+          "driving_duration_by_range": {}
+        },
+        {
+          "origin_location_id": "NL-HUB-ZWO",
+          "destination_location_id": "NL-FC-APE",
+          "driving_duration_by_time": {
+            "1723413600000": 1920000,
+            "1723437000000": 1980000,
+            "1723446000000": 2100000,
+            "1723470300000": 2100000,
+            "1723481100000": 1740000
+          },
+          "distance": 42489,
+          "driving_duration_by_range": {}
+        },
+        {
+          "origin_location_id": "NL-FC-APE",
+          "destination_location_id": "NL-HUB-ZWO",
+          "driving_duration_by_time": {
+            "1723413600000": 1920000,
+            "1723437000000": 1980000,
+            "1723446000000": 2100000,
+            "1723470300000": 2100000,
+            "1723481100000": 1740000
+          },
+          "distance": 42489,
+          "driving_duration_by_range": {}
+        },
+        {
+          "origin_location_id": "NL-HUB-DOI",
+          "destination_location_id": "NL-HUB-APE-1",
+          "driving_duration_by_time": {
+            "1723413600000": 3110000
+          },
+          "distance": 59554,
+          "driving_duration_by_range": {}
+        },
+        {
+          "origin_location_id": "NL-HUB-APE-1",
+          "destination_location_id": "NL-HUB-DOI",
+          "driving_duration_by_time": {
+            "1723413600000": 3110000
+          },
+          "distance": 59554,
+          "driving_duration_by_range": {}
+        },
+        {
+          "origin_location_id": "NL-FC-APE",
+          "destination_location_id": "NL-HUB-DOI",
+          "driving_duration_by_time": {
+            "1723413600000": 3000000,
+            "1723437000000": 3000000,
+            "1723446000000": 3300000,
+            "1723470300000": 3600000,
+            "1723481100000": 3000000
+          },
+          "distance": 58588,
+          "driving_duration_by_range": {}
+        },
+        {
+          "origin_location_id": "NL-HUB-ZWO",
+          "destination_location_id": "NL-HUB-ENS",
+          "driving_duration_by_time": {
+            "1723413600000": 3478000
+          },
+          "distance": 68714,
+          "driving_duration_by_range": {}
+        },
+        {
+          "origin_location_id": "NL-HUB-ENS",
+          "destination_location_id": "NL-HUB-ZWO",
+          "driving_duration_by_time": {
+            "1723413600000": 3478000
+          },
+          "distance": 68714,
+          "driving_duration_by_range": {}
+        },
+        {
+          "origin_location_id": "NL-FC-APE",
+          "destination_location_id": "NL-HUB-ALM",
+          "driving_duration_by_time": {
+            "1723413600000": 2640000,
+            "1723437000000": 2820000,
+            "1723446000000": 2940000,
+            "1723470300000": 3000000,
+            "1723481100000": 2580000
+          },
+          "distance": 53759,
+          "driving_duration_by_range": {}
+        },
+        {
+          "origin_location_id": "NL-HUB-ALM",
+          "destination_location_id": "NL-FC-APE",
+          "driving_duration_by_time": {
+            "1723413600000": 2640000,
+            "1723437000000": 2820000,
+            "1723446000000": 2940000,
+            "1723470300000": 3000000,
+            "1723481100000": 2580000
+          },
+          "distance": 53759,
+          "driving_duration_by_range": {}
+        },
+        {
+          "origin_location_id": "NL-FC-APE",
+          "destination_location_id": "NL-HUB-DEV",
+          "driving_duration_by_time": {
+            "1723413600000": 900000,
+            "1723437000000": 1080000,
+            "1723446000000": 1080000,
+            "1723470300000": 1980000,
+            "1723481100000": 900000
+          },
+          "distance": 16363,
+          "driving_duration_by_range": {}
+        },
+        {
+          "origin_location_id": "NL-HUB-DEV",
+          "destination_location_id": "NL-FC-APE",
+          "driving_duration_by_time": {
+            "1723413600000": 900000,
+            "1723437000000": 1080000,
+            "1723446000000": 1080000,
+            "1723470300000": 1980000,
+            "1723481100000": 900000
+          },
+          "distance": 16363,
+          "driving_duration_by_range": {}
+        },
+        {
+          "origin_location_id": "NL-FC-APE",
+          "destination_location_id": "NL-HUB-DVT",
+          "driving_duration_by_time": {
+            "1723413600000": 4260000,
+            "1723437000000": 4620000,
+            "1723446000000": 4800000,
+            "1723470300000": 5160000,
+            "1723481100000": 4200000
+          },
+          "distance": 90023,
+          "driving_duration_by_range": {}
+        },
+        {
+          "origin_location_id": "NL-HUB-DVT",
+          "destination_location_id": "NL-FC-APE",
+          "driving_duration_by_time": {
+            "1723413600000": 4260000,
+            "1723437000000": 4620000,
+            "1723446000000": 4800000,
+            "1723470300000": 5160000,
+            "1723481100000": 4200000
+          },
+          "distance": 90023,
+          "driving_duration_by_range": {}
+        },
+        {
+          "origin_location_id": "NL-HUB-ENS",
+          "destination_location_id": "NL-FC-APE",
+          "driving_duration_by_time": {
+            "1723413600000": 3120000,
+            "1723437000000": 3240000,
+            "1723446000000": 3420000,
+            "1723470300000": 3480000,
+            "1723481100000": 2940000
+          },
+          "distance": 67501,
+          "driving_duration_by_range": {}
+        },
+        {
+          "origin_location_id": "NL-HUB-APE-1",
+          "destination_location_id": "NL-HUB-ALM",
+          "driving_duration_by_time": {
+            "1723413600000": 3122000
+          },
+          "distance": 58087,
+          "driving_duration_by_range": {}
+        },
+        {
+          "origin_location_id": "NL-HUB-ALM",
+          "destination_location_id": "NL-HUB-APE-1",
+          "driving_duration_by_time": {
+            "1723413600000": 3122000
+          },
+          "distance": 58087,
+          "driving_duration_by_range": {}
+        },
+        {
+          "origin_location_id": "NL-HUB-DOI",
+          "destination_location_id": "NL-HUB-ALM",
+          "driving_duration_by_time": {
+            "1723413600000": 4246000
+          },
+          "distance": 69195,
+          "driving_duration_by_range": {}
+        },
+        {
+          "origin_location_id": "NL-HUB-APE-1",
+          "destination_location_id": "NL-HUB-DEV",
+          "driving_duration_by_time": {
+            "1723413600000": 2100000
+          },
+          "distance": 18928,
+          "driving_duration_by_range": {}
+        },
+        {
+          "origin_location_id": "NL-HUB-DEV",
+          "destination_location_id": "NL-HUB-APE-1",
+          "driving_duration_by_time": {
+            "1723413600000": 2100000
+          },
+          "distance": 18928,
+          "driving_duration_by_range": {}
+        },
+        {
+          "origin_location_id": "NL-HUB-DVT",
+          "destination_location_id": "NL-HUB-APE-1",
+          "driving_duration_by_time": {
+            "1723413600000": 4437000
+          },
+          "distance": 87136,
+          "driving_duration_by_range": {}
+        },
+        {
+          "origin_location_id": "NL-HUB-APE-1",
+          "destination_location_id": "NL-HUB-DVT",
+          "driving_duration_by_time": {
+            "1723413600000": 4437000
+          },
+          "distance": 87136,
+          "driving_duration_by_range": {}
+        },
+        {
+          "origin_location_id": "NL-HUB-APE-1",
+          "destination_location_id": "NL-HUB-ENS",
+          "driving_duration_by_time": {
+            "1723413600000": 4800000
+          },
+          "distance": 70764,
+          "driving_duration_by_range": {}
+        },
+        {
+          "origin_location_id": "NL-HUB-ENS",
+          "destination_location_id": "NL-HUB-APE-1",
+          "driving_duration_by_time": {
+            "1723413600000": 4800000
+          },
+          "distance": 70764,
+          "driving_duration_by_range": {}
+        },
+        {
+          "origin_location_id": "NL-HUB-APE-1",
+          "destination_location_id": "NL-HUB-ZWO",
+          "driving_duration_by_time": {
+            "1723413600000": 2400000
+          },
+          "distance": 41377,
+          "driving_duration_by_range": {}
+        },
+        {
+          "origin_location_id": "NL-HUB-ZWO",
+          "destination_location_id": "NL-HUB-APE-1",
+          "driving_duration_by_time": {
+            "1723413600000": 2400000
+          },
+          "distance": 41377,
+          "driving_duration_by_range": {}
+        },
+        {
+          "origin_location_id": "NL-HUB-DEV",
+          "destination_location_id": "NL-HUB-DOI",
+          "driving_duration_by_time": {
+            "1723413600000": 3096000
+          },
+          "distance": 40777,
+          "driving_duration_by_range": {}
+        },
+        {
+          "origin_location_id": "NL-HUB-DOI",
+          "destination_location_id": "NL-HUB-DEV",
+          "driving_duration_by_time": {
+            "1723413600000": 3096000
+          },
+          "distance": 40777,
+          "driving_duration_by_range": {}
+        },
+        {
+          "origin_location_id": "NL-HUB-DVT",
+          "destination_location_id": "NL-HUB-DOI",
+          "driving_duration_by_time": {
+            "1723413600000": 5952000
+          },
+          "distance": 124818,
+          "driving_duration_by_range": {}
+        },
+        {
+          "origin_location_id": "NL-HUB-DOI",
+          "destination_location_id": "NL-HUB-DVT",
+          "driving_duration_by_time": {
+            "1723413600000": 5952000
+          },
+          "distance": 124818,
+          "driving_duration_by_range": {}
+        },
+        {
+          "origin_location_id": "NL-HUB-ENS",
+          "destination_location_id": "NL-HUB-DOI",
+          "driving_duration_by_time": {
+            "1723413600000": 3480000
+          },
+          "distance": 61642,
+          "driving_duration_by_range": {}
+        },
+        {
+          "origin_location_id": "NL-HUB-DOI",
+          "destination_location_id": "NL-HUB-ENS",
+          "driving_duration_by_time": {
+            "1723413600000": 3600000
+          },
+          "distance": 61642,
+          "driving_duration_by_range": {}
+        },
+        {
+          "origin_location_id": "NL-HUB-ZWO",
+          "destination_location_id": "NL-HUB-DOI",
+          "driving_duration_by_time": {
+            "1723413600000": 4655000
+          },
+          "distance": 98462,
+          "driving_duration_by_range": {}
+        },
+        {
+          "origin_location_id": "NL-HUB-DOI",
+          "destination_location_id": "NL-HUB-ZWO",
+          "driving_duration_by_time": {
+            "1723413600000": 4655000
+          },
+          "distance": 98462,
+          "driving_duration_by_range": {}
+        },
+        {
+          "origin_location_id": "NL-HUB-DVT",
+          "destination_location_id": "NL-HUB-DEV",
+          "driving_duration_by_time": {
+            "1723413600000": 5013000
+          },
+          "distance": 102759,
+          "driving_duration_by_range": {}
+        },
+        {
+          "origin_location_id": "NL-HUB-DEV",
+          "destination_location_id": "NL-HUB-DVT",
+          "driving_duration_by_time": {
+            "1723413600000": 5013000
+          },
+          "distance": 102759,
+          "driving_duration_by_range": {}
+        },
+        {
+          "origin_location_id": "NL-HUB-DEV",
+          "destination_location_id": "NL-HUB-ENS",
+          "driving_duration_by_time": {
+            "1723413600000": 3300000
+          },
+          "distance": 55631,
+          "driving_duration_by_range": {}
+        },
+        {
+          "origin_location_id": "NL-HUB-ENS",
+          "destination_location_id": "NL-HUB-DEV",
+          "driving_duration_by_time": {
+            "1723413600000": 2820000
+          },
+          "distance": 55631,
+          "driving_duration_by_range": {}
+        },
+        {
+          "origin_location_id": "NL-HUB-DEV",
+          "destination_location_id": "NL-HUB-ZWO",
+          "driving_duration_by_time": {
+            "1723413600000": 2820000
+          },
+          "distance": 38214,
+          "driving_duration_by_range": {}
+        },
+        {
+          "origin_location_id": "NL-HUB-ZWO",
+          "destination_location_id": "NL-HUB-DEV",
+          "driving_duration_by_time": {
+            "1723413600000": 3000000
+          },
+          "distance": 38214,
+          "driving_duration_by_range": {}
+        },
+        {
+          "origin_location_id": "NL-HUB-ENS",
+          "destination_location_id": "NL-HUB-DVT",
+          "driving_duration_by_time": {
+            "1723413600000": 6748000
+          },
+          "distance": 156076,
+          "driving_duration_by_range": {}
+        },
+        {
+          "origin_location_id": "NL-HUB-DVT",
+          "destination_location_id": "NL-HUB-ENS",
+          "driving_duration_by_time": {
+            "1723413600000": 6748000
+          },
+          "distance": 156076,
+          "driving_duration_by_range": {}
+        },
+        {
+          "origin_location_id": "NL-HUB-ZWO",
+          "destination_location_id": "NL-HUB-DVT",
+          "driving_duration_by_time": {
+            "1723413600000": 5167000
+          },
+          "distance": 113544,
+          "driving_duration_by_range": {}
+        },
+        {
+          "origin_location_id": "NL-HUB-DVT",
+          "destination_location_id": "NL-HUB-ZWO",
+          "driving_duration_by_time": {
+            "1723413600000": 5167000
+          },
+          "distance": 113544,
+          "driving_duration_by_range": {}
+        }
+      ],
+      "driver_shift_start_margin": 1800000
+    },
+    "pickup_location_configurations_by_location_id": {
+      "NL-FC-APE": {
+        "location_id": "NL-FC-APE",
+        "transport_hours": [
+          {
+            "lower_endpoint": 1723444200000,
+            "lower_bound_type": "CLOSED",
+            "upper_endpoint": 1723499940000,
+            "upper_bound_type": "OPEN"
+          }
+        ],
+        "minimum_pickup_duration": 2100000
+      }
+    },
+    "routing_config_provider": {
+      "location_driving_duration_by_origin_and_destination": {
+        "NL-HUB-ALM": {
+          "NL-HUB-DOI": {
+            "origin_location_id": "NL-HUB-ALM",
+            "destination_location_id": "NL-HUB-DOI",
+            "driving_duration_by_time": {
+              "1723413600000": 4246000
+            },
+            "distance": 69195,
+            "driving_duration_by_range": {}
+          },
+          "NL-HUB-ALM": {
+            "origin_location_id": "NL-HUB-ALM",
+            "destination_location_id": "NL-HUB-ALM",
+            "driving_duration_by_time": {
+              "0": 0
+            },
+            "distance": 0,
+            "driving_duration_by_range": {}
+          },
+          "NL-HUB-DEV": {
+            "origin_location_id": "NL-HUB-ALM",
+            "destination_location_id": "NL-HUB-DEV",
+            "driving_duration_by_time": {
+              "1723413600000": 2400000
+            },
+            "distance": 42690,
+            "driving_duration_by_range": {}
+          },
+          "NL-HUB-DVT": {
+            "origin_location_id": "NL-HUB-ALM",
+            "destination_location_id": "NL-HUB-DVT",
+            "driving_duration_by_time": {
+              "1723413600000": 6603000
+            },
+            "distance": 140150,
+            "driving_duration_by_range": {}
+          },
+          "NL-HUB-ENS": {
+            "origin_location_id": "NL-HUB-ALM",
+            "destination_location_id": "NL-HUB-ENS",
+            "driving_duration_by_time": {
+              "1723413600000": 1500000
+            },
+            "distance": 28954,
+            "driving_duration_by_range": {}
+          },
+          "NL-FC-APE": {
+            "origin_location_id": "NL-HUB-ALM",
+            "destination_location_id": "NL-FC-APE",
+            "driving_duration_by_time": {
+              "1723413600000": 2640000,
+              "1723437000000": 2820000,
+              "1723446000000": 2940000,
+              "1723470300000": 3000000,
+              "1723481100000": 2580000
+            },
+            "distance": 53759,
+            "driving_duration_by_range": {}
+          },
+          "NL-HUB-APE-1": {
+            "origin_location_id": "NL-HUB-ALM",
+            "destination_location_id": "NL-HUB-APE-1",
+            "driving_duration_by_time": {
+              "1723413600000": 3122000
+            },
+            "distance": 58087,
+            "driving_duration_by_range": {}
+          },
+          "NL-HUB-ZWO": {
+            "origin_location_id": "NL-HUB-ALM",
+            "destination_location_id": "NL-HUB-ZWO",
+            "driving_duration_by_time": {
+              "1723413600000": 2650000
+            },
+            "distance": 46863,
+            "driving_duration_by_range": {}
+          }
+        },
+        "NL-HUB-DEV": {
+          "NL-HUB-DOI": {
+            "origin_location_id": "NL-HUB-DEV",
+            "destination_location_id": "NL-HUB-DOI",
+            "driving_duration_by_time": {
+              "1723413600000": 3096000
+            },
+            "distance": 40777,
+            "driving_duration_by_range": {}
+          },
+          "NL-HUB-ALM": {
+            "origin_location_id": "NL-HUB-DEV",
+            "destination_location_id": "NL-HUB-ALM",
+            "driving_duration_by_time": {
+              "1723413600000": 2400000
+            },
+            "distance": 42690,
+            "driving_duration_by_range": {}
+          },
+          "NL-HUB-DEV": {
+            "origin_location_id": "NL-HUB-DEV",
+            "destination_location_id": "NL-HUB-DEV",
+            "driving_duration_by_time": {
+              "0": 0
+            },
+            "distance": 0,
+            "driving_duration_by_range": {}
+          },
+          "NL-HUB-DVT": {
+            "origin_location_id": "NL-HUB-DEV",
+            "destination_location_id": "NL-HUB-DVT",
+            "driving_duration_by_time": {
+              "1723413600000": 5013000
+            },
+            "distance": 102759,
+            "driving_duration_by_range": {}
+          },
+          "NL-HUB-ENS": {
+            "origin_location_id": "NL-HUB-DEV",
+            "destination_location_id": "NL-HUB-ENS",
+            "driving_duration_by_time": {
+              "1723413600000": 3300000
+            },
+            "distance": 55631,
+            "driving_duration_by_range": {}
+          },
+          "NL-FC-APE": {
+            "origin_location_id": "NL-HUB-DEV",
+            "destination_location_id": "NL-FC-APE",
+            "driving_duration_by_time": {
+              "1723413600000": 900000,
+              "1723437000000": 1080000,
+              "1723446000000": 1080000,
+              "1723470300000": 1980000,
+              "1723481100000": 900000
+            },
+            "distance": 16363,
+            "driving_duration_by_range": {}
+          },
+          "NL-HUB-APE-1": {
+            "origin_location_id": "NL-HUB-DEV",
+            "destination_location_id": "NL-HUB-APE-1",
+            "driving_duration_by_time": {
+              "1723413600000": 2100000
+            },
+            "distance": 18928,
+            "driving_duration_by_range": {}
+          },
+          "NL-HUB-ZWO": {
+            "origin_location_id": "NL-HUB-DEV",
+            "destination_location_id": "NL-HUB-ZWO",
+            "driving_duration_by_time": {
+              "1723413600000": 2820000
+            },
+            "distance": 38214,
+            "driving_duration_by_range": {}
+          }
+        },
+        "NL-HUB-DVT": {
+          "NL-HUB-DOI": {
+            "origin_location_id": "NL-HUB-DVT",
+            "destination_location_id": "NL-HUB-DOI",
+            "driving_duration_by_time": {
+              "1723413600000": 5952000
+            },
+            "distance": 124818,
+            "driving_duration_by_range": {}
+          },
+          "NL-HUB-ALM": {
+            "origin_location_id": "NL-HUB-DVT",
+            "destination_location_id": "NL-HUB-ALM",
+            "driving_duration_by_time": {
+              "1723413600000": 6603000
+            },
+            "distance": 140150,
+            "driving_duration_by_range": {}
+          },
+          "NL-HUB-DEV": {
+            "origin_location_id": "NL-HUB-DVT",
+            "destination_location_id": "NL-HUB-DEV",
+            "driving_duration_by_time": {
+              "1723413600000": 5013000
+            },
+            "distance": 102759,
+            "driving_duration_by_range": {}
+          },
+          "NL-HUB-DVT": {
+            "origin_location_id": "NL-HUB-DVT",
+            "destination_location_id": "NL-HUB-DVT",
+            "driving_duration_by_time": {
+              "0": 0
+            },
+            "distance": 0,
+            "driving_duration_by_range": {}
+          },
+          "NL-HUB-ENS": {
+            "origin_location_id": "NL-HUB-DVT",
+            "destination_location_id": "NL-HUB-ENS",
+            "driving_duration_by_time": {
+              "1723413600000": 6748000
+            },
+            "distance": 156076,
+            "driving_duration_by_range": {}
+          },
+          "NL-FC-APE": {
+            "origin_location_id": "NL-HUB-DVT",
+            "destination_location_id": "NL-FC-APE",
+            "driving_duration_by_time": {
+              "1723413600000": 4260000,
+              "1723437000000": 4620000,
+              "1723446000000": 4800000,
+              "1723470300000": 5160000,
+              "1723481100000": 4200000
+            },
+            "distance": 90023,
+            "driving_duration_by_range": {}
+          },
+          "NL-HUB-APE-1": {
+            "origin_location_id": "NL-HUB-DVT",
+            "destination_location_id": "NL-HUB-APE-1",
+            "driving_duration_by_time": {
+              "1723413600000": 4437000
+            },
+            "distance": 87136,
+            "driving_duration_by_range": {}
+          },
+          "NL-HUB-ZWO": {
+            "origin_location_id": "NL-HUB-DVT",
+            "destination_location_id": "NL-HUB-ZWO",
+            "driving_duration_by_time": {
+              "1723413600000": 5167000
+            },
+            "distance": 113544,
+            "driving_duration_by_range": {}
+          }
+        },
+        "NL-HUB-ENS": {
+          "NL-HUB-DOI": {
+            "origin_location_id": "NL-HUB-ENS",
+            "destination_location_id": "NL-HUB-DOI",
+            "driving_duration_by_time": {
+              "1723413600000": 3480000
+            },
+            "distance": 61642,
+            "driving_duration_by_range": {}
+          },
+          "NL-HUB-ALM": {
+            "origin_location_id": "NL-HUB-ENS",
+            "destination_location_id": "NL-HUB-ALM",
+            "driving_duration_by_time": {
+              "1723413600000": 1500000
+            },
+            "distance": 28954,
+            "driving_duration_by_range": {}
+          },
+          "NL-HUB-DEV": {
+            "origin_location_id": "NL-HUB-ENS",
+            "destination_location_id": "NL-HUB-DEV",
+            "driving_duration_by_time": {
+              "1723413600000": 2820000
+            },
+            "distance": 55631,
+            "driving_duration_by_range": {}
+          },
+          "NL-HUB-DVT": {
+            "origin_location_id": "NL-HUB-ENS",
+            "destination_location_id": "NL-HUB-DVT",
+            "driving_duration_by_time": {
+              "1723413600000": 6748000
+            },
+            "distance": 156076,
+            "driving_duration_by_range": {}
+          },
+          "NL-HUB-ENS": {
+            "origin_location_id": "NL-HUB-ENS",
+            "destination_location_id": "NL-HUB-ENS",
+            "driving_duration_by_time": {
+              "0": 0
+            },
+            "distance": 0,
+            "driving_duration_by_range": {}
+          },
+          "NL-FC-APE": {
+            "origin_location_id": "NL-HUB-ENS",
+            "destination_location_id": "NL-FC-APE",
+            "driving_duration_by_time": {
+              "1723413600000": 3120000,
+              "1723437000000": 3240000,
+              "1723446000000": 3420000,
+              "1723470300000": 3480000,
+              "1723481100000": 2940000
+            },
+            "distance": 67501,
+            "driving_duration_by_range": {}
+          },
+          "NL-HUB-APE-1": {
+            "origin_location_id": "NL-HUB-ENS",
+            "destination_location_id": "NL-HUB-APE-1",
+            "driving_duration_by_time": {
+              "1723413600000": 4800000
+            },
+            "distance": 70764,
+            "driving_duration_by_range": {}
+          },
+          "NL-HUB-ZWO": {
+            "origin_location_id": "NL-HUB-ENS",
+            "destination_location_id": "NL-HUB-ZWO",
+            "driving_duration_by_time": {
+              "1723413600000": 3478000
+            },
+            "distance": 68714,
+            "driving_duration_by_range": {}
+          }
+        },
+        "NL-FC-APE": {
+          "NL-HUB-DOI": {
+            "origin_location_id": "NL-FC-APE",
+            "destination_location_id": "NL-HUB-DOI",
+            "driving_duration_by_time": {
+              "1723413600000": 3000000,
+              "1723437000000": 3000000,
+              "1723446000000": 3300000,
+              "1723470300000": 3600000,
+              "1723481100000": 3000000
+            },
+            "distance": 58588,
+            "driving_duration_by_range": {}
+          },
+          "NL-HUB-ALM": {
+            "origin_location_id": "NL-FC-APE",
+            "destination_location_id": "NL-HUB-ALM",
+            "driving_duration_by_time": {
+              "1723413600000": 2640000,
+              "1723437000000": 2820000,
+              "1723446000000": 2940000,
+              "1723470300000": 3000000,
+              "1723481100000": 2580000
+            },
+            "distance": 53759,
+            "driving_duration_by_range": {}
+          },
+          "NL-HUB-DEV": {
+            "origin_location_id": "NL-FC-APE",
+            "destination_location_id": "NL-HUB-DEV",
+            "driving_duration_by_time": {
+              "1723413600000": 900000,
+              "1723437000000": 1080000,
+              "1723446000000": 1080000,
+              "1723470300000": 1980000,
+              "1723481100000": 900000
+            },
+            "distance": 16363,
+            "driving_duration_by_range": {}
+          },
+          "NL-HUB-DVT": {
+            "origin_location_id": "NL-FC-APE",
+            "destination_location_id": "NL-HUB-DVT",
+            "driving_duration_by_time": {
+              "1723413600000": 4260000,
+              "1723437000000": 4620000,
+              "1723446000000": 4800000,
+              "1723470300000": 5160000,
+              "1723481100000": 4200000
+            },
+            "distance": 90023,
+            "driving_duration_by_range": {}
+          },
+          "NL-HUB-ENS": {
+            "origin_location_id": "NL-FC-APE",
+            "destination_location_id": "NL-HUB-ENS",
+            "driving_duration_by_time": {
+              "1723413600000": 3120000,
+              "1723437000000": 3240000,
+              "1723446000000": 3420000,
+              "1723470300000": 3480000,
+              "1723481100000": 2940000
+            },
+            "distance": 67501,
+            "driving_duration_by_range": {}
+          },
+          "NL-FC-APE": {
+            "origin_location_id": "NL-FC-APE",
+            "destination_location_id": "NL-FC-APE",
+            "driving_duration_by_time": {
+              "0": 0
+            },
+            "distance": 0,
+            "driving_duration_by_range": {}
+          },
+          "NL-HUB-APE-1": {
+            "origin_location_id": "NL-FC-APE",
+            "destination_location_id": "NL-HUB-APE-1",
+            "driving_duration_by_time": {
+              "1723413600000": 720000,
+              "1723437000000": 900000,
+              "1723446000000": 900000,
+              "1723470300000": 960000,
+              "1723481100000": 720000
+            },
+            "distance": 6159,
+            "driving_duration_by_range": {}
+          },
+          "NL-HUB-ZWO": {
+            "origin_location_id": "NL-FC-APE",
+            "destination_location_id": "NL-HUB-ZWO",
+            "driving_duration_by_time": {
+              "1723413600000": 1920000,
+              "1723437000000": 1980000,
+              "1723446000000": 2100000,
+              "1723470300000": 2100000,
+              "1723481100000": 1740000
+            },
+            "distance": 42489,
+            "driving_duration_by_range": {}
+          }
+        },
+        "NL-HUB-APE-1": {
+          "NL-HUB-DOI": {
+            "origin_location_id": "NL-HUB-APE-1",
+            "destination_location_id": "NL-HUB-DOI",
+            "driving_duration_by_time": {
+              "1723413600000": 3110000
+            },
+            "distance": 59554,
+            "driving_duration_by_range": {}
+          },
+          "NL-HUB-ALM": {
+            "origin_location_id": "NL-HUB-APE-1",
+            "destination_location_id": "NL-HUB-ALM",
+            "driving_duration_by_time": {
+              "1723413600000": 3122000
+            },
+            "distance": 58087,
+            "driving_duration_by_range": {}
+          },
+          "NL-HUB-DEV": {
+            "origin_location_id": "NL-HUB-APE-1",
+            "destination_location_id": "NL-HUB-DEV",
+            "driving_duration_by_time": {
+              "1723413600000": 2100000
+            },
+            "distance": 18928,
+            "driving_duration_by_range": {}
+          },
+          "NL-HUB-DVT": {
+            "origin_location_id": "NL-HUB-APE-1",
+            "destination_location_id": "NL-HUB-DVT",
+            "driving_duration_by_time": {
+              "1723413600000": 4437000
+            },
+            "distance": 87136,
+            "driving_duration_by_range": {}
+          },
+          "NL-HUB-ENS": {
+            "origin_location_id": "NL-HUB-APE-1",
+            "destination_location_id": "NL-HUB-ENS",
+            "driving_duration_by_time": {
+              "1723413600000": 4800000
+            },
+            "distance": 70764,
+            "driving_duration_by_range": {}
+          },
+          "NL-FC-APE": {
+            "origin_location_id": "NL-HUB-APE-1",
+            "destination_location_id": "NL-FC-APE",
+            "driving_duration_by_time": {
+              "1723413600000": 720000,
+              "1723437000000": 900000,
+              "1723446000000": 900000,
+              "1723470300000": 960000,
+              "1723481100000": 720000
+            },
+            "distance": 6159,
+            "driving_duration_by_range": {}
+          },
+          "NL-HUB-APE-1": {
+            "origin_location_id": "NL-HUB-APE-1",
+            "destination_location_id": "NL-HUB-APE-1",
+            "driving_duration_by_time": {
+              "0": 0
+            },
+            "distance": 0,
+            "driving_duration_by_range": {}
+          },
+          "NL-HUB-ZWO": {
+            "origin_location_id": "NL-HUB-APE-1",
+            "destination_location_id": "NL-HUB-ZWO",
+            "driving_duration_by_time": {
+              "1723413600000": 2400000
+            },
+            "distance": 41377,
+            "driving_duration_by_range": {}
+          }
+        },
+        "NL-HUB-ZWO": {
+          "NL-HUB-DOI": {
+            "origin_location_id": "NL-HUB-ZWO",
+            "destination_location_id": "NL-HUB-DOI",
+            "driving_duration_by_time": {
+              "1723413600000": 4655000
+            },
+            "distance": 98462,
+            "driving_duration_by_range": {}
+          },
+          "NL-HUB-ALM": {
+            "origin_location_id": "NL-HUB-ZWO",
+            "destination_location_id": "NL-HUB-ALM",
+            "driving_duration_by_time": {
+              "1723413600000": 3000000
+            },
+            "distance": 46863,
+            "driving_duration_by_range": {}
+          },
+          "NL-HUB-DEV": {
+            "origin_location_id": "NL-HUB-ZWO",
+            "destination_location_id": "NL-HUB-DEV",
+            "driving_duration_by_time": {
+              "1723413600000": 3000000
+            },
+            "distance": 38214,
+            "driving_duration_by_range": {}
+          },
+          "NL-HUB-DVT": {
+            "origin_location_id": "NL-HUB-ZWO",
+            "destination_location_id": "NL-HUB-DVT",
+            "driving_duration_by_time": {
+              "1723413600000": 5167000
+            },
+            "distance": 113544,
+            "driving_duration_by_range": {}
+          },
+          "NL-HUB-ENS": {
+            "origin_location_id": "NL-HUB-ZWO",
+            "destination_location_id": "NL-HUB-ENS",
+            "driving_duration_by_time": {
+              "1723413600000": 3478000
+            },
+            "distance": 68714,
+            "driving_duration_by_range": {}
+          },
+          "NL-FC-APE": {
+            "origin_location_id": "NL-HUB-ZWO",
+            "destination_location_id": "NL-FC-APE",
+            "driving_duration_by_time": {
+              "1723413600000": 1920000,
+              "1723437000000": 1980000,
+              "1723446000000": 2100000,
+              "1723470300000": 2100000,
+              "1723481100000": 1740000
+            },
+            "distance": 42489,
+            "driving_duration_by_range": {}
+          },
+          "NL-HUB-APE-1": {
+            "origin_location_id": "NL-HUB-ZWO",
+            "destination_location_id": "NL-HUB-APE-1",
+            "driving_duration_by_time": {
+              "1723413600000": 2400000
+            },
+            "distance": 41377,
+            "driving_duration_by_range": {}
+          },
+          "NL-HUB-ZWO": {
+            "origin_location_id": "NL-HUB-ZWO",
+            "destination_location_id": "NL-HUB-ZWO",
+            "driving_duration_by_time": {
+              "0": 0
+            },
+            "distance": 0,
+            "driving_duration_by_range": {}
+          }
+        },
+        "NL-HUB-DOI": {
+          "NL-HUB-DOI": {
+            "origin_location_id": "NL-HUB-DOI",
+            "destination_location_id": "NL-HUB-DOI",
+            "driving_duration_by_time": {
+              "0": 0
+            },
+            "distance": 0,
+            "driving_duration_by_range": {}
+          },
+          "NL-HUB-ALM": {
+            "origin_location_id": "NL-HUB-DOI",
+            "destination_location_id": "NL-HUB-ALM",
+            "driving_duration_by_time": {
+              "1723413600000": 4246000
+            },
+            "distance": 69195,
+            "driving_duration_by_range": {}
+          },
+          "NL-HUB-DEV": {
+            "origin_location_id": "NL-HUB-DOI",
+            "destination_location_id": "NL-HUB-DEV",
+            "driving_duration_by_time": {
+              "1723413600000": 3096000
+            },
+            "distance": 40777,
+            "driving_duration_by_range": {}
+          },
+          "NL-HUB-DVT": {
+            "origin_location_id": "NL-HUB-DOI",
+            "destination_location_id": "NL-HUB-DVT",
+            "driving_duration_by_time": {
+              "1723413600000": 5952000
+            },
+            "distance": 124818,
+            "driving_duration_by_range": {}
+          },
+          "NL-HUB-ENS": {
+            "origin_location_id": "NL-HUB-DOI",
+            "destination_location_id": "NL-HUB-ENS",
+            "driving_duration_by_time": {
+              "1723413600000": 3600000
+            },
+            "distance": 61642,
+            "driving_duration_by_range": {}
+          },
+          "NL-FC-APE": {
+            "origin_location_id": "NL-HUB-DOI",
+            "destination_location_id": "NL-FC-APE",
+            "driving_duration_by_time": {
+              "1723413600000": 3000000,
+              "1723437000000": 3000000,
+              "1723446000000": 3300000,
+              "1723470300000": 3600000,
+              "1723481100000": 3000000
+            },
+            "distance": 58588,
+            "driving_duration_by_range": {}
+          },
+          "NL-HUB-APE-1": {
+            "origin_location_id": "NL-HUB-DOI",
+            "destination_location_id": "NL-HUB-APE-1",
+            "driving_duration_by_time": {
+              "1723413600000": 3110000
+            },
+            "distance": 59554,
+            "driving_duration_by_range": {}
+          },
+          "NL-HUB-ZWO": {
+            "origin_location_id": "NL-HUB-DOI",
+            "destination_location_id": "NL-HUB-ZWO",
+            "driving_duration_by_time": {
+              "1723413600000": 4655000
+            },
+            "distance": 98462,
+            "driving_duration_by_range": {}
+          }
+        }
+      }
+    },
+    "driver_provider": {
+      "common_constraints": {
+        "fc_docking_time": 300000,
+        "emballage_unloading_time": 600000,
+        "cost_per_kilometer": 0.67,
+        "cost_per_driver_working_hour": 55.7,
+        "cost_per_driver_hour_without_work": 30.0,
+        "cost_per_driver_not_used": 320.0,
+        "cost_per_dummy_driver_used": 0.0,
+        "cost_per_truck_used": 210.0,
+        "minimum_schedule_duration": 14400000,
+        "maximum_schedule_duration_by_start_time": {
+          "1723413600000": 36000000,
+          "1723431600000": 43200000
+        },
+        "break_duration_by_working_duration": {
+          "16200000": 1800000,
+          "27000000": 3600000,
+          "43200000": 5400000
+        },
+        "truck_capacity": 34000000,
+        "location_driving_durations": [
+          {
+            "origin_location_id": "NL-HUB-ALM",
+            "destination_location_id": "NL-HUB-DOI",
+            "driving_duration_by_time": {
+              "1723413600000": 4246000
+            },
+            "distance": 69195,
+            "driving_duration_by_range": {}
+          },
+          {
+            "origin_location_id": "NL-HUB-DEV",
+            "destination_location_id": "NL-HUB-ALM",
+            "driving_duration_by_time": {
+              "1723413600000": 2400000
+            },
+            "distance": 42690,
+            "driving_duration_by_range": {}
+          },
+          {
+            "origin_location_id": "NL-HUB-ALM",
+            "destination_location_id": "NL-HUB-DEV",
+            "driving_duration_by_time": {
+              "1723413600000": 2400000
+            },
+            "distance": 42690,
+            "driving_duration_by_range": {}
+          },
+          {
+            "origin_location_id": "NL-HUB-DVT",
+            "destination_location_id": "NL-HUB-ALM",
+            "driving_duration_by_time": {
+              "1723413600000": 6603000
+            },
+            "distance": 140150,
+            "driving_duration_by_range": {}
+          },
+          {
+            "origin_location_id": "NL-HUB-ALM",
+            "destination_location_id": "NL-HUB-DVT",
+            "driving_duration_by_time": {
+              "1723413600000": 6603000
+            },
+            "distance": 140150,
+            "driving_duration_by_range": {}
+          },
+          {
+            "origin_location_id": "NL-HUB-ENS",
+            "destination_location_id": "NL-HUB-ALM",
+            "driving_duration_by_time": {
+              "1723413600000": 1500000
+            },
+            "distance": 28954,
+            "driving_duration_by_range": {}
+          },
+          {
+            "origin_location_id": "NL-HUB-ALM",
+            "destination_location_id": "NL-HUB-ENS",
+            "driving_duration_by_time": {
+              "1723413600000": 1500000
+            },
+            "distance": 28954,
+            "driving_duration_by_range": {}
+          },
+          {
+            "origin_location_id": "NL-FC-APE",
+            "destination_location_id": "NL-HUB-ENS",
+            "driving_duration_by_time": {
+              "1723413600000": 3120000,
+              "1723437000000": 3240000,
+              "1723446000000": 3420000,
+              "1723470300000": 3480000,
+              "1723481100000": 2940000
+            },
+            "distance": 67501,
+            "driving_duration_by_range": {}
+          },
+          {
+            "origin_location_id": "NL-HUB-APE-1",
+            "destination_location_id": "NL-FC-APE",
+            "driving_duration_by_time": {
+              "1723413600000": 720000,
+              "1723437000000": 900000,
+              "1723446000000": 900000,
+              "1723470300000": 960000,
+              "1723481100000": 720000
+            },
+            "distance": 6159,
+            "driving_duration_by_range": {}
+          },
+          {
+            "origin_location_id": "NL-FC-APE",
+            "destination_location_id": "NL-HUB-APE-1",
+            "driving_duration_by_time": {
+              "1723413600000": 720000,
+              "1723437000000": 900000,
+              "1723446000000": 900000,
+              "1723470300000": 960000,
+              "1723481100000": 720000
+            },
+            "distance": 6159,
+            "driving_duration_by_range": {}
+          },
+          {
+            "origin_location_id": "NL-HUB-ZWO",
+            "destination_location_id": "NL-HUB-ALM",
+            "driving_duration_by_time": {
+              "1723413600000": 3000000
+            },
+            "distance": 46863,
+            "driving_duration_by_range": {}
+          },
+          {
+            "origin_location_id": "NL-HUB-ALM",
+            "destination_location_id": "NL-HUB-ZWO",
+            "driving_duration_by_time": {
+              "1723413600000": 2650000
+            },
+            "distance": 46863,
+            "driving_duration_by_range": {}
+          },
+          {
+            "origin_location_id": "NL-HUB-DOI",
+            "destination_location_id": "NL-FC-APE",
+            "driving_duration_by_time": {
+              "1723413600000": 3000000,
+              "1723437000000": 3000000,
+              "1723446000000": 3300000,
+              "1723470300000": 3600000,
+              "1723481100000": 3000000
+            },
+            "distance": 58588,
+            "driving_duration_by_range": {}
+          },
+          {
+            "origin_location_id": "NL-HUB-ZWO",
+            "destination_location_id": "NL-FC-APE",
+            "driving_duration_by_time": {
+              "1723413600000": 1920000,
+              "1723437000000": 1980000,
+              "1723446000000": 2100000,
+              "1723470300000": 2100000,
+              "1723481100000": 1740000
+            },
+            "distance": 42489,
+            "driving_duration_by_range": {}
+          },
+          {
+            "origin_location_id": "NL-FC-APE",
+            "destination_location_id": "NL-HUB-ZWO",
+            "driving_duration_by_time": {
+              "1723413600000": 1920000,
+              "1723437000000": 1980000,
+              "1723446000000": 2100000,
+              "1723470300000": 2100000,
+              "1723481100000": 1740000
+            },
+            "distance": 42489,
+            "driving_duration_by_range": {}
+          },
+          {
+            "origin_location_id": "NL-HUB-DOI",
+            "destination_location_id": "NL-HUB-APE-1",
+            "driving_duration_by_time": {
+              "1723413600000": 3110000
+            },
+            "distance": 59554,
+            "driving_duration_by_range": {}
+          },
+          {
+            "origin_location_id": "NL-HUB-APE-1",
+            "destination_location_id": "NL-HUB-DOI",
+            "driving_duration_by_time": {
+              "1723413600000": 3110000
+            },
+            "distance": 59554,
+            "driving_duration_by_range": {}
+          },
+          {
+            "origin_location_id": "NL-FC-APE",
+            "destination_location_id": "NL-HUB-DOI",
+            "driving_duration_by_time": {
+              "1723413600000": 3000000,
+              "1723437000000": 3000000,
+              "1723446000000": 3300000,
+              "1723470300000": 3600000,
+              "1723481100000": 3000000
+            },
+            "distance": 58588,
+            "driving_duration_by_range": {}
+          },
+          {
+            "origin_location_id": "NL-HUB-ZWO",
+            "destination_location_id": "NL-HUB-ENS",
+            "driving_duration_by_time": {
+              "1723413600000": 3478000
+            },
+            "distance": 68714,
+            "driving_duration_by_range": {}
+          },
+          {
+            "origin_location_id": "NL-HUB-ENS",
+            "destination_location_id": "NL-HUB-ZWO",
+            "driving_duration_by_time": {
+              "1723413600000": 3478000
+            },
+            "distance": 68714,
+            "driving_duration_by_range": {}
+          },
+          {
+            "origin_location_id": "NL-FC-APE",
+            "destination_location_id": "NL-HUB-ALM",
+            "driving_duration_by_time": {
+              "1723413600000": 2640000,
+              "1723437000000": 2820000,
+              "1723446000000": 2940000,
+              "1723470300000": 3000000,
+              "1723481100000": 2580000
+            },
+            "distance": 53759,
+            "driving_duration_by_range": {}
+          },
+          {
+            "origin_location_id": "NL-HUB-ALM",
+            "destination_location_id": "NL-FC-APE",
+            "driving_duration_by_time": {
+              "1723413600000": 2640000,
+              "1723437000000": 2820000,
+              "1723446000000": 2940000,
+              "1723470300000": 3000000,
+              "1723481100000": 2580000
+            },
+            "distance": 53759,
+            "driving_duration_by_range": {}
+          },
+          {
+            "origin_location_id": "NL-FC-APE",
+            "destination_location_id": "NL-HUB-DEV",
+            "driving_duration_by_time": {
+              "1723413600000": 900000,
+              "1723437000000": 1080000,
+              "1723446000000": 1080000,
+              "1723470300000": 1980000,
+              "1723481100000": 900000
+            },
+            "distance": 16363,
+            "driving_duration_by_range": {}
+          },
+          {
+            "origin_location_id": "NL-HUB-DEV",
+            "destination_location_id": "NL-FC-APE",
+            "driving_duration_by_time": {
+              "1723413600000": 900000,
+              "1723437000000": 1080000,
+              "1723446000000": 1080000,
+              "1723470300000": 1980000,
+              "1723481100000": 900000
+            },
+            "distance": 16363,
+            "driving_duration_by_range": {}
+          },
+          {
+            "origin_location_id": "NL-FC-APE",
+            "destination_location_id": "NL-HUB-DVT",
+            "driving_duration_by_time": {
+              "1723413600000": 4260000,
+              "1723437000000": 4620000,
+              "1723446000000": 4800000,
+              "1723470300000": 5160000,
+              "1723481100000": 4200000
+            },
+            "distance": 90023,
+            "driving_duration_by_range": {}
+          },
+          {
+            "origin_location_id": "NL-HUB-DVT",
+            "destination_location_id": "NL-FC-APE",
+            "driving_duration_by_time": {
+              "1723413600000": 4260000,
+              "1723437000000": 4620000,
+              "1723446000000": 4800000,
+              "1723470300000": 5160000,
+              "1723481100000": 4200000
+            },
+            "distance": 90023,
+            "driving_duration_by_range": {}
+          },
+          {
+            "origin_location_id": "NL-HUB-ENS",
+            "destination_location_id": "NL-FC-APE",
+            "driving_duration_by_time": {
+              "1723413600000": 3120000,
+              "1723437000000": 3240000,
+              "1723446000000": 3420000,
+              "1723470300000": 3480000,
+              "1723481100000": 2940000
+            },
+            "distance": 67501,
+            "driving_duration_by_range": {}
+          },
+          {
+            "origin_location_id": "NL-HUB-APE-1",
+            "destination_location_id": "NL-HUB-ALM",
+            "driving_duration_by_time": {
+              "1723413600000": 3122000
+            },
+            "distance": 58087,
+            "driving_duration_by_range": {}
+          },
+          {
+            "origin_location_id": "NL-HUB-ALM",
+            "destination_location_id": "NL-HUB-APE-1",
+            "driving_duration_by_time": {
+              "1723413600000": 3122000
+            },
+            "distance": 58087,
+            "driving_duration_by_range": {}
+          },
+          {
+            "origin_location_id": "NL-HUB-DOI",
+            "destination_location_id": "NL-HUB-ALM",
+            "driving_duration_by_time": {
+              "1723413600000": 4246000
+            },
+            "distance": 69195,
+            "driving_duration_by_range": {}
+          },
+          {
+            "origin_location_id": "NL-HUB-APE-1",
+            "destination_location_id": "NL-HUB-DEV",
+            "driving_duration_by_time": {
+              "1723413600000": 2100000
+            },
+            "distance": 18928,
+            "driving_duration_by_range": {}
+          },
+          {
+            "origin_location_id": "NL-HUB-DEV",
+            "destination_location_id": "NL-HUB-APE-1",
+            "driving_duration_by_time": {
+              "1723413600000": 2100000
+            },
+            "distance": 18928,
+            "driving_duration_by_range": {}
+          },
+          {
+            "origin_location_id": "NL-HUB-DVT",
+            "destination_location_id": "NL-HUB-APE-1",
+            "driving_duration_by_time": {
+              "1723413600000": 4437000
+            },
+            "distance": 87136,
+            "driving_duration_by_range": {}
+          },
+          {
+            "origin_location_id": "NL-HUB-APE-1",
+            "destination_location_id": "NL-HUB-DVT",
+            "driving_duration_by_time": {
+              "1723413600000": 4437000
+            },
+            "distance": 87136,
+            "driving_duration_by_range": {}
+          },
+          {
+            "origin_location_id": "NL-HUB-APE-1",
+            "destination_location_id": "NL-HUB-ENS",
+            "driving_duration_by_time": {
+              "1723413600000": 4800000
+            },
+            "distance": 70764,
+            "driving_duration_by_range": {}
+          },
+          {
+            "origin_location_id": "NL-HUB-ENS",
+            "destination_location_id": "NL-HUB-APE-1",
+            "driving_duration_by_time": {
+              "1723413600000": 4800000
+            },
+            "distance": 70764,
+            "driving_duration_by_range": {}
+          },
+          {
+            "origin_location_id": "NL-HUB-APE-1",
+            "destination_location_id": "NL-HUB-ZWO",
+            "driving_duration_by_time": {
+              "1723413600000": 2400000
+            },
+            "distance": 41377,
+            "driving_duration_by_range": {}
+          },
+          {
+            "origin_location_id": "NL-HUB-ZWO",
+            "destination_location_id": "NL-HUB-APE-1",
+            "driving_duration_by_time": {
+              "1723413600000": 2400000
+            },
+            "distance": 41377,
+            "driving_duration_by_range": {}
+          },
+          {
+            "origin_location_id": "NL-HUB-DEV",
+            "destination_location_id": "NL-HUB-DOI",
+            "driving_duration_by_time": {
+              "1723413600000": 3096000
+            },
+            "distance": 40777,
+            "driving_duration_by_range": {}
+          },
+          {
+            "origin_location_id": "NL-HUB-DOI",
+            "destination_location_id": "NL-HUB-DEV",
+            "driving_duration_by_time": {
+              "1723413600000": 3096000
+            },
+            "distance": 40777,
+            "driving_duration_by_range": {}
+          },
+          {
+            "origin_location_id": "NL-HUB-DVT",
+            "destination_location_id": "NL-HUB-DOI",
+            "driving_duration_by_time": {
+              "1723413600000": 5952000
+            },
+            "distance": 124818,
+            "driving_duration_by_range": {}
+          },
+          {
+            "origin_location_id": "NL-HUB-DOI",
+            "destination_location_id": "NL-HUB-DVT",
+            "driving_duration_by_time": {
+              "1723413600000": 5952000
+            },
+            "distance": 124818,
+            "driving_duration_by_range": {}
+          },
+          {
+            "origin_location_id": "NL-HUB-ENS",
+            "destination_location_id": "NL-HUB-DOI",
+            "driving_duration_by_time": {
+              "1723413600000": 3480000
+            },
+            "distance": 61642,
+            "driving_duration_by_range": {}
+          },
+          {
+            "origin_location_id": "NL-HUB-DOI",
+            "destination_location_id": "NL-HUB-ENS",
+            "driving_duration_by_time": {
+              "1723413600000": 3600000
+            },
+            "distance": 61642,
+            "driving_duration_by_range": {}
+          },
+          {
+            "origin_location_id": "NL-HUB-ZWO",
+            "destination_location_id": "NL-HUB-DOI",
+            "driving_duration_by_time": {
+              "1723413600000": 4655000
+            },
+            "distance": 98462,
+            "driving_duration_by_range": {}
+          },
+          {
+            "origin_location_id": "NL-HUB-DOI",
+            "destination_location_id": "NL-HUB-ZWO",
+            "driving_duration_by_time": {
+              "1723413600000": 4655000
+            },
+            "distance": 98462,
+            "driving_duration_by_range": {}
+          },
+          {
+            "origin_location_id": "NL-HUB-DVT",
+            "destination_location_id": "NL-HUB-DEV",
+            "driving_duration_by_time": {
+              "1723413600000": 5013000
+            },
+            "distance": 102759,
+            "driving_duration_by_range": {}
+          },
+          {
+            "origin_location_id": "NL-HUB-DEV",
+            "destination_location_id": "NL-HUB-DVT",
+            "driving_duration_by_time": {
+              "1723413600000": 5013000
+            },
+            "distance": 102759,
+            "driving_duration_by_range": {}
+          },
+          {
+            "origin_location_id": "NL-HUB-DEV",
+            "destination_location_id": "NL-HUB-ENS",
+            "driving_duration_by_time": {
+              "1723413600000": 3300000
+            },
+            "distance": 55631,
+            "driving_duration_by_range": {}
+          },
+          {
+            "origin_location_id": "NL-HUB-ENS",
+            "destination_location_id": "NL-HUB-DEV",
+            "driving_duration_by_time": {
+              "1723413600000": 2820000
+            },
+            "distance": 55631,
+            "driving_duration_by_range": {}
+          },
+          {
+            "origin_location_id": "NL-HUB-DEV",
+            "destination_location_id": "NL-HUB-ZWO",
+            "driving_duration_by_time": {
+              "1723413600000": 2820000
+            },
+            "distance": 38214,
+            "driving_duration_by_range": {}
+          },
+          {
+            "origin_location_id": "NL-HUB-ZWO",
+            "destination_location_id": "NL-HUB-DEV",
+            "driving_duration_by_time": {
+              "1723413600000": 3000000
+            },
+            "distance": 38214,
+            "driving_duration_by_range": {}
+          },
+          {
+            "origin_location_id": "NL-HUB-ENS",
+            "destination_location_id": "NL-HUB-DVT",
+            "driving_duration_by_time": {
+              "1723413600000": 6748000
+            },
+            "distance": 156076,
+            "driving_duration_by_range": {}
+          },
+          {
+            "origin_location_id": "NL-HUB-DVT",
+            "destination_location_id": "NL-HUB-ENS",
+            "driving_duration_by_time": {
+              "1723413600000": 6748000
+            },
+            "distance": 156076,
+            "driving_duration_by_range": {}
+          },
+          {
+            "origin_location_id": "NL-HUB-ZWO",
+            "destination_location_id": "NL-HUB-DVT",
+            "driving_duration_by_time": {
+              "1723413600000": 5167000
+            },
+            "distance": 113544,
+            "driving_duration_by_range": {}
+          },
+          {
+            "origin_location_id": "NL-HUB-DVT",
+            "destination_location_id": "NL-HUB-ZWO",
+            "driving_duration_by_time": {
+              "1723413600000": 5167000
+            },
+            "distance": 113544,
+            "driving_duration_by_range": {}
+          }
+        ],
+        "driver_shift_start_margin": 1800000
+      },
+      "drivers": [
+        {
+          "id": "driver-vdbrink-FC5-1-20240812",
+          "location_id": "NL-FC-APE",
+          "reservation_time_window": {
+            "lower_endpoint": 1723442820000,
+            "lower_bound_type": "CLOSED",
+            "upper_endpoint": 1723472220000,
+            "upper_bound_type": "OPEN"
+          },
+          "is_dummy": false
+        },
+        {
+          "id": "driver-vdbrink-FC5-3-20240812",
+          "location_id": "NL-FC-APE",
+          "reservation_time_window": {
+            "lower_endpoint": 1723450080000,
+            "lower_bound_type": "CLOSED",
+            "upper_endpoint": 1723482060000,
+            "upper_bound_type": "OPEN"
+          },
+          "is_dummy": false
+        },
+        {
+          "id": "driver-vdbrink-FC5-4-20240812",
+          "location_id": "NL-FC-APE",
+          "reservation_time_window": {
+            "lower_endpoint": 1723453740000,
+            "lower_bound_type": "CLOSED",
+            "upper_endpoint": 1723479900000,
+            "upper_bound_type": "OPEN"
+          },
+          "is_dummy": false
+        },
+        {
+          "id": "driver-vdbrink-FC5-2-20240812",
+          "location_id": "NL-FC-APE",
+          "reservation_time_window": {
+            "lower_endpoint": 1723443720000,
+            "lower_bound_type": "CLOSED",
+            "upper_endpoint": 1723472100000,
+            "upper_bound_type": "OPEN"
+          },
+          "is_dummy": false
+        },
+        {
+          "id": "driver-vdbrink-FC5-5-20240812",
+          "location_id": "NL-FC-APE",
+          "reservation_time_window": {
+            "lower_endpoint": 1723456620000,
+            "lower_bound_type": "CLOSED",
+            "upper_endpoint": 1723480620000,
+            "upper_bound_type": "OPEN"
+          },
+          "is_dummy": false
+        }
+      ],
+      "drivers_by_location_id": {
+        "NL-FC-APE": [
+          {
+            "id": "driver-vdbrink-FC5-5-20240812",
+            "location_id": "NL-FC-APE",
+            "reservation_time_window": {
+              "lower_endpoint": 1723456620000,
+              "lower_bound_type": "CLOSED",
+              "upper_endpoint": 1723480620000,
+              "upper_bound_type": "OPEN"
+            },
+            "is_dummy": false
+          },
+          {
+            "id": "driver-vdbrink-FC5-4-20240812",
+            "location_id": "NL-FC-APE",
+            "reservation_time_window": {
+              "lower_endpoint": 1723453740000,
+              "lower_bound_type": "CLOSED",
+              "upper_endpoint": 1723479900000,
+              "upper_bound_type": "OPEN"
+            },
+            "is_dummy": false
+          },
+          {
+            "id": "driver-vdbrink-FC5-3-20240812",
+            "location_id": "NL-FC-APE",
+            "reservation_time_window": {
+              "lower_endpoint": 1723450080000,
+              "lower_bound_type": "CLOSED",
+              "upper_endpoint": 1723482060000,
+              "upper_bound_type": "OPEN"
+            },
+            "is_dummy": false
+          },
+          {
+            "id": "driver-vdbrink-FC5-2-20240812",
+            "location_id": "NL-FC-APE",
+            "reservation_time_window": {
+              "lower_endpoint": 1723443720000,
+              "lower_bound_type": "CLOSED",
+              "upper_endpoint": 1723472100000,
+              "upper_bound_type": "OPEN"
+            },
+            "is_dummy": false
+          },
+          {
+            "id": "driver-vdbrink-FC5-1-20240812",
+            "location_id": "NL-FC-APE",
+            "reservation_time_window": {
+              "lower_endpoint": 1723442820000,
+              "lower_bound_type": "CLOSED",
+              "upper_endpoint": 1723472220000,
+              "upper_bound_type": "OPEN"
+            },
+            "is_dummy": false
+          }
+        ]
+      },
+      "planning_id": "tps-7t7znbwr",
+      "id_generator": {
+        "id_sequence": 6
+      }
+    },
+    "truck_provider": {
+      "planning_id": "tps-7t7znbwr",
+      "truck_proximity_index": {
+        "NL-FC-APE": []
+      },
+      "id_generator": {
+        "id_sequence": 81
+      }
+    },
+    "forbidden_next_delivery_location_ids": {
+      "NL-HUB-DOI": [
+        "NL-HUB-ALM",
+        "NL-HUB-ZWO",
+        "NL-HUB-DEV",
+        "NL-HUB-ENS",
+        "NL-HUB-APE-1",
+        "NL-HUB-DVT"
+      ],
+      "NL-HUB-ALM": [
+        "NL-HUB-DOI",
+        "NL-HUB-ZWO",
+        "NL-HUB-DEV",
+        "NL-HUB-ENS",
+        "NL-HUB-APE-1",
+        "NL-HUB-DVT"
+      ],
+      "NL-HUB-ZWO": [
+        "NL-HUB-DOI",
+        "NL-HUB-ALM",
+        "NL-HUB-DEV",
+        "NL-HUB-ENS",
+        "NL-HUB-APE-1",
+        "NL-HUB-DVT"
+      ],
+      "NL-HUB-DEV": [
+        "NL-HUB-DOI",
+        "NL-HUB-ALM",
+        "NL-HUB-ZWO",
+        "NL-HUB-ENS",
+        "NL-HUB-APE-1",
+        "NL-HUB-DVT"
+      ],
+      "NL-HUB-ENS": [
+        "NL-HUB-DOI",
+        "NL-HUB-ALM",
+        "NL-HUB-ZWO",
+        "NL-HUB-DEV",
+        "NL-HUB-APE-1",
+        "NL-HUB-DVT"
+      ],
+      "NL-HUB-APE-1": [
+        "NL-HUB-DOI",
+        "NL-HUB-ALM",
+        "NL-HUB-ZWO",
+        "NL-HUB-DEV",
+        "NL-HUB-ENS",
+        "NL-HUB-DVT"
+      ],
+      "NL-HUB-DVT": [
+        "NL-HUB-DOI",
+        "NL-HUB-ALM",
+        "NL-HUB-ZWO",
+        "NL-HUB-DEV",
+        "NL-HUB-ENS",
+        "NL-HUB-APE-1"
+      ]
+    },
+    "random": {
+      "deprecated": false
+    },
+    "node_factory": {
+      "id_generator": {
+        "id_sequence": 337
+      }
+    }
+  },
+  "route_optimizer": {
+    "routing_config_provider": {
+      "location_driving_duration_by_origin_and_destination": {
+        "NL-HUB-ALM": {
+          "NL-HUB-DOI": {
+            "origin_location_id": "NL-HUB-ALM",
+            "destination_location_id": "NL-HUB-DOI",
+            "driving_duration_by_time": {
+              "1723413600000": 4246000
+            },
+            "distance": 69195,
+            "driving_duration_by_range": {}
+          },
+          "NL-HUB-ALM": {
+            "origin_location_id": "NL-HUB-ALM",
+            "destination_location_id": "NL-HUB-ALM",
+            "driving_duration_by_time": {
+              "0": 0
+            },
+            "distance": 0,
+            "driving_duration_by_range": {}
+          },
+          "NL-HUB-DEV": {
+            "origin_location_id": "NL-HUB-ALM",
+            "destination_location_id": "NL-HUB-DEV",
+            "driving_duration_by_time": {
+              "1723413600000": 2400000
+            },
+            "distance": 42690,
+            "driving_duration_by_range": {}
+          },
+          "NL-HUB-DVT": {
+            "origin_location_id": "NL-HUB-ALM",
+            "destination_location_id": "NL-HUB-DVT",
+            "driving_duration_by_time": {
+              "1723413600000": 6603000
+            },
+            "distance": 140150,
+            "driving_duration_by_range": {}
+          },
+          "NL-HUB-ENS": {
+            "origin_location_id": "NL-HUB-ALM",
+            "destination_location_id": "NL-HUB-ENS",
+            "driving_duration_by_time": {
+              "1723413600000": 1500000
+            },
+            "distance": 28954,
+            "driving_duration_by_range": {}
+          },
+          "NL-FC-APE": {
+            "origin_location_id": "NL-HUB-ALM",
+            "destination_location_id": "NL-FC-APE",
+            "driving_duration_by_time": {
+              "1723413600000": 2640000,
+              "1723437000000": 2820000,
+              "1723446000000": 2940000,
+              "1723470300000": 3000000,
+              "1723481100000": 2580000
+            },
+            "distance": 53759,
+            "driving_duration_by_range": {}
+          },
+          "NL-HUB-APE-1": {
+            "origin_location_id": "NL-HUB-ALM",
+            "destination_location_id": "NL-HUB-APE-1",
+            "driving_duration_by_time": {
+              "1723413600000": 3122000
+            },
+            "distance": 58087,
+            "driving_duration_by_range": {}
+          },
+          "NL-HUB-ZWO": {
+            "origin_location_id": "NL-HUB-ALM",
+            "destination_location_id": "NL-HUB-ZWO",
+            "driving_duration_by_time": {
+              "1723413600000": 2650000
+            },
+            "distance": 46863,
+            "driving_duration_by_range": {}
+          }
+        },
+        "NL-HUB-DEV": {
+          "NL-HUB-DOI": {
+            "origin_location_id": "NL-HUB-DEV",
+            "destination_location_id": "NL-HUB-DOI",
+            "driving_duration_by_time": {
+              "1723413600000": 3096000
+            },
+            "distance": 40777,
+            "driving_duration_by_range": {}
+          },
+          "NL-HUB-ALM": {
+            "origin_location_id": "NL-HUB-DEV",
+            "destination_location_id": "NL-HUB-ALM",
+            "driving_duration_by_time": {
+              "1723413600000": 2400000
+            },
+            "distance": 42690,
+            "driving_duration_by_range": {}
+          },
+          "NL-HUB-DEV": {
+            "origin_location_id": "NL-HUB-DEV",
+            "destination_location_id": "NL-HUB-DEV",
+            "driving_duration_by_time": {
+              "0": 0
+            },
+            "distance": 0,
+            "driving_duration_by_range": {}
+          },
+          "NL-HUB-DVT": {
+            "origin_location_id": "NL-HUB-DEV",
+            "destination_location_id": "NL-HUB-DVT",
+            "driving_duration_by_time": {
+              "1723413600000": 5013000
+            },
+            "distance": 102759,
+            "driving_duration_by_range": {}
+          },
+          "NL-HUB-ENS": {
+            "origin_location_id": "NL-HUB-DEV",
+            "destination_location_id": "NL-HUB-ENS",
+            "driving_duration_by_time": {
+              "1723413600000": 3300000
+            },
+            "distance": 55631,
+            "driving_duration_by_range": {}
+          },
+          "NL-FC-APE": {
+            "origin_location_id": "NL-HUB-DEV",
+            "destination_location_id": "NL-FC-APE",
+            "driving_duration_by_time": {
+              "1723413600000": 900000,
+              "1723437000000": 1080000,
+              "1723446000000": 1080000,
+              "1723470300000": 1980000,
+              "1723481100000": 900000
+            },
+            "distance": 16363,
+            "driving_duration_by_range": {}
+          },
+          "NL-HUB-APE-1": {
+            "origin_location_id": "NL-HUB-DEV",
+            "destination_location_id": "NL-HUB-APE-1",
+            "driving_duration_by_time": {
+              "1723413600000": 2100000
+            },
+            "distance": 18928,
+            "driving_duration_by_range": {}
+          },
+          "NL-HUB-ZWO": {
+            "origin_location_id": "NL-HUB-DEV",
+            "destination_location_id": "NL-HUB-ZWO",
+            "driving_duration_by_time": {
+              "1723413600000": 2820000
+            },
+            "distance": 38214,
+            "driving_duration_by_range": {}
+          }
+        },
+        "NL-HUB-DVT": {
+          "NL-HUB-DOI": {
+            "origin_location_id": "NL-HUB-DVT",
+            "destination_location_id": "NL-HUB-DOI",
+            "driving_duration_by_time": {
+              "1723413600000": 5952000
+            },
+            "distance": 124818,
+            "driving_duration_by_range": {}
+          },
+          "NL-HUB-ALM": {
+            "origin_location_id": "NL-HUB-DVT",
+            "destination_location_id": "NL-HUB-ALM",
+            "driving_duration_by_time": {
+              "1723413600000": 6603000
+            },
+            "distance": 140150,
+            "driving_duration_by_range": {}
+          },
+          "NL-HUB-DEV": {
+            "origin_location_id": "NL-HUB-DVT",
+            "destination_location_id": "NL-HUB-DEV",
+            "driving_duration_by_time": {
+              "1723413600000": 5013000
+            },
+            "distance": 102759,
+            "driving_duration_by_range": {}
+          },
+          "NL-HUB-DVT": {
+            "origin_location_id": "NL-HUB-DVT",
+            "destination_location_id": "NL-HUB-DVT",
+            "driving_duration_by_time": {
+              "0": 0
+            },
+            "distance": 0,
+            "driving_duration_by_range": {}
+          },
+          "NL-HUB-ENS": {
+            "origin_location_id": "NL-HUB-DVT",
+            "destination_location_id": "NL-HUB-ENS",
+            "driving_duration_by_time": {
+              "1723413600000": 6748000
+            },
+            "distance": 156076,
+            "driving_duration_by_range": {}
+          },
+          "NL-FC-APE": {
+            "origin_location_id": "NL-HUB-DVT",
+            "destination_location_id": "NL-FC-APE",
+            "driving_duration_by_time": {
+              "1723413600000": 4260000,
+              "1723437000000": 4620000,
+              "1723446000000": 4800000,
+              "1723470300000": 5160000,
+              "1723481100000": 4200000
+            },
+            "distance": 90023,
+            "driving_duration_by_range": {}
+          },
+          "NL-HUB-APE-1": {
+            "origin_location_id": "NL-HUB-DVT",
+            "destination_location_id": "NL-HUB-APE-1",
+            "driving_duration_by_time": {
+              "1723413600000": 4437000
+            },
+            "distance": 87136,
+            "driving_duration_by_range": {}
+          },
+          "NL-HUB-ZWO": {
+            "origin_location_id": "NL-HUB-DVT",
+            "destination_location_id": "NL-HUB-ZWO",
+            "driving_duration_by_time": {
+              "1723413600000": 5167000
+            },
+            "distance": 113544,
+            "driving_duration_by_range": {}
+          }
+        },
+        "NL-HUB-ENS": {
+          "NL-HUB-DOI": {
+            "origin_location_id": "NL-HUB-ENS",
+            "destination_location_id": "NL-HUB-DOI",
+            "driving_duration_by_time": {
+              "1723413600000": 3480000
+            },
+            "distance": 61642,
+            "driving_duration_by_range": {}
+          },
+          "NL-HUB-ALM": {
+            "origin_location_id": "NL-HUB-ENS",
+            "destination_location_id": "NL-HUB-ALM",
+            "driving_duration_by_time": {
+              "1723413600000": 1500000
+            },
+            "distance": 28954,
+            "driving_duration_by_range": {}
+          },
+          "NL-HUB-DEV": {
+            "origin_location_id": "NL-HUB-ENS",
+            "destination_location_id": "NL-HUB-DEV",
+            "driving_duration_by_time": {
+              "1723413600000": 2820000
+            },
+            "distance": 55631,
+            "driving_duration_by_range": {}
+          },
+          "NL-HUB-DVT": {
+            "origin_location_id": "NL-HUB-ENS",
+            "destination_location_id": "NL-HUB-DVT",
+            "driving_duration_by_time": {
+              "1723413600000": 6748000
+            },
+            "distance": 156076,
+            "driving_duration_by_range": {}
+          },
+          "NL-HUB-ENS": {
+            "origin_location_id": "NL-HUB-ENS",
+            "destination_location_id": "NL-HUB-ENS",
+            "driving_duration_by_time": {
+              "0": 0
+            },
+            "distance": 0,
+            "driving_duration_by_range": {}
+          },
+          "NL-FC-APE": {
+            "origin_location_id": "NL-HUB-ENS",
+            "destination_location_id": "NL-FC-APE",
+            "driving_duration_by_time": {
+              "1723413600000": 3120000,
+              "1723437000000": 3240000,
+              "1723446000000": 3420000,
+              "1723470300000": 3480000,
+              "1723481100000": 2940000
+            },
+            "distance": 67501,
+            "driving_duration_by_range": {}
+          },
+          "NL-HUB-APE-1": {
+            "origin_location_id": "NL-HUB-ENS",
+            "destination_location_id": "NL-HUB-APE-1",
+            "driving_duration_by_time": {
+              "1723413600000": 4800000
+            },
+            "distance": 70764,
+            "driving_duration_by_range": {}
+          },
+          "NL-HUB-ZWO": {
+            "origin_location_id": "NL-HUB-ENS",
+            "destination_location_id": "NL-HUB-ZWO",
+            "driving_duration_by_time": {
+              "1723413600000": 3478000
+            },
+            "distance": 68714,
+            "driving_duration_by_range": {}
+          }
+        },
+        "NL-FC-APE": {
+          "NL-HUB-DOI": {
+            "origin_location_id": "NL-FC-APE",
+            "destination_location_id": "NL-HUB-DOI",
+            "driving_duration_by_time": {
+              "1723413600000": 3000000,
+              "1723437000000": 3000000,
+              "1723446000000": 3300000,
+              "1723470300000": 3600000,
+              "1723481100000": 3000000
+            },
+            "distance": 58588,
+            "driving_duration_by_range": {}
+          },
+          "NL-HUB-ALM": {
+            "origin_location_id": "NL-FC-APE",
+            "destination_location_id": "NL-HUB-ALM",
+            "driving_duration_by_time": {
+              "1723413600000": 2640000,
+              "1723437000000": 2820000,
+              "1723446000000": 2940000,
+              "1723470300000": 3000000,
+              "1723481100000": 2580000
+            },
+            "distance": 53759,
+            "driving_duration_by_range": {}
+          },
+          "NL-HUB-DEV": {
+            "origin_location_id": "NL-FC-APE",
+            "destination_location_id": "NL-HUB-DEV",
+            "driving_duration_by_time": {
+              "1723413600000": 900000,
+              "1723437000000": 1080000,
+              "1723446000000": 1080000,
+              "1723470300000": 1980000,
+              "1723481100000": 900000
+            },
+            "distance": 16363,
+            "driving_duration_by_range": {}
+          },
+          "NL-HUB-DVT": {
+            "origin_location_id": "NL-FC-APE",
+            "destination_location_id": "NL-HUB-DVT",
+            "driving_duration_by_time": {
+              "1723413600000": 4260000,
+              "1723437000000": 4620000,
+              "1723446000000": 4800000,
+              "1723470300000": 5160000,
+              "1723481100000": 4200000
+            },
+            "distance": 90023,
+            "driving_duration_by_range": {}
+          },
+          "NL-HUB-ENS": {
+            "origin_location_id": "NL-FC-APE",
+            "destination_location_id": "NL-HUB-ENS",
+            "driving_duration_by_time": {
+              "1723413600000": 3120000,
+              "1723437000000": 3240000,
+              "1723446000000": 3420000,
+              "1723470300000": 3480000,
+              "1723481100000": 2940000
+            },
+            "distance": 67501,
+            "driving_duration_by_range": {}
+          },
+          "NL-FC-APE": {
+            "origin_location_id": "NL-FC-APE",
+            "destination_location_id": "NL-FC-APE",
+            "driving_duration_by_time": {
+              "0": 0
+            },
+            "distance": 0,
+            "driving_duration_by_range": {}
+          },
+          "NL-HUB-APE-1": {
+            "origin_location_id": "NL-FC-APE",
+            "destination_location_id": "NL-HUB-APE-1",
+            "driving_duration_by_time": {
+              "1723413600000": 720000,
+              "1723437000000": 900000,
+              "1723446000000": 900000,
+              "1723470300000": 960000,
+              "1723481100000": 720000
+            },
+            "distance": 6159,
+            "driving_duration_by_range": {}
+          },
+          "NL-HUB-ZWO": {
+            "origin_location_id": "NL-FC-APE",
+            "destination_location_id": "NL-HUB-ZWO",
+            "driving_duration_by_time": {
+              "1723413600000": 1920000,
+              "1723437000000": 1980000,
+              "1723446000000": 2100000,
+              "1723470300000": 2100000,
+              "1723481100000": 1740000
+            },
+            "distance": 42489,
+            "driving_duration_by_range": {}
+          }
+        },
+        "NL-HUB-APE-1": {
+          "NL-HUB-DOI": {
+            "origin_location_id": "NL-HUB-APE-1",
+            "destination_location_id": "NL-HUB-DOI",
+            "driving_duration_by_time": {
+              "1723413600000": 3110000
+            },
+            "distance": 59554,
+            "driving_duration_by_range": {}
+          },
+          "NL-HUB-ALM": {
+            "origin_location_id": "NL-HUB-APE-1",
+            "destination_location_id": "NL-HUB-ALM",
+            "driving_duration_by_time": {
+              "1723413600000": 3122000
+            },
+            "distance": 58087,
+            "driving_duration_by_range": {}
+          },
+          "NL-HUB-DEV": {
+            "origin_location_id": "NL-HUB-APE-1",
+            "destination_location_id": "NL-HUB-DEV",
+            "driving_duration_by_time": {
+              "1723413600000": 2100000
+            },
+            "distance": 18928,
+            "driving_duration_by_range": {}
+          },
+          "NL-HUB-DVT": {
+            "origin_location_id": "NL-HUB-APE-1",
+            "destination_location_id": "NL-HUB-DVT",
+            "driving_duration_by_time": {
+              "1723413600000": 4437000
+            },
+            "distance": 87136,
+            "driving_duration_by_range": {}
+          },
+          "NL-HUB-ENS": {
+            "origin_location_id": "NL-HUB-APE-1",
+            "destination_location_id": "NL-HUB-ENS",
+            "driving_duration_by_time": {
+              "1723413600000": 4800000
+            },
+            "distance": 70764,
+            "driving_duration_by_range": {}
+          },
+          "NL-FC-APE": {
+            "origin_location_id": "NL-HUB-APE-1",
+            "destination_location_id": "NL-FC-APE",
+            "driving_duration_by_time": {
+              "1723413600000": 720000,
+              "1723437000000": 900000,
+              "1723446000000": 900000,
+              "1723470300000": 960000,
+              "1723481100000": 720000
+            },
+            "distance": 6159,
+            "driving_duration_by_range": {}
+          },
+          "NL-HUB-APE-1": {
+            "origin_location_id": "NL-HUB-APE-1",
+            "destination_location_id": "NL-HUB-APE-1",
+            "driving_duration_by_time": {
+              "0": 0
+            },
+            "distance": 0,
+            "driving_duration_by_range": {}
+          },
+          "NL-HUB-ZWO": {
+            "origin_location_id": "NL-HUB-APE-1",
+            "destination_location_id": "NL-HUB-ZWO",
+            "driving_duration_by_time": {
+              "1723413600000": 2400000
+            },
+            "distance": 41377,
+            "driving_duration_by_range": {}
+          }
+        },
+        "NL-HUB-ZWO": {
+          "NL-HUB-DOI": {
+            "origin_location_id": "NL-HUB-ZWO",
+            "destination_location_id": "NL-HUB-DOI",
+            "driving_duration_by_time": {
+              "1723413600000": 4655000
+            },
+            "distance": 98462,
+            "driving_duration_by_range": {}
+          },
+          "NL-HUB-ALM": {
+            "origin_location_id": "NL-HUB-ZWO",
+            "destination_location_id": "NL-HUB-ALM",
+            "driving_duration_by_time": {
+              "1723413600000": 3000000
+            },
+            "distance": 46863,
+            "driving_duration_by_range": {}
+          },
+          "NL-HUB-DEV": {
+            "origin_location_id": "NL-HUB-ZWO",
+            "destination_location_id": "NL-HUB-DEV",
+            "driving_duration_by_time": {
+              "1723413600000": 3000000
+            },
+            "distance": 38214,
+            "driving_duration_by_range": {}
+          },
+          "NL-HUB-DVT": {
+            "origin_location_id": "NL-HUB-ZWO",
+            "destination_location_id": "NL-HUB-DVT",
+            "driving_duration_by_time": {
+              "1723413600000": 5167000
+            },
+            "distance": 113544,
+            "driving_duration_by_range": {}
+          },
+          "NL-HUB-ENS": {
+            "origin_location_id": "NL-HUB-ZWO",
+            "destination_location_id": "NL-HUB-ENS",
+            "driving_duration_by_time": {
+              "1723413600000": 3478000
+            },
+            "distance": 68714,
+            "driving_duration_by_range": {}
+          },
+          "NL-FC-APE": {
+            "origin_location_id": "NL-HUB-ZWO",
+            "destination_location_id": "NL-FC-APE",
+            "driving_duration_by_time": {
+              "1723413600000": 1920000,
+              "1723437000000": 1980000,
+              "1723446000000": 2100000,
+              "1723470300000": 2100000,
+              "1723481100000": 1740000
+            },
+            "distance": 42489,
+            "driving_duration_by_range": {}
+          },
+          "NL-HUB-APE-1": {
+            "origin_location_id": "NL-HUB-ZWO",
+            "destination_location_id": "NL-HUB-APE-1",
+            "driving_duration_by_time": {
+              "1723413600000": 2400000
+            },
+            "distance": 41377,
+            "driving_duration_by_range": {}
+          },
+          "NL-HUB-ZWO": {
+            "origin_location_id": "NL-HUB-ZWO",
+            "destination_location_id": "NL-HUB-ZWO",
+            "driving_duration_by_time": {
+              "0": 0
+            },
+            "distance": 0,
+            "driving_duration_by_range": {}
+          }
+        },
+        "NL-HUB-DOI": {
+          "NL-HUB-DOI": {
+            "origin_location_id": "NL-HUB-DOI",
+            "destination_location_id": "NL-HUB-DOI",
+            "driving_duration_by_time": {
+              "0": 0
+            },
+            "distance": 0,
+            "driving_duration_by_range": {}
+          },
+          "NL-HUB-ALM": {
+            "origin_location_id": "NL-HUB-DOI",
+            "destination_location_id": "NL-HUB-ALM",
+            "driving_duration_by_time": {
+              "1723413600000": 4246000
+            },
+            "distance": 69195,
+            "driving_duration_by_range": {}
+          },
+          "NL-HUB-DEV": {
+            "origin_location_id": "NL-HUB-DOI",
+            "destination_location_id": "NL-HUB-DEV",
+            "driving_duration_by_time": {
+              "1723413600000": 3096000
+            },
+            "distance": 40777,
+            "driving_duration_by_range": {}
+          },
+          "NL-HUB-DVT": {
+            "origin_location_id": "NL-HUB-DOI",
+            "destination_location_id": "NL-HUB-DVT",
+            "driving_duration_by_time": {
+              "1723413600000": 5952000
+            },
+            "distance": 124818,
+            "driving_duration_by_range": {}
+          },
+          "NL-HUB-ENS": {
+            "origin_location_id": "NL-HUB-DOI",
+            "destination_location_id": "NL-HUB-ENS",
+            "driving_duration_by_time": {
+              "1723413600000": 3600000
+            },
+            "distance": 61642,
+            "driving_duration_by_range": {}
+          },
+          "NL-FC-APE": {
+            "origin_location_id": "NL-HUB-DOI",
+            "destination_location_id": "NL-FC-APE",
+            "driving_duration_by_time": {
+              "1723413600000": 3000000,
+              "1723437000000": 3000000,
+              "1723446000000": 3300000,
+              "1723470300000": 3600000,
+              "1723481100000": 3000000
+            },
+            "distance": 58588,
+            "driving_duration_by_range": {}
+          },
+          "NL-HUB-APE-1": {
+            "origin_location_id": "NL-HUB-DOI",
+            "destination_location_id": "NL-HUB-APE-1",
+            "driving_duration_by_time": {
+              "1723413600000": 3110000
+            },
+            "distance": 59554,
+            "driving_duration_by_range": {}
+          },
+          "NL-HUB-ZWO": {
+            "origin_location_id": "NL-HUB-DOI",
+            "destination_location_id": "NL-HUB-ZWO",
+            "driving_duration_by_time": {
+              "1723413600000": 4655000
+            },
+            "distance": 98462,
+            "driving_duration_by_range": {}
+          }
+        }
+      }
+    }
+  },
+  "route_cost_calculator": {
+    "execution_context": {
+      "planning_id": "tps-7t7znbwr",
+      "common_constraints": {
+        "fc_docking_time": 300000,
+        "emballage_unloading_time": 600000,
+        "cost_per_kilometer": 0.67,
+        "cost_per_driver_working_hour": 55.7,
+        "cost_per_driver_hour_without_work": 30.0,
+        "cost_per_driver_not_used": 320.0,
+        "cost_per_dummy_driver_used": 0.0,
+        "cost_per_truck_used": 210.0,
+        "minimum_schedule_duration": 14400000,
+        "maximum_schedule_duration_by_start_time": {
+          "1723413600000": 36000000,
+          "1723431600000": 43200000
+        },
+        "break_duration_by_working_duration": {
+          "16200000": 1800000,
+          "27000000": 3600000,
+          "43200000": 5400000
+        },
+        "truck_capacity": 34000000,
+        "location_driving_durations": [
+          {
+            "origin_location_id": "NL-HUB-ALM",
+            "destination_location_id": "NL-HUB-DOI",
+            "driving_duration_by_time": {
+              "1723413600000": 4246000
+            },
+            "distance": 69195,
+            "driving_duration_by_range": {}
+          },
+          {
+            "origin_location_id": "NL-HUB-DEV",
+            "destination_location_id": "NL-HUB-ALM",
+            "driving_duration_by_time": {
+              "1723413600000": 2400000
+            },
+            "distance": 42690,
+            "driving_duration_by_range": {}
+          },
+          {
+            "origin_location_id": "NL-HUB-ALM",
+            "destination_location_id": "NL-HUB-DEV",
+            "driving_duration_by_time": {
+              "1723413600000": 2400000
+            },
+            "distance": 42690,
+            "driving_duration_by_range": {}
+          },
+          {
+            "origin_location_id": "NL-HUB-DVT",
+            "destination_location_id": "NL-HUB-ALM",
+            "driving_duration_by_time": {
+              "1723413600000": 6603000
+            },
+            "distance": 140150,
+            "driving_duration_by_range": {}
+          },
+          {
+            "origin_location_id": "NL-HUB-ALM",
+            "destination_location_id": "NL-HUB-DVT",
+            "driving_duration_by_time": {
+              "1723413600000": 6603000
+            },
+            "distance": 140150,
+            "driving_duration_by_range": {}
+          },
+          {
+            "origin_location_id": "NL-HUB-ENS",
+            "destination_location_id": "NL-HUB-ALM",
+            "driving_duration_by_time": {
+              "1723413600000": 1500000
+            },
+            "distance": 28954,
+            "driving_duration_by_range": {}
+          },
+          {
+            "origin_location_id": "NL-HUB-ALM",
+            "destination_location_id": "NL-HUB-ENS",
+            "driving_duration_by_time": {
+              "1723413600000": 1500000
+            },
+            "distance": 28954,
+            "driving_duration_by_range": {}
+          },
+          {
+            "origin_location_id": "NL-FC-APE",
+            "destination_location_id": "NL-HUB-ENS",
+            "driving_duration_by_time": {
+              "1723413600000": 3120000,
+              "1723437000000": 3240000,
+              "1723446000000": 3420000,
+              "1723470300000": 3480000,
+              "1723481100000": 2940000
+            },
+            "distance": 67501,
+            "driving_duration_by_range": {}
+          },
+          {
+            "origin_location_id": "NL-HUB-APE-1",
+            "destination_location_id": "NL-FC-APE",
+            "driving_duration_by_time": {
+              "1723413600000": 720000,
+              "1723437000000": 900000,
+              "1723446000000": 900000,
+              "1723470300000": 960000,
+              "1723481100000": 720000
+            },
+            "distance": 6159,
+            "driving_duration_by_range": {}
+          },
+          {
+            "origin_location_id": "NL-FC-APE",
+            "destination_location_id": "NL-HUB-APE-1",
+            "driving_duration_by_time": {
+              "1723413600000": 720000,
+              "1723437000000": 900000,
+              "1723446000000": 900000,
+              "1723470300000": 960000,
+              "1723481100000": 720000
+            },
+            "distance": 6159,
+            "driving_duration_by_range": {}
+          },
+          {
+            "origin_location_id": "NL-HUB-ZWO",
+            "destination_location_id": "NL-HUB-ALM",
+            "driving_duration_by_time": {
+              "1723413600000": 3000000
+            },
+            "distance": 46863,
+            "driving_duration_by_range": {}
+          },
+          {
+            "origin_location_id": "NL-HUB-ALM",
+            "destination_location_id": "NL-HUB-ZWO",
+            "driving_duration_by_time": {
+              "1723413600000": 2650000
+            },
+            "distance": 46863,
+            "driving_duration_by_range": {}
+          },
+          {
+            "origin_location_id": "NL-HUB-DOI",
+            "destination_location_id": "NL-FC-APE",
+            "driving_duration_by_time": {
+              "1723413600000": 3000000,
+              "1723437000000": 3000000,
+              "1723446000000": 3300000,
+              "1723470300000": 3600000,
+              "1723481100000": 3000000
+            },
+            "distance": 58588,
+            "driving_duration_by_range": {}
+          },
+          {
+            "origin_location_id": "NL-HUB-ZWO",
+            "destination_location_id": "NL-FC-APE",
+            "driving_duration_by_time": {
+              "1723413600000": 1920000,
+              "1723437000000": 1980000,
+              "1723446000000": 2100000,
+              "1723470300000": 2100000,
+              "1723481100000": 1740000
+            },
+            "distance": 42489,
+            "driving_duration_by_range": {}
+          },
+          {
+            "origin_location_id": "NL-FC-APE",
+            "destination_location_id": "NL-HUB-ZWO",
+            "driving_duration_by_time": {
+              "1723413600000": 1920000,
+              "1723437000000": 1980000,
+              "1723446000000": 2100000,
+              "1723470300000": 2100000,
+              "1723481100000": 1740000
+            },
+            "distance": 42489,
+            "driving_duration_by_range": {}
+          },
+          {
+            "origin_location_id": "NL-HUB-DOI",
+            "destination_location_id": "NL-HUB-APE-1",
+            "driving_duration_by_time": {
+              "1723413600000": 3110000
+            },
+            "distance": 59554,
+            "driving_duration_by_range": {}
+          },
+          {
+            "origin_location_id": "NL-HUB-APE-1",
+            "destination_location_id": "NL-HUB-DOI",
+            "driving_duration_by_time": {
+              "1723413600000": 3110000
+            },
+            "distance": 59554,
+            "driving_duration_by_range": {}
+          },
+          {
+            "origin_location_id": "NL-FC-APE",
+            "destination_location_id": "NL-HUB-DOI",
+            "driving_duration_by_time": {
+              "1723413600000": 3000000,
+              "1723437000000": 3000000,
+              "1723446000000": 3300000,
+              "1723470300000": 3600000,
+              "1723481100000": 3000000
+            },
+            "distance": 58588,
+            "driving_duration_by_range": {}
+          },
+          {
+            "origin_location_id": "NL-HUB-ZWO",
+            "destination_location_id": "NL-HUB-ENS",
+            "driving_duration_by_time": {
+              "1723413600000": 3478000
+            },
+            "distance": 68714,
+            "driving_duration_by_range": {}
+          },
+          {
+            "origin_location_id": "NL-HUB-ENS",
+            "destination_location_id": "NL-HUB-ZWO",
+            "driving_duration_by_time": {
+              "1723413600000": 3478000
+            },
+            "distance": 68714,
+            "driving_duration_by_range": {}
+          },
+          {
+            "origin_location_id": "NL-FC-APE",
+            "destination_location_id": "NL-HUB-ALM",
+            "driving_duration_by_time": {
+              "1723413600000": 2640000,
+              "1723437000000": 2820000,
+              "1723446000000": 2940000,
+              "1723470300000": 3000000,
+              "1723481100000": 2580000
+            },
+            "distance": 53759,
+            "driving_duration_by_range": {}
+          },
+          {
+            "origin_location_id": "NL-HUB-ALM",
+            "destination_location_id": "NL-FC-APE",
+            "driving_duration_by_time": {
+              "1723413600000": 2640000,
+              "1723437000000": 2820000,
+              "1723446000000": 2940000,
+              "1723470300000": 3000000,
+              "1723481100000": 2580000
+            },
+            "distance": 53759,
+            "driving_duration_by_range": {}
+          },
+          {
+            "origin_location_id": "NL-FC-APE",
+            "destination_location_id": "NL-HUB-DEV",
+            "driving_duration_by_time": {
+              "1723413600000": 900000,
+              "1723437000000": 1080000,
+              "1723446000000": 1080000,
+              "1723470300000": 1980000,
+              "1723481100000": 900000
+            },
+            "distance": 16363,
+            "driving_duration_by_range": {}
+          },
+          {
+            "origin_location_id": "NL-HUB-DEV",
+            "destination_location_id": "NL-FC-APE",
+            "driving_duration_by_time": {
+              "1723413600000": 900000,
+              "1723437000000": 1080000,
+              "1723446000000": 1080000,
+              "1723470300000": 1980000,
+              "1723481100000": 900000
+            },
+            "distance": 16363,
+            "driving_duration_by_range": {}
+          },
+          {
+            "origin_location_id": "NL-FC-APE",
+            "destination_location_id": "NL-HUB-DVT",
+            "driving_duration_by_time": {
+              "1723413600000": 4260000,
+              "1723437000000": 4620000,
+              "1723446000000": 4800000,
+              "1723470300000": 5160000,
+              "1723481100000": 4200000
+            },
+            "distance": 90023,
+            "driving_duration_by_range": {}
+          },
+          {
+            "origin_location_id": "NL-HUB-DVT",
+            "destination_location_id": "NL-FC-APE",
+            "driving_duration_by_time": {
+              "1723413600000": 4260000,
+              "1723437000000": 4620000,
+              "1723446000000": 4800000,
+              "1723470300000": 5160000,
+              "1723481100000": 4200000
+            },
+            "distance": 90023,
+            "driving_duration_by_range": {}
+          },
+          {
+            "origin_location_id": "NL-HUB-ENS",
+            "destination_location_id": "NL-FC-APE",
+            "driving_duration_by_time": {
+              "1723413600000": 3120000,
+              "1723437000000": 3240000,
+              "1723446000000": 3420000,
+              "1723470300000": 3480000,
+              "1723481100000": 2940000
+            },
+            "distance": 67501,
+            "driving_duration_by_range": {}
+          },
+          {
+            "origin_location_id": "NL-HUB-APE-1",
+            "destination_location_id": "NL-HUB-ALM",
+            "driving_duration_by_time": {
+              "1723413600000": 3122000
+            },
+            "distance": 58087,
+            "driving_duration_by_range": {}
+          },
+          {
+            "origin_location_id": "NL-HUB-ALM",
+            "destination_location_id": "NL-HUB-APE-1",
+            "driving_duration_by_time": {
+              "1723413600000": 3122000
+            },
+            "distance": 58087,
+            "driving_duration_by_range": {}
+          },
+          {
+            "origin_location_id": "NL-HUB-DOI",
+            "destination_location_id": "NL-HUB-ALM",
+            "driving_duration_by_time": {
+              "1723413600000": 4246000
+            },
+            "distance": 69195,
+            "driving_duration_by_range": {}
+          },
+          {
+            "origin_location_id": "NL-HUB-APE-1",
+            "destination_location_id": "NL-HUB-DEV",
+            "driving_duration_by_time": {
+              "1723413600000": 2100000
+            },
+            "distance": 18928,
+            "driving_duration_by_range": {}
+          },
+          {
+            "origin_location_id": "NL-HUB-DEV",
+            "destination_location_id": "NL-HUB-APE-1",
+            "driving_duration_by_time": {
+              "1723413600000": 2100000
+            },
+            "distance": 18928,
+            "driving_duration_by_range": {}
+          },
+          {
+            "origin_location_id": "NL-HUB-DVT",
+            "destination_location_id": "NL-HUB-APE-1",
+            "driving_duration_by_time": {
+              "1723413600000": 4437000
+            },
+            "distance": 87136,
+            "driving_duration_by_range": {}
+          },
+          {
+            "origin_location_id": "NL-HUB-APE-1",
+            "destination_location_id": "NL-HUB-DVT",
+            "driving_duration_by_time": {
+              "1723413600000": 4437000
+            },
+            "distance": 87136,
+            "driving_duration_by_range": {}
+          },
+          {
+            "origin_location_id": "NL-HUB-APE-1",
+            "destination_location_id": "NL-HUB-ENS",
+            "driving_duration_by_time": {
+              "1723413600000": 4800000
+            },
+            "distance": 70764,
+            "driving_duration_by_range": {}
+          },
+          {
+            "origin_location_id": "NL-HUB-ENS",
+            "destination_location_id": "NL-HUB-APE-1",
+            "driving_duration_by_time": {
+              "1723413600000": 4800000
+            },
+            "distance": 70764,
+            "driving_duration_by_range": {}
+          },
+          {
+            "origin_location_id": "NL-HUB-APE-1",
+            "destination_location_id": "NL-HUB-ZWO",
+            "driving_duration_by_time": {
+              "1723413600000": 2400000
+            },
+            "distance": 41377,
+            "driving_duration_by_range": {}
+          },
+          {
+            "origin_location_id": "NL-HUB-ZWO",
+            "destination_location_id": "NL-HUB-APE-1",
+            "driving_duration_by_time": {
+              "1723413600000": 2400000
+            },
+            "distance": 41377,
+            "driving_duration_by_range": {}
+          },
+          {
+            "origin_location_id": "NL-HUB-DEV",
+            "destination_location_id": "NL-HUB-DOI",
+            "driving_duration_by_time": {
+              "1723413600000": 3096000
+            },
+            "distance": 40777,
+            "driving_duration_by_range": {}
+          },
+          {
+            "origin_location_id": "NL-HUB-DOI",
+            "destination_location_id": "NL-HUB-DEV",
+            "driving_duration_by_time": {
+              "1723413600000": 3096000
+            },
+            "distance": 40777,
+            "driving_duration_by_range": {}
+          },
+          {
+            "origin_location_id": "NL-HUB-DVT",
+            "destination_location_id": "NL-HUB-DOI",
+            "driving_duration_by_time": {
+              "1723413600000": 5952000
+            },
+            "distance": 124818,
+            "driving_duration_by_range": {}
+          },
+          {
+            "origin_location_id": "NL-HUB-DOI",
+            "destination_location_id": "NL-HUB-DVT",
+            "driving_duration_by_time": {
+              "1723413600000": 5952000
+            },
+            "distance": 124818,
+            "driving_duration_by_range": {}
+          },
+          {
+            "origin_location_id": "NL-HUB-ENS",
+            "destination_location_id": "NL-HUB-DOI",
+            "driving_duration_by_time": {
+              "1723413600000": 3480000
+            },
+            "distance": 61642,
+            "driving_duration_by_range": {}
+          },
+          {
+            "origin_location_id": "NL-HUB-DOI",
+            "destination_location_id": "NL-HUB-ENS",
+            "driving_duration_by_time": {
+              "1723413600000": 3600000
+            },
+            "distance": 61642,
+            "driving_duration_by_range": {}
+          },
+          {
+            "origin_location_id": "NL-HUB-ZWO",
+            "destination_location_id": "NL-HUB-DOI",
+            "driving_duration_by_time": {
+              "1723413600000": 4655000
+            },
+            "distance": 98462,
+            "driving_duration_by_range": {}
+          },
+          {
+            "origin_location_id": "NL-HUB-DOI",
+            "destination_location_id": "NL-HUB-ZWO",
+            "driving_duration_by_time": {
+              "1723413600000": 4655000
+            },
+            "distance": 98462,
+            "driving_duration_by_range": {}
+          },
+          {
+            "origin_location_id": "NL-HUB-DVT",
+            "destination_location_id": "NL-HUB-DEV",
+            "driving_duration_by_time": {
+              "1723413600000": 5013000
+            },
+            "distance": 102759,
+            "driving_duration_by_range": {}
+          },
+          {
+            "origin_location_id": "NL-HUB-DEV",
+            "destination_location_id": "NL-HUB-DVT",
+            "driving_duration_by_time": {
+              "1723413600000": 5013000
+            },
+            "distance": 102759,
+            "driving_duration_by_range": {}
+          },
+          {
+            "origin_location_id": "NL-HUB-DEV",
+            "destination_location_id": "NL-HUB-ENS",
+            "driving_duration_by_time": {
+              "1723413600000": 3300000
+            },
+            "distance": 55631,
+            "driving_duration_by_range": {}
+          },
+          {
+            "origin_location_id": "NL-HUB-ENS",
+            "destination_location_id": "NL-HUB-DEV",
+            "driving_duration_by_time": {
+              "1723413600000": 2820000
+            },
+            "distance": 55631,
+            "driving_duration_by_range": {}
+          },
+          {
+            "origin_location_id": "NL-HUB-DEV",
+            "destination_location_id": "NL-HUB-ZWO",
+            "driving_duration_by_time": {
+              "1723413600000": 2820000
+            },
+            "distance": 38214,
+            "driving_duration_by_range": {}
+          },
+          {
+            "origin_location_id": "NL-HUB-ZWO",
+            "destination_location_id": "NL-HUB-DEV",
+            "driving_duration_by_time": {
+              "1723413600000": 3000000
+            },
+            "distance": 38214,
+            "driving_duration_by_range": {}
+          },
+          {
+            "origin_location_id": "NL-HUB-ENS",
+            "destination_location_id": "NL-HUB-DVT",
+            "driving_duration_by_time": {
+              "1723413600000": 6748000
+            },
+            "distance": 156076,
+            "driving_duration_by_range": {}
+          },
+          {
+            "origin_location_id": "NL-HUB-DVT",
+            "destination_location_id": "NL-HUB-ENS",
+            "driving_duration_by_time": {
+              "1723413600000": 6748000
+            },
+            "distance": 156076,
+            "driving_duration_by_range": {}
+          },
+          {
+            "origin_location_id": "NL-HUB-ZWO",
+            "destination_location_id": "NL-HUB-DVT",
+            "driving_duration_by_time": {
+              "1723413600000": 5167000
+            },
+            "distance": 113544,
+            "driving_duration_by_range": {}
+          },
+          {
+            "origin_location_id": "NL-HUB-DVT",
+            "destination_location_id": "NL-HUB-ZWO",
+            "driving_duration_by_time": {
+              "1723413600000": 5167000
+            },
+            "distance": 113544,
+            "driving_duration_by_range": {}
+          }
+        ],
+        "driver_shift_start_margin": 1800000
+      },
+      "pickup_location_configurations_by_location_id": {
+        "NL-FC-APE": {
+          "location_id": "NL-FC-APE",
+          "transport_hours": [
+            {
+              "lower_endpoint": 1723444200000,
+              "lower_bound_type": "CLOSED",
+              "upper_endpoint": 1723499940000,
+              "upper_bound_type": "OPEN"
+            }
+          ],
+          "minimum_pickup_duration": 2100000
+        }
+      },
+      "routing_config_provider": {
+        "location_driving_duration_by_origin_and_destination": {
+          "NL-HUB-ALM": {
+            "NL-HUB-DOI": {
+              "origin_location_id": "NL-HUB-ALM",
+              "destination_location_id": "NL-HUB-DOI",
+              "driving_duration_by_time": {
+                "1723413600000": 4246000
+              },
+              "distance": 69195,
+              "driving_duration_by_range": {}
+            },
+            "NL-HUB-ALM": {
+              "origin_location_id": "NL-HUB-ALM",
+              "destination_location_id": "NL-HUB-ALM",
+              "driving_duration_by_time": {
+                "0": 0
+              },
+              "distance": 0,
+              "driving_duration_by_range": {}
+            },
+            "NL-HUB-DEV": {
+              "origin_location_id": "NL-HUB-ALM",
+              "destination_location_id": "NL-HUB-DEV",
+              "driving_duration_by_time": {
+                "1723413600000": 2400000
+              },
+              "distance": 42690,
+              "driving_duration_by_range": {}
+            },
+            "NL-HUB-DVT": {
+              "origin_location_id": "NL-HUB-ALM",
+              "destination_location_id": "NL-HUB-DVT",
+              "driving_duration_by_time": {
+                "1723413600000": 6603000
+              },
+              "distance": 140150,
+              "driving_duration_by_range": {}
+            },
+            "NL-HUB-ENS": {
+              "origin_location_id": "NL-HUB-ALM",
+              "destination_location_id": "NL-HUB-ENS",
+              "driving_duration_by_time": {
+                "1723413600000": 1500000
+              },
+              "distance": 28954,
+              "driving_duration_by_range": {}
+            },
+            "NL-FC-APE": {
+              "origin_location_id": "NL-HUB-ALM",
+              "destination_location_id": "NL-FC-APE",
+              "driving_duration_by_time": {
+                "1723413600000": 2640000,
+                "1723437000000": 2820000,
+                "1723446000000": 2940000,
+                "1723470300000": 3000000,
+                "1723481100000": 2580000
+              },
+              "distance": 53759,
+              "driving_duration_by_range": {}
+            },
+            "NL-HUB-APE-1": {
+              "origin_location_id": "NL-HUB-ALM",
+              "destination_location_id": "NL-HUB-APE-1",
+              "driving_duration_by_time": {
+                "1723413600000": 3122000
+              },
+              "distance": 58087,
+              "driving_duration_by_range": {}
+            },
+            "NL-HUB-ZWO": {
+              "origin_location_id": "NL-HUB-ALM",
+              "destination_location_id": "NL-HUB-ZWO",
+              "driving_duration_by_time": {
+                "1723413600000": 2650000
+              },
+              "distance": 46863,
+              "driving_duration_by_range": {}
+            }
+          },
+          "NL-HUB-DEV": {
+            "NL-HUB-DOI": {
+              "origin_location_id": "NL-HUB-DEV",
+              "destination_location_id": "NL-HUB-DOI",
+              "driving_duration_by_time": {
+                "1723413600000": 3096000
+              },
+              "distance": 40777,
+              "driving_duration_by_range": {}
+            },
+            "NL-HUB-ALM": {
+              "origin_location_id": "NL-HUB-DEV",
+              "destination_location_id": "NL-HUB-ALM",
+              "driving_duration_by_time": {
+                "1723413600000": 2400000
+              },
+              "distance": 42690,
+              "driving_duration_by_range": {}
+            },
+            "NL-HUB-DEV": {
+              "origin_location_id": "NL-HUB-DEV",
+              "destination_location_id": "NL-HUB-DEV",
+              "driving_duration_by_time": {
+                "0": 0
+              },
+              "distance": 0,
+              "driving_duration_by_range": {}
+            },
+            "NL-HUB-DVT": {
+              "origin_location_id": "NL-HUB-DEV",
+              "destination_location_id": "NL-HUB-DVT",
+              "driving_duration_by_time": {
+                "1723413600000": 5013000
+              },
+              "distance": 102759,
+              "driving_duration_by_range": {}
+            },
+            "NL-HUB-ENS": {
+              "origin_location_id": "NL-HUB-DEV",
+              "destination_location_id": "NL-HUB-ENS",
+              "driving_duration_by_time": {
+                "1723413600000": 3300000
+              },
+              "distance": 55631,
+              "driving_duration_by_range": {}
+            },
+            "NL-FC-APE": {
+              "origin_location_id": "NL-HUB-DEV",
+              "destination_location_id": "NL-FC-APE",
+              "driving_duration_by_time": {
+                "1723413600000": 900000,
+                "1723437000000": 1080000,
+                "1723446000000": 1080000,
+                "1723470300000": 1980000,
+                "1723481100000": 900000
+              },
+              "distance": 16363,
+              "driving_duration_by_range": {}
+            },
+            "NL-HUB-APE-1": {
+              "origin_location_id": "NL-HUB-DEV",
+              "destination_location_id": "NL-HUB-APE-1",
+              "driving_duration_by_time": {
+                "1723413600000": 2100000
+              },
+              "distance": 18928,
+              "driving_duration_by_range": {}
+            },
+            "NL-HUB-ZWO": {
+              "origin_location_id": "NL-HUB-DEV",
+              "destination_location_id": "NL-HUB-ZWO",
+              "driving_duration_by_time": {
+                "1723413600000": 2820000
+              },
+              "distance": 38214,
+              "driving_duration_by_range": {}
+            }
+          },
+          "NL-HUB-DVT": {
+            "NL-HUB-DOI": {
+              "origin_location_id": "NL-HUB-DVT",
+              "destination_location_id": "NL-HUB-DOI",
+              "driving_duration_by_time": {
+                "1723413600000": 5952000
+              },
+              "distance": 124818,
+              "driving_duration_by_range": {}
+            },
+            "NL-HUB-ALM": {
+              "origin_location_id": "NL-HUB-DVT",
+              "destination_location_id": "NL-HUB-ALM",
+              "driving_duration_by_time": {
+                "1723413600000": 6603000
+              },
+              "distance": 140150,
+              "driving_duration_by_range": {}
+            },
+            "NL-HUB-DEV": {
+              "origin_location_id": "NL-HUB-DVT",
+              "destination_location_id": "NL-HUB-DEV",
+              "driving_duration_by_time": {
+                "1723413600000": 5013000
+              },
+              "distance": 102759,
+              "driving_duration_by_range": {}
+            },
+            "NL-HUB-DVT": {
+              "origin_location_id": "NL-HUB-DVT",
+              "destination_location_id": "NL-HUB-DVT",
+              "driving_duration_by_time": {
+                "0": 0
+              },
+              "distance": 0,
+              "driving_duration_by_range": {}
+            },
+            "NL-HUB-ENS": {
+              "origin_location_id": "NL-HUB-DVT",
+              "destination_location_id": "NL-HUB-ENS",
+              "driving_duration_by_time": {
+                "1723413600000": 6748000
+              },
+              "distance": 156076,
+              "driving_duration_by_range": {}
+            },
+            "NL-FC-APE": {
+              "origin_location_id": "NL-HUB-DVT",
+              "destination_location_id": "NL-FC-APE",
+              "driving_duration_by_time": {
+                "1723413600000": 4260000,
+                "1723437000000": 4620000,
+                "1723446000000": 4800000,
+                "1723470300000": 5160000,
+                "1723481100000": 4200000
+              },
+              "distance": 90023,
+              "driving_duration_by_range": {}
+            },
+            "NL-HUB-APE-1": {
+              "origin_location_id": "NL-HUB-DVT",
+              "destination_location_id": "NL-HUB-APE-1",
+              "driving_duration_by_time": {
+                "1723413600000": 4437000
+              },
+              "distance": 87136,
+              "driving_duration_by_range": {}
+            },
+            "NL-HUB-ZWO": {
+              "origin_location_id": "NL-HUB-DVT",
+              "destination_location_id": "NL-HUB-ZWO",
+              "driving_duration_by_time": {
+                "1723413600000": 5167000
+              },
+              "distance": 113544,
+              "driving_duration_by_range": {}
+            }
+          },
+          "NL-HUB-ENS": {
+            "NL-HUB-DOI": {
+              "origin_location_id": "NL-HUB-ENS",
+              "destination_location_id": "NL-HUB-DOI",
+              "driving_duration_by_time": {
+                "1723413600000": 3480000
+              },
+              "distance": 61642,
+              "driving_duration_by_range": {}
+            },
+            "NL-HUB-ALM": {
+              "origin_location_id": "NL-HUB-ENS",
+              "destination_location_id": "NL-HUB-ALM",
+              "driving_duration_by_time": {
+                "1723413600000": 1500000
+              },
+              "distance": 28954,
+              "driving_duration_by_range": {}
+            },
+            "NL-HUB-DEV": {
+              "origin_location_id": "NL-HUB-ENS",
+              "destination_location_id": "NL-HUB-DEV",
+              "driving_duration_by_time": {
+                "1723413600000": 2820000
+              },
+              "distance": 55631,
+              "driving_duration_by_range": {}
+            },
+            "NL-HUB-DVT": {
+              "origin_location_id": "NL-HUB-ENS",
+              "destination_location_id": "NL-HUB-DVT",
+              "driving_duration_by_time": {
+                "1723413600000": 6748000
+              },
+              "distance": 156076,
+              "driving_duration_by_range": {}
+            },
+            "NL-HUB-ENS": {
+              "origin_location_id": "NL-HUB-ENS",
+              "destination_location_id": "NL-HUB-ENS",
+              "driving_duration_by_time": {
+                "0": 0
+              },
+              "distance": 0,
+              "driving_duration_by_range": {}
+            },
+            "NL-FC-APE": {
+              "origin_location_id": "NL-HUB-ENS",
+              "destination_location_id": "NL-FC-APE",
+              "driving_duration_by_time": {
+                "1723413600000": 3120000,
+                "1723437000000": 3240000,
+                "1723446000000": 3420000,
+                "1723470300000": 3480000,
+                "1723481100000": 2940000
+              },
+              "distance": 67501,
+              "driving_duration_by_range": {}
+            },
+            "NL-HUB-APE-1": {
+              "origin_location_id": "NL-HUB-ENS",
+              "destination_location_id": "NL-HUB-APE-1",
+              "driving_duration_by_time": {
+                "1723413600000": 4800000
+              },
+              "distance": 70764,
+              "driving_duration_by_range": {}
+            },
+            "NL-HUB-ZWO": {
+              "origin_location_id": "NL-HUB-ENS",
+              "destination_location_id": "NL-HUB-ZWO",
+              "driving_duration_by_time": {
+                "1723413600000": 3478000
+              },
+              "distance": 68714,
+              "driving_duration_by_range": {}
+            }
+          },
+          "NL-FC-APE": {
+            "NL-HUB-DOI": {
+              "origin_location_id": "NL-FC-APE",
+              "destination_location_id": "NL-HUB-DOI",
+              "driving_duration_by_time": {
+                "1723413600000": 3000000,
+                "1723437000000": 3000000,
+                "1723446000000": 3300000,
+                "1723470300000": 3600000,
+                "1723481100000": 3000000
+              },
+              "distance": 58588,
+              "driving_duration_by_range": {}
+            },
+            "NL-HUB-ALM": {
+              "origin_location_id": "NL-FC-APE",
+              "destination_location_id": "NL-HUB-ALM",
+              "driving_duration_by_time": {
+                "1723413600000": 2640000,
+                "1723437000000": 2820000,
+                "1723446000000": 2940000,
+                "1723470300000": 3000000,
+                "1723481100000": 2580000
+              },
+              "distance": 53759,
+              "driving_duration_by_range": {}
+            },
+            "NL-HUB-DEV": {
+              "origin_location_id": "NL-FC-APE",
+              "destination_location_id": "NL-HUB-DEV",
+              "driving_duration_by_time": {
+                "1723413600000": 900000,
+                "1723437000000": 1080000,
+                "1723446000000": 1080000,
+                "1723470300000": 1980000,
+                "1723481100000": 900000
+              },
+              "distance": 16363,
+              "driving_duration_by_range": {}
+            },
+            "NL-HUB-DVT": {
+              "origin_location_id": "NL-FC-APE",
+              "destination_location_id": "NL-HUB-DVT",
+              "driving_duration_by_time": {
+                "1723413600000": 4260000,
+                "1723437000000": 4620000,
+                "1723446000000": 4800000,
+                "1723470300000": 5160000,
+                "1723481100000": 4200000
+              },
+              "distance": 90023,
+              "driving_duration_by_range": {}
+            },
+            "NL-HUB-ENS": {
+              "origin_location_id": "NL-FC-APE",
+              "destination_location_id": "NL-HUB-ENS",
+              "driving_duration_by_time": {
+                "1723413600000": 3120000,
+                "1723437000000": 3240000,
+                "1723446000000": 3420000,
+                "1723470300000": 3480000,
+                "1723481100000": 2940000
+              },
+              "distance": 67501,
+              "driving_duration_by_range": {}
+            },
+            "NL-FC-APE": {
+              "origin_location_id": "NL-FC-APE",
+              "destination_location_id": "NL-FC-APE",
+              "driving_duration_by_time": {
+                "0": 0
+              },
+              "distance": 0,
+              "driving_duration_by_range": {}
+            },
+            "NL-HUB-APE-1": {
+              "origin_location_id": "NL-FC-APE",
+              "destination_location_id": "NL-HUB-APE-1",
+              "driving_duration_by_time": {
+                "1723413600000": 720000,
+                "1723437000000": 900000,
+                "1723446000000": 900000,
+                "1723470300000": 960000,
+                "1723481100000": 720000
+              },
+              "distance": 6159,
+              "driving_duration_by_range": {}
+            },
+            "NL-HUB-ZWO": {
+              "origin_location_id": "NL-FC-APE",
+              "destination_location_id": "NL-HUB-ZWO",
+              "driving_duration_by_time": {
+                "1723413600000": 1920000,
+                "1723437000000": 1980000,
+                "1723446000000": 2100000,
+                "1723470300000": 2100000,
+                "1723481100000": 1740000
+              },
+              "distance": 42489,
+              "driving_duration_by_range": {}
+            }
+          },
+          "NL-HUB-APE-1": {
+            "NL-HUB-DOI": {
+              "origin_location_id": "NL-HUB-APE-1",
+              "destination_location_id": "NL-HUB-DOI",
+              "driving_duration_by_time": {
+                "1723413600000": 3110000
+              },
+              "distance": 59554,
+              "driving_duration_by_range": {}
+            },
+            "NL-HUB-ALM": {
+              "origin_location_id": "NL-HUB-APE-1",
+              "destination_location_id": "NL-HUB-ALM",
+              "driving_duration_by_time": {
+                "1723413600000": 3122000
+              },
+              "distance": 58087,
+              "driving_duration_by_range": {}
+            },
+            "NL-HUB-DEV": {
+              "origin_location_id": "NL-HUB-APE-1",
+              "destination_location_id": "NL-HUB-DEV",
+              "driving_duration_by_time": {
+                "1723413600000": 2100000
+              },
+              "distance": 18928,
+              "driving_duration_by_range": {}
+            },
+            "NL-HUB-DVT": {
+              "origin_location_id": "NL-HUB-APE-1",
+              "destination_location_id": "NL-HUB-DVT",
+              "driving_duration_by_time": {
+                "1723413600000": 4437000
+              },
+              "distance": 87136,
+              "driving_duration_by_range": {}
+            },
+            "NL-HUB-ENS": {
+              "origin_location_id": "NL-HUB-APE-1",
+              "destination_location_id": "NL-HUB-ENS",
+              "driving_duration_by_time": {
+                "1723413600000": 4800000
+              },
+              "distance": 70764,
+              "driving_duration_by_range": {}
+            },
+            "NL-FC-APE": {
+              "origin_location_id": "NL-HUB-APE-1",
+              "destination_location_id": "NL-FC-APE",
+              "driving_duration_by_time": {
+                "1723413600000": 720000,
+                "1723437000000": 900000,
+                "1723446000000": 900000,
+                "1723470300000": 960000,
+                "1723481100000": 720000
+              },
+              "distance": 6159,
+              "driving_duration_by_range": {}
+            },
+            "NL-HUB-APE-1": {
+              "origin_location_id": "NL-HUB-APE-1",
+              "destination_location_id": "NL-HUB-APE-1",
+              "driving_duration_by_time": {
+                "0": 0
+              },
+              "distance": 0,
+              "driving_duration_by_range": {}
+            },
+            "NL-HUB-ZWO": {
+              "origin_location_id": "NL-HUB-APE-1",
+              "destination_location_id": "NL-HUB-ZWO",
+              "driving_duration_by_time": {
+                "1723413600000": 2400000
+              },
+              "distance": 41377,
+              "driving_duration_by_range": {}
+            }
+          },
+          "NL-HUB-ZWO": {
+            "NL-HUB-DOI": {
+              "origin_location_id": "NL-HUB-ZWO",
+              "destination_location_id": "NL-HUB-DOI",
+              "driving_duration_by_time": {
+                "1723413600000": 4655000
+              },
+              "distance": 98462,
+              "driving_duration_by_range": {}
+            },
+            "NL-HUB-ALM": {
+              "origin_location_id": "NL-HUB-ZWO",
+              "destination_location_id": "NL-HUB-ALM",
+              "driving_duration_by_time": {
+                "1723413600000": 3000000
+              },
+              "distance": 46863,
+              "driving_duration_by_range": {}
+            },
+            "NL-HUB-DEV": {
+              "origin_location_id": "NL-HUB-ZWO",
+              "destination_location_id": "NL-HUB-DEV",
+              "driving_duration_by_time": {
+                "1723413600000": 3000000
+              },
+              "distance": 38214,
+              "driving_duration_by_range": {}
+            },
+            "NL-HUB-DVT": {
+              "origin_location_id": "NL-HUB-ZWO",
+              "destination_location_id": "NL-HUB-DVT",
+              "driving_duration_by_time": {
+                "1723413600000": 5167000
+              },
+              "distance": 113544,
+              "driving_duration_by_range": {}
+            },
+            "NL-HUB-ENS": {
+              "origin_location_id": "NL-HUB-ZWO",
+              "destination_location_id": "NL-HUB-ENS",
+              "driving_duration_by_time": {
+                "1723413600000": 3478000
+              },
+              "distance": 68714,
+              "driving_duration_by_range": {}
+            },
+            "NL-FC-APE": {
+              "origin_location_id": "NL-HUB-ZWO",
+              "destination_location_id": "NL-FC-APE",
+              "driving_duration_by_time": {
+                "1723413600000": 1920000,
+                "1723437000000": 1980000,
+                "1723446000000": 2100000,
+                "1723470300000": 2100000,
+                "1723481100000": 1740000
+              },
+              "distance": 42489,
+              "driving_duration_by_range": {}
+            },
+            "NL-HUB-APE-1": {
+              "origin_location_id": "NL-HUB-ZWO",
+              "destination_location_id": "NL-HUB-APE-1",
+              "driving_duration_by_time": {
+                "1723413600000": 2400000
+              },
+              "distance": 41377,
+              "driving_duration_by_range": {}
+            },
+            "NL-HUB-ZWO": {
+              "origin_location_id": "NL-HUB-ZWO",
+              "destination_location_id": "NL-HUB-ZWO",
+              "driving_duration_by_time": {
+                "0": 0
+              },
+              "distance": 0,
+              "driving_duration_by_range": {}
+            }
+          },
+          "NL-HUB-DOI": {
+            "NL-HUB-DOI": {
+              "origin_location_id": "NL-HUB-DOI",
+              "destination_location_id": "NL-HUB-DOI",
+              "driving_duration_by_time": {
+                "0": 0
+              },
+              "distance": 0,
+              "driving_duration_by_range": {}
+            },
+            "NL-HUB-ALM": {
+              "origin_location_id": "NL-HUB-DOI",
+              "destination_location_id": "NL-HUB-ALM",
+              "driving_duration_by_time": {
+                "1723413600000": 4246000
+              },
+              "distance": 69195,
+              "driving_duration_by_range": {}
+            },
+            "NL-HUB-DEV": {
+              "origin_location_id": "NL-HUB-DOI",
+              "destination_location_id": "NL-HUB-DEV",
+              "driving_duration_by_time": {
+                "1723413600000": 3096000
+              },
+              "distance": 40777,
+              "driving_duration_by_range": {}
+            },
+            "NL-HUB-DVT": {
+              "origin_location_id": "NL-HUB-DOI",
+              "destination_location_id": "NL-HUB-DVT",
+              "driving_duration_by_time": {
+                "1723413600000": 5952000
+              },
+              "distance": 124818,
+              "driving_duration_by_range": {}
+            },
+            "NL-HUB-ENS": {
+              "origin_location_id": "NL-HUB-DOI",
+              "destination_location_id": "NL-HUB-ENS",
+              "driving_duration_by_time": {
+                "1723413600000": 3600000
+              },
+              "distance": 61642,
+              "driving_duration_by_range": {}
+            },
+            "NL-FC-APE": {
+              "origin_location_id": "NL-HUB-DOI",
+              "destination_location_id": "NL-FC-APE",
+              "driving_duration_by_time": {
+                "1723413600000": 3000000,
+                "1723437000000": 3000000,
+                "1723446000000": 3300000,
+                "1723470300000": 3600000,
+                "1723481100000": 3000000
+              },
+              "distance": 58588,
+              "driving_duration_by_range": {}
+            },
+            "NL-HUB-APE-1": {
+              "origin_location_id": "NL-HUB-DOI",
+              "destination_location_id": "NL-HUB-APE-1",
+              "driving_duration_by_time": {
+                "1723413600000": 3110000
+              },
+              "distance": 59554,
+              "driving_duration_by_range": {}
+            },
+            "NL-HUB-ZWO": {
+              "origin_location_id": "NL-HUB-DOI",
+              "destination_location_id": "NL-HUB-ZWO",
+              "driving_duration_by_time": {
+                "1723413600000": 4655000
+              },
+              "distance": 98462,
+              "driving_duration_by_range": {}
+            }
+          }
+        }
+      },
+      "driver_provider": {
+        "common_constraints": {
+          "fc_docking_time": 300000,
+          "emballage_unloading_time": 600000,
+          "cost_per_kilometer": 0.67,
+          "cost_per_driver_working_hour": 55.7,
+          "cost_per_driver_hour_without_work": 30.0,
+          "cost_per_driver_not_used": 320.0,
+          "cost_per_dummy_driver_used": 0.0,
+          "cost_per_truck_used": 210.0,
+          "minimum_schedule_duration": 14400000,
+          "maximum_schedule_duration_by_start_time": {
+            "1723413600000": 36000000,
+            "1723431600000": 43200000
+          },
+          "break_duration_by_working_duration": {
+            "16200000": 1800000,
+            "27000000": 3600000,
+            "43200000": 5400000
+          },
+          "truck_capacity": 34000000,
+          "location_driving_durations": [
+            {
+              "origin_location_id": "NL-HUB-ALM",
+              "destination_location_id": "NL-HUB-DOI",
+              "driving_duration_by_time": {
+                "1723413600000": 4246000
+              },
+              "distance": 69195,
+              "driving_duration_by_range": {}
+            },
+            {
+              "origin_location_id": "NL-HUB-DEV",
+              "destination_location_id": "NL-HUB-ALM",
+              "driving_duration_by_time": {
+                "1723413600000": 2400000
+              },
+              "distance": 42690,
+              "driving_duration_by_range": {}
+            },
+            {
+              "origin_location_id": "NL-HUB-ALM",
+              "destination_location_id": "NL-HUB-DEV",
+              "driving_duration_by_time": {
+                "1723413600000": 2400000
+              },
+              "distance": 42690,
+              "driving_duration_by_range": {}
+            },
+            {
+              "origin_location_id": "NL-HUB-DVT",
+              "destination_location_id": "NL-HUB-ALM",
+              "driving_duration_by_time": {
+                "1723413600000": 6603000
+              },
+              "distance": 140150,
+              "driving_duration_by_range": {}
+            },
+            {
+              "origin_location_id": "NL-HUB-ALM",
+              "destination_location_id": "NL-HUB-DVT",
+              "driving_duration_by_time": {
+                "1723413600000": 6603000
+              },
+              "distance": 140150,
+              "driving_duration_by_range": {}
+            },
+            {
+              "origin_location_id": "NL-HUB-ENS",
+              "destination_location_id": "NL-HUB-ALM",
+              "driving_duration_by_time": {
+                "1723413600000": 1500000
+              },
+              "distance": 28954,
+              "driving_duration_by_range": {}
+            },
+            {
+              "origin_location_id": "NL-HUB-ALM",
+              "destination_location_id": "NL-HUB-ENS",
+              "driving_duration_by_time": {
+                "1723413600000": 1500000
+              },
+              "distance": 28954,
+              "driving_duration_by_range": {}
+            },
+            {
+              "origin_location_id": "NL-FC-APE",
+              "destination_location_id": "NL-HUB-ENS",
+              "driving_duration_by_time": {
+                "1723413600000": 3120000,
+                "1723437000000": 3240000,
+                "1723446000000": 3420000,
+                "1723470300000": 3480000,
+                "1723481100000": 2940000
+              },
+              "distance": 67501,
+              "driving_duration_by_range": {}
+            },
+            {
+              "origin_location_id": "NL-HUB-APE-1",
+              "destination_location_id": "NL-FC-APE",
+              "driving_duration_by_time": {
+                "1723413600000": 720000,
+                "1723437000000": 900000,
+                "1723446000000": 900000,
+                "1723470300000": 960000,
+                "1723481100000": 720000
+              },
+              "distance": 6159,
+              "driving_duration_by_range": {}
+            },
+            {
+              "origin_location_id": "NL-FC-APE",
+              "destination_location_id": "NL-HUB-APE-1",
+              "driving_duration_by_time": {
+                "1723413600000": 720000,
+                "1723437000000": 900000,
+                "1723446000000": 900000,
+                "1723470300000": 960000,
+                "1723481100000": 720000
+              },
+              "distance": 6159,
+              "driving_duration_by_range": {}
+            },
+            {
+              "origin_location_id": "NL-HUB-ZWO",
+              "destination_location_id": "NL-HUB-ALM",
+              "driving_duration_by_time": {
+                "1723413600000": 3000000
+              },
+              "distance": 46863,
+              "driving_duration_by_range": {}
+            },
+            {
+              "origin_location_id": "NL-HUB-ALM",
+              "destination_location_id": "NL-HUB-ZWO",
+              "driving_duration_by_time": {
+                "1723413600000": 2650000
+              },
+              "distance": 46863,
+              "driving_duration_by_range": {}
+            },
+            {
+              "origin_location_id": "NL-HUB-DOI",
+              "destination_location_id": "NL-FC-APE",
+              "driving_duration_by_time": {
+                "1723413600000": 3000000,
+                "1723437000000": 3000000,
+                "1723446000000": 3300000,
+                "1723470300000": 3600000,
+                "1723481100000": 3000000
+              },
+              "distance": 58588,
+              "driving_duration_by_range": {}
+            },
+            {
+              "origin_location_id": "NL-HUB-ZWO",
+              "destination_location_id": "NL-FC-APE",
+              "driving_duration_by_time": {
+                "1723413600000": 1920000,
+                "1723437000000": 1980000,
+                "1723446000000": 2100000,
+                "1723470300000": 2100000,
+                "1723481100000": 1740000
+              },
+              "distance": 42489,
+              "driving_duration_by_range": {}
+            },
+            {
+              "origin_location_id": "NL-FC-APE",
+              "destination_location_id": "NL-HUB-ZWO",
+              "driving_duration_by_time": {
+                "1723413600000": 1920000,
+                "1723437000000": 1980000,
+                "1723446000000": 2100000,
+                "1723470300000": 2100000,
+                "1723481100000": 1740000
+              },
+              "distance": 42489,
+              "driving_duration_by_range": {}
+            },
+            {
+              "origin_location_id": "NL-HUB-DOI",
+              "destination_location_id": "NL-HUB-APE-1",
+              "driving_duration_by_time": {
+                "1723413600000": 3110000
+              },
+              "distance": 59554,
+              "driving_duration_by_range": {}
+            },
+            {
+              "origin_location_id": "NL-HUB-APE-1",
+              "destination_location_id": "NL-HUB-DOI",
+              "driving_duration_by_time": {
+                "1723413600000": 3110000
+              },
+              "distance": 59554,
+              "driving_duration_by_range": {}
+            },
+            {
+              "origin_location_id": "NL-FC-APE",
+              "destination_location_id": "NL-HUB-DOI",
+              "driving_duration_by_time": {
+                "1723413600000": 3000000,
+                "1723437000000": 3000000,
+                "1723446000000": 3300000,
+                "1723470300000": 3600000,
+                "1723481100000": 3000000
+              },
+              "distance": 58588,
+              "driving_duration_by_range": {}
+            },
+            {
+              "origin_location_id": "NL-HUB-ZWO",
+              "destination_location_id": "NL-HUB-ENS",
+              "driving_duration_by_time": {
+                "1723413600000": 3478000
+              },
+              "distance": 68714,
+              "driving_duration_by_range": {}
+            },
+            {
+              "origin_location_id": "NL-HUB-ENS",
+              "destination_location_id": "NL-HUB-ZWO",
+              "driving_duration_by_time": {
+                "1723413600000": 3478000
+              },
+              "distance": 68714,
+              "driving_duration_by_range": {}
+            },
+            {
+              "origin_location_id": "NL-FC-APE",
+              "destination_location_id": "NL-HUB-ALM",
+              "driving_duration_by_time": {
+                "1723413600000": 2640000,
+                "1723437000000": 2820000,
+                "1723446000000": 2940000,
+                "1723470300000": 3000000,
+                "1723481100000": 2580000
+              },
+              "distance": 53759,
+              "driving_duration_by_range": {}
+            },
+            {
+              "origin_location_id": "NL-HUB-ALM",
+              "destination_location_id": "NL-FC-APE",
+              "driving_duration_by_time": {
+                "1723413600000": 2640000,
+                "1723437000000": 2820000,
+                "1723446000000": 2940000,
+                "1723470300000": 3000000,
+                "1723481100000": 2580000
+              },
+              "distance": 53759,
+              "driving_duration_by_range": {}
+            },
+            {
+              "origin_location_id": "NL-FC-APE",
+              "destination_location_id": "NL-HUB-DEV",
+              "driving_duration_by_time": {
+                "1723413600000": 900000,
+                "1723437000000": 1080000,
+                "1723446000000": 1080000,
+                "1723470300000": 1980000,
+                "1723481100000": 900000
+              },
+              "distance": 16363,
+              "driving_duration_by_range": {}
+            },
+            {
+              "origin_location_id": "NL-HUB-DEV",
+              "destination_location_id": "NL-FC-APE",
+              "driving_duration_by_time": {
+                "1723413600000": 900000,
+                "1723437000000": 1080000,
+                "1723446000000": 1080000,
+                "1723470300000": 1980000,
+                "1723481100000": 900000
+              },
+              "distance": 16363,
+              "driving_duration_by_range": {}
+            },
+            {
+              "origin_location_id": "NL-FC-APE",
+              "destination_location_id": "NL-HUB-DVT",
+              "driving_duration_by_time": {
+                "1723413600000": 4260000,
+                "1723437000000": 4620000,
+                "1723446000000": 4800000,
+                "1723470300000": 5160000,
+                "1723481100000": 4200000
+              },
+              "distance": 90023,
+              "driving_duration_by_range": {}
+            },
+            {
+              "origin_location_id": "NL-HUB-DVT",
+              "destination_location_id": "NL-FC-APE",
+              "driving_duration_by_time": {
+                "1723413600000": 4260000,
+                "1723437000000": 4620000,
+                "1723446000000": 4800000,
+                "1723470300000": 5160000,
+                "1723481100000": 4200000
+              },
+              "distance": 90023,
+              "driving_duration_by_range": {}
+            },
+            {
+              "origin_location_id": "NL-HUB-ENS",
+              "destination_location_id": "NL-FC-APE",
+              "driving_duration_by_time": {
+                "1723413600000": 3120000,
+                "1723437000000": 3240000,
+                "1723446000000": 3420000,
+                "1723470300000": 3480000,
+                "1723481100000": 2940000
+              },
+              "distance": 67501,
+              "driving_duration_by_range": {}
+            },
+            {
+              "origin_location_id": "NL-HUB-APE-1",
+              "destination_location_id": "NL-HUB-ALM",
+              "driving_duration_by_time": {
+                "1723413600000": 3122000
+              },
+              "distance": 58087,
+              "driving_duration_by_range": {}
+            },
+            {
+              "origin_location_id": "NL-HUB-ALM",
+              "destination_location_id": "NL-HUB-APE-1",
+              "driving_duration_by_time": {
+                "1723413600000": 3122000
+              },
+              "distance": 58087,
+              "driving_duration_by_range": {}
+            },
+            {
+              "origin_location_id": "NL-HUB-DOI",
+              "destination_location_id": "NL-HUB-ALM",
+              "driving_duration_by_time": {
+                "1723413600000": 4246000
+              },
+              "distance": 69195,
+              "driving_duration_by_range": {}
+            },
+            {
+              "origin_location_id": "NL-HUB-APE-1",
+              "destination_location_id": "NL-HUB-DEV",
+              "driving_duration_by_time": {
+                "1723413600000": 2100000
+              },
+              "distance": 18928,
+              "driving_duration_by_range": {}
+            },
+            {
+              "origin_location_id": "NL-HUB-DEV",
+              "destination_location_id": "NL-HUB-APE-1",
+              "driving_duration_by_time": {
+                "1723413600000": 2100000
+              },
+              "distance": 18928,
+              "driving_duration_by_range": {}
+            },
+            {
+              "origin_location_id": "NL-HUB-DVT",
+              "destination_location_id": "NL-HUB-APE-1",
+              "driving_duration_by_time": {
+                "1723413600000": 4437000
+              },
+              "distance": 87136,
+              "driving_duration_by_range": {}
+            },
+            {
+              "origin_location_id": "NL-HUB-APE-1",
+              "destination_location_id": "NL-HUB-DVT",
+              "driving_duration_by_time": {
+                "1723413600000": 4437000
+              },
+              "distance": 87136,
+              "driving_duration_by_range": {}
+            },
+            {
+              "origin_location_id": "NL-HUB-APE-1",
+              "destination_location_id": "NL-HUB-ENS",
+              "driving_duration_by_time": {
+                "1723413600000": 4800000
+              },
+              "distance": 70764,
+              "driving_duration_by_range": {}
+            },
+            {
+              "origin_location_id": "NL-HUB-ENS",
+              "destination_location_id": "NL-HUB-APE-1",
+              "driving_duration_by_time": {
+                "1723413600000": 4800000
+              },
+              "distance": 70764,
+              "driving_duration_by_range": {}
+            },
+            {
+              "origin_location_id": "NL-HUB-APE-1",
+              "destination_location_id": "NL-HUB-ZWO",
+              "driving_duration_by_time": {
+                "1723413600000": 2400000
+              },
+              "distance": 41377,
+              "driving_duration_by_range": {}
+            },
+            {
+              "origin_location_id": "NL-HUB-ZWO",
+              "destination_location_id": "NL-HUB-APE-1",
+              "driving_duration_by_time": {
+                "1723413600000": 2400000
+              },
+              "distance": 41377,
+              "driving_duration_by_range": {}
+            },
+            {
+              "origin_location_id": "NL-HUB-DEV",
+              "destination_location_id": "NL-HUB-DOI",
+              "driving_duration_by_time": {
+                "1723413600000": 3096000
+              },
+              "distance": 40777,
+              "driving_duration_by_range": {}
+            },
+            {
+              "origin_location_id": "NL-HUB-DOI",
+              "destination_location_id": "NL-HUB-DEV",
+              "driving_duration_by_time": {
+                "1723413600000": 3096000
+              },
+              "distance": 40777,
+              "driving_duration_by_range": {}
+            },
+            {
+              "origin_location_id": "NL-HUB-DVT",
+              "destination_location_id": "NL-HUB-DOI",
+              "driving_duration_by_time": {
+                "1723413600000": 5952000
+              },
+              "distance": 124818,
+              "driving_duration_by_range": {}
+            },
+            {
+              "origin_location_id": "NL-HUB-DOI",
+              "destination_location_id": "NL-HUB-DVT",
+              "driving_duration_by_time": {
+                "1723413600000": 5952000
+              },
+              "distance": 124818,
+              "driving_duration_by_range": {}
+            },
+            {
+              "origin_location_id": "NL-HUB-ENS",
+              "destination_location_id": "NL-HUB-DOI",
+              "driving_duration_by_time": {
+                "1723413600000": 3480000
+              },
+              "distance": 61642,
+              "driving_duration_by_range": {}
+            },
+            {
+              "origin_location_id": "NL-HUB-DOI",
+              "destination_location_id": "NL-HUB-ENS",
+              "driving_duration_by_time": {
+                "1723413600000": 3600000
+              },
+              "distance": 61642,
+              "driving_duration_by_range": {}
+            },
+            {
+              "origin_location_id": "NL-HUB-ZWO",
+              "destination_location_id": "NL-HUB-DOI",
+              "driving_duration_by_time": {
+                "1723413600000": 4655000
+              },
+              "distance": 98462,
+              "driving_duration_by_range": {}
+            },
+            {
+              "origin_location_id": "NL-HUB-DOI",
+              "destination_location_id": "NL-HUB-ZWO",
+              "driving_duration_by_time": {
+                "1723413600000": 4655000
+              },
+              "distance": 98462,
+              "driving_duration_by_range": {}
+            },
+            {
+              "origin_location_id": "NL-HUB-DVT",
+              "destination_location_id": "NL-HUB-DEV",
+              "driving_duration_by_time": {
+                "1723413600000": 5013000
+              },
+              "distance": 102759,
+              "driving_duration_by_range": {}
+            },
+            {
+              "origin_location_id": "NL-HUB-DEV",
+              "destination_location_id": "NL-HUB-DVT",
+              "driving_duration_by_time": {
+                "1723413600000": 5013000
+              },
+              "distance": 102759,
+              "driving_duration_by_range": {}
+            },
+            {
+              "origin_location_id": "NL-HUB-DEV",
+              "destination_location_id": "NL-HUB-ENS",
+              "driving_duration_by_time": {
+                "1723413600000": 3300000
+              },
+              "distance": 55631,
+              "driving_duration_by_range": {}
+            },
+            {
+              "origin_location_id": "NL-HUB-ENS",
+              "destination_location_id": "NL-HUB-DEV",
+              "driving_duration_by_time": {
+                "1723413600000": 2820000
+              },
+              "distance": 55631,
+              "driving_duration_by_range": {}
+            },
+            {
+              "origin_location_id": "NL-HUB-DEV",
+              "destination_location_id": "NL-HUB-ZWO",
+              "driving_duration_by_time": {
+                "1723413600000": 2820000
+              },
+              "distance": 38214,
+              "driving_duration_by_range": {}
+            },
+            {
+              "origin_location_id": "NL-HUB-ZWO",
+              "destination_location_id": "NL-HUB-DEV",
+              "driving_duration_by_time": {
+                "1723413600000": 3000000
+              },
+              "distance": 38214,
+              "driving_duration_by_range": {}
+            },
+            {
+              "origin_location_id": "NL-HUB-ENS",
+              "destination_location_id": "NL-HUB-DVT",
+              "driving_duration_by_time": {
+                "1723413600000": 6748000
+              },
+              "distance": 156076,
+              "driving_duration_by_range": {}
+            },
+            {
+              "origin_location_id": "NL-HUB-DVT",
+              "destination_location_id": "NL-HUB-ENS",
+              "driving_duration_by_time": {
+                "1723413600000": 6748000
+              },
+              "distance": 156076,
+              "driving_duration_by_range": {}
+            },
+            {
+              "origin_location_id": "NL-HUB-ZWO",
+              "destination_location_id": "NL-HUB-DVT",
+              "driving_duration_by_time": {
+                "1723413600000": 5167000
+              },
+              "distance": 113544,
+              "driving_duration_by_range": {}
+            },
+            {
+              "origin_location_id": "NL-HUB-DVT",
+              "destination_location_id": "NL-HUB-ZWO",
+              "driving_duration_by_time": {
+                "1723413600000": 5167000
+              },
+              "distance": 113544,
+              "driving_duration_by_range": {}
+            }
+          ],
+          "driver_shift_start_margin": 1800000
+        },
+        "drivers": [
+          {
+            "id": "driver-vdbrink-FC5-1-20240812",
+            "location_id": "NL-FC-APE",
+            "reservation_time_window": {
+              "lower_endpoint": 1723442820000,
+              "lower_bound_type": "CLOSED",
+              "upper_endpoint": 1723472220000,
+              "upper_bound_type": "OPEN"
+            },
+            "is_dummy": false
+          },
+          {
+            "id": "driver-vdbrink-FC5-3-20240812",
+            "location_id": "NL-FC-APE",
+            "reservation_time_window": {
+              "lower_endpoint": 1723450080000,
+              "lower_bound_type": "CLOSED",
+              "upper_endpoint": 1723482060000,
+              "upper_bound_type": "OPEN"
+            },
+            "is_dummy": false
+          },
+          {
+            "id": "driver-vdbrink-FC5-4-20240812",
+            "location_id": "NL-FC-APE",
+            "reservation_time_window": {
+              "lower_endpoint": 1723453740000,
+              "lower_bound_type": "CLOSED",
+              "upper_endpoint": 1723479900000,
+              "upper_bound_type": "OPEN"
+            },
+            "is_dummy": false
+          },
+          {
+            "id": "driver-vdbrink-FC5-2-20240812",
+            "location_id": "NL-FC-APE",
+            "reservation_time_window": {
+              "lower_endpoint": 1723443720000,
+              "lower_bound_type": "CLOSED",
+              "upper_endpoint": 1723472100000,
+              "upper_bound_type": "OPEN"
+            },
+            "is_dummy": false
+          },
+          {
+            "id": "driver-vdbrink-FC5-5-20240812",
+            "location_id": "NL-FC-APE",
+            "reservation_time_window": {
+              "lower_endpoint": 1723456620000,
+              "lower_bound_type": "CLOSED",
+              "upper_endpoint": 1723480620000,
+              "upper_bound_type": "OPEN"
+            },
+            "is_dummy": false
+          }
+        ],
+        "drivers_by_location_id": {
+          "NL-FC-APE": [
+            {
+              "id": "driver-vdbrink-FC5-5-20240812",
+              "location_id": "NL-FC-APE",
+              "reservation_time_window": {
+                "lower_endpoint": 1723456620000,
+                "lower_bound_type": "CLOSED",
+                "upper_endpoint": 1723480620000,
+                "upper_bound_type": "OPEN"
+              },
+              "is_dummy": false
+            },
+            {
+              "id": "driver-vdbrink-FC5-4-20240812",
+              "location_id": "NL-FC-APE",
+              "reservation_time_window": {
+                "lower_endpoint": 1723453740000,
+                "lower_bound_type": "CLOSED",
+                "upper_endpoint": 1723479900000,
+                "upper_bound_type": "OPEN"
+              },
+              "is_dummy": false
+            },
+            {
+              "id": "driver-vdbrink-FC5-3-20240812",
+              "location_id": "NL-FC-APE",
+              "reservation_time_window": {
+                "lower_endpoint": 1723450080000,
+                "lower_bound_type": "CLOSED",
+                "upper_endpoint": 1723482060000,
+                "upper_bound_type": "OPEN"
+              },
+              "is_dummy": false
+            },
+            {
+              "id": "driver-vdbrink-FC5-2-20240812",
+              "location_id": "NL-FC-APE",
+              "reservation_time_window": {
+                "lower_endpoint": 1723443720000,
+                "lower_bound_type": "CLOSED",
+                "upper_endpoint": 1723472100000,
+                "upper_bound_type": "OPEN"
+              },
+              "is_dummy": false
+            },
+            {
+              "id": "driver-vdbrink-FC5-1-20240812",
+              "location_id": "NL-FC-APE",
+              "reservation_time_window": {
+                "lower_endpoint": 1723442820000,
+                "lower_bound_type": "CLOSED",
+                "upper_endpoint": 1723472220000,
+                "upper_bound_type": "OPEN"
+              },
+              "is_dummy": false
+            }
+          ]
+        },
+        "planning_id": "tps-7t7znbwr",
+        "id_generator": {
+          "id_sequence": 6
+        }
+      },
+      "truck_provider": {
+        "planning_id": "tps-7t7znbwr",
+        "truck_proximity_index": {
+          "NL-FC-APE": []
+        },
+        "id_generator": {
+          "id_sequence": 81
+        }
+      },
+      "forbidden_next_delivery_location_ids": {
+        "NL-HUB-DOI": [
+          "NL-HUB-ALM",
+          "NL-HUB-ZWO",
+          "NL-HUB-DEV",
+          "NL-HUB-ENS",
+          "NL-HUB-APE-1",
+          "NL-HUB-DVT"
+        ],
+        "NL-HUB-ALM": [
+          "NL-HUB-DOI",
+          "NL-HUB-ZWO",
+          "NL-HUB-DEV",
+          "NL-HUB-ENS",
+          "NL-HUB-APE-1",
+          "NL-HUB-DVT"
+        ],
+        "NL-HUB-ZWO": [
+          "NL-HUB-DOI",
+          "NL-HUB-ALM",
+          "NL-HUB-DEV",
+          "NL-HUB-ENS",
+          "NL-HUB-APE-1",
+          "NL-HUB-DVT"
+        ],
+        "NL-HUB-DEV": [
+          "NL-HUB-DOI",
+          "NL-HUB-ALM",
+          "NL-HUB-ZWO",
+          "NL-HUB-ENS",
+          "NL-HUB-APE-1",
+          "NL-HUB-DVT"
+        ],
+        "NL-HUB-ENS": [
+          "NL-HUB-DOI",
+          "NL-HUB-ALM",
+          "NL-HUB-ZWO",
+          "NL-HUB-DEV",
+          "NL-HUB-APE-1",
+          "NL-HUB-DVT"
+        ],
+        "NL-HUB-APE-1": [
+          "NL-HUB-DOI",
+          "NL-HUB-ALM",
+          "NL-HUB-ZWO",
+          "NL-HUB-DEV",
+          "NL-HUB-ENS",
+          "NL-HUB-DVT"
+        ],
+        "NL-HUB-DVT": [
+          "NL-HUB-DOI",
+          "NL-HUB-ALM",
+          "NL-HUB-ZWO",
+          "NL-HUB-DEV",
+          "NL-HUB-ENS",
+          "NL-HUB-APE-1"
+        ]
+      },
+      "random": {
+        "deprecated": false
+      },
+      "node_factory": {
+        "id_generator": {
+          "id_sequence": 337
+        }
+      }
+    }
+  },
+  "id": 1,
+  "truck": {
+    "id": "dummy-tps-7t7znbwr-25",
+    "location_id": "NL-FC-APE"
+  },
+  "nodes": [
+    {
+      "id": 101,
+      "node_type": "DEPOT",
+      "location_id": "NL-FC-APE",
+      "driver": {
+        "id": "driver-vdbrink-FC5-5-20240812",
+        "location_id": "NL-FC-APE",
+        "reservation_time_window": {
+          "lower_endpoint": 1723456620000,
+          "lower_bound_type": "CLOSED",
+          "upper_endpoint": 1723480620000,
+          "upper_bound_type": "OPEN"
+        },
+        "is_dummy": false
+      },
+      "shipment_id": "",
+      "shipment_size": 0,
+      "service_duration": 0,
+      "truck_preparation_time": 0,
+      "time_windows": [
+        {
+          "lower_endpoint": 0,
+          "lower_bound_type": "CLOSED",
+          "upper_endpoint": 32503680000000,
+          "upper_bound_type": "OPEN"
+        }
+      ],
+      "resource_constraint_type": "NONE",
+      "minimum_duration_between_truck_departures": 0,
+      "service_start_time": 1723459253000,
+      "adjusted_service_duration": 0
+    },
+    {
+      "id": 102,
+      "node_type": "PICKUP_PREPARATION",
+      "location_id": "NL-FC-APE",
+      "driver": {
+        "id": "driver-vdbrink-FC5-5-20240812",
+        "location_id": "NL-FC-APE",
+        "reservation_time_window": {
+          "lower_endpoint": 1723456620000,
+          "lower_bound_type": "CLOSED",
+          "upper_endpoint": 1723480620000,
+          "upper_bound_type": "OPEN"
+        },
+        "is_dummy": false
+      },
+      "shipment_id": "",
+      "shipment_size": 0,
+      "service_duration": 990000,
+      "truck_preparation_time": 0,
+      "time_windows": [
+        {
+          "lower_endpoint": 1723444200000,
+          "lower_bound_type": "CLOSED",
+          "upper_endpoint": 1723499940000,
+          "upper_bound_type": "OPEN"
+        }
+      ],
+      "resource_constraint_type": "NONE",
+      "minimum_duration_between_truck_departures": 0,
+      "service_start_time": 1723459253000,
+      "adjusted_service_duration": 990000
+    },
+    {
+      "id": 11,
+      "node_type": "PICKUP",
+      "location_id": "NL-FC-APE",
+      "driver": {
+        "id": "driver-vdbrink-FC5-5-20240812",
+        "location_id": "NL-FC-APE",
+        "reservation_time_window": {
+          "lower_endpoint": 1723456620000,
+          "lower_bound_type": "CLOSED",
+          "upper_endpoint": 1723480620000,
+          "upper_bound_type": "OPEN"
+        },
+        "is_dummy": false
+      },
+      "shipment_id": "mpp-cyg5rlav-FC5-06-NL-FC-APE-NL-HUB-APE-1",
+      "shipment_size": 27896400,
+      "service_duration": 510000,
+      "truck_preparation_time": 600000,
+      "time_windows": [
+        {
+          "lower_endpoint": 1723457802380,
+          "lower_bound_type": "CLOSED",
+          "upper_endpoint": 1723499940000,
+          "upper_bound_type": "OPEN"
+        }
+      ],
+      "resource_constraint_type": "MINIMUM_DURATION_BETWEEN_TRUCK_DEPARTURES",
+      "minimum_duration_between_truck_departures": 600000,
+      "service_start_time": 1723460243000,
+      "adjusted_service_duration": 1110000
+    },
+    {
+      "id": 12,
+      "node_type": "DELIVERY",
+      "location_id": "NL-HUB-APE-1",
+      "driver": {
+        "id": "driver-vdbrink-FC5-5-20240812",
+        "location_id": "NL-FC-APE",
+        "reservation_time_window": {
+          "lower_endpoint": 1723456620000,
+          "lower_bound_type": "CLOSED",
+          "upper_endpoint": 1723480620000,
+          "upper_bound_type": "OPEN"
+        },
+        "is_dummy": false
+      },
+      "shipment_id": "mpp-cyg5rlav-FC5-06-NL-FC-APE-NL-HUB-APE-1",
+      "shipment_size": 27896400,
+      "service_duration": 2244000,
+      "truck_preparation_time": 1200000,
+      "time_windows": [
+        {
+          "lower_endpoint": 1723437000000,
+          "lower_bound_type": "CLOSED",
+          "upper_endpoint": 1723465697000,
+          "upper_bound_type": "OPEN"
+        }
+      ],
+      "resource_constraint_type": "NUMBER_OF_SERVICED_TRUCKS_SIMULTANEOUSLY",
+      "minimum_duration_between_truck_departures": 0,
+      "service_start_time": 1723462253000,
+      "adjusted_service_duration": 3444000
+    },
+    {
+      "id": 103,
+      "node_type": "PICKUP_PREPARATION",
+      "location_id": "NL-FC-APE",
+      "driver": {
+        "id": "driver-vdbrink-FC5-5-20240812",
+        "location_id": "NL-FC-APE",
+        "reservation_time_window": {
+          "lower_endpoint": 1723456620000,
+          "lower_bound_type": "CLOSED",
+          "upper_endpoint": 1723480620000,
+          "upper_bound_type": "OPEN"
+        },
+        "is_dummy": false
+      },
+      "shipment_id": "",
+      "shipment_size": 0,
+      "service_duration": 2010000,
+      "truck_preparation_time": 0,
+      "time_windows": [
+        {
+          "lower_endpoint": 1723444200000,
+          "lower_bound_type": "CLOSED",
+          "upper_endpoint": 1723499940000,
+          "upper_bound_type": "OPEN"
+        }
+      ],
+      "resource_constraint_type": "NONE",
+      "minimum_duration_between_truck_departures": 0,
+      "service_start_time": 1723466597000,
+      "adjusted_service_duration": 2010000
+    },
+    {
+      "id": 19,
+      "node_type": "PICKUP",
+      "location_id": "NL-FC-APE",
+      "driver": {
+        "id": "driver-vdbrink-FC5-5-20240812",
+        "location_id": "NL-FC-APE",
+        "reservation_time_window": {
+          "lower_endpoint": 1723456620000,
+          "lower_bound_type": "CLOSED",
+          "upper_endpoint": 1723480620000,
+          "upper_bound_type": "OPEN"
+        },
+        "is_dummy": false
+      },
+      "shipment_id": "mpp-cyg5rlav-FC5-10-NL-FC-APE-NL-HUB-APE-1",
+      "shipment_size": 6199200,
+      "service_duration": 90000,
+      "truck_preparation_time": 600000,
+      "time_windows": [
+        {
+          "lower_endpoint": 1723466699999,
+          "lower_bound_type": "CLOSED",
+          "upper_endpoint": 1723499940000,
+          "upper_bound_type": "OPEN"
+        }
+      ],
+      "resource_constraint_type": "MINIMUM_DURATION_BETWEEN_TRUCK_DEPARTURES",
+      "minimum_duration_between_truck_departures": 600000,
+      "service_start_time": 1723468607000,
+      "adjusted_service_duration": 690000
+    },
+    {
+      "id": 20,
+      "node_type": "DELIVERY",
+      "location_id": "NL-HUB-APE-1",
+      "driver": {
+        "id": "driver-vdbrink-FC5-5-20240812",
+        "location_id": "NL-FC-APE",
+        "reservation_time_window": {
+          "lower_endpoint": 1723456620000,
+          "lower_bound_type": "CLOSED",
+          "upper_endpoint": 1723480620000,
+          "upper_bound_type": "OPEN"
+        },
+        "is_dummy": false
+      },
+      "shipment_id": "mpp-cyg5rlav-FC5-10-NL-FC-APE-NL-HUB-APE-1",
+      "shipment_size": 6199200,
+      "service_duration": 396000,
+      "truck_preparation_time": 1200000,
+      "time_windows": [
+        {
+          "lower_endpoint": 1723437000000,
+          "lower_bound_type": "CLOSED",
+          "upper_endpoint": 1723485225000,
+          "upper_bound_type": "OPEN"
+        }
+      ],
+      "resource_constraint_type": "NUMBER_OF_SERVICED_TRUCKS_SIMULTANEOUSLY",
+      "minimum_duration_between_truck_departures": 0,
+      "service_start_time": 1723470197000,
+      "adjusted_service_duration": 1596000
+    },
+    {
+      "id": 104,
+      "node_type": "DEPOT",
+      "location_id": "NL-FC-APE",
+      "driver": {
+        "id": "driver-vdbrink-FC5-5-20240812",
+        "location_id": "NL-FC-APE",
+        "reservation_time_window": {
+          "lower_endpoint": 1723456620000,
+          "lower_bound_type": "CLOSED",
+          "upper_endpoint": 1723480620000,
+          "upper_bound_type": "OPEN"
+        },
+        "is_dummy": false
+      },
+      "shipment_id": "",
+      "shipment_size": 0,
+      "service_duration": 0,
+      "truck_preparation_time": 0,
+      "time_windows": [
+        {
+          "lower_endpoint": 0,
+          "lower_bound_type": "CLOSED",
+          "upper_endpoint": 32503680000000,
+          "upper_bound_type": "OPEN"
+        }
+      ],
+      "resource_constraint_type": "NONE",
+      "minimum_duration_between_truck_departures": 0,
+      "service_start_time": 1723472753000,
+      "adjusted_service_duration": 0
+    }
+  ],
+  "cost": 232.88112
+}

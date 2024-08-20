@@ -28,6 +28,9 @@ dependencies {
         bundledPlugin('com.intellij.java')
     }
 
+    implementation 'org.python:jython-standalone:2.7.2'
+
+
     // https://mvnrepository.com/artifact/net.sourceforge.plantuml/plantuml
     implementation group: 'net.sourceforge.plantuml', name: 'plantuml', version: '1.2023.10'
     // https://mvnrepository.com/artifact/org.apache.commons/commons-lang3
