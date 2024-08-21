@@ -3,7 +3,6 @@ package no.hvl.tk.visual.debugger.debugging.visualization;
 import com.intellij.openapi.diagnostic.Logger;
 import com.intellij.ui.components.JBScrollPane;
 import java.awt.*;
-import java.awt.image.BufferedImage;
 import java.io.BufferedReader;
 import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
@@ -13,7 +12,6 @@ import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.nio.file.Files;
 import java.nio.file.StandardCopyOption;
-import java.util.Optional;
 import javax.imageio.ImageIO;
 import javax.swing.*;
 import net.sourceforge.plantuml.FileFormat;
@@ -30,44 +28,34 @@ public class TpsRouteDebuggingVisualizer extends DebuggingInfoVisualizerBase {
 
     private final JPanel pluginUI;
     private JLabel imgLabel;
+    private final File pythonScriptFile;
 
     public TpsRouteDebuggingVisualizer(final JPanel jPanel) {
         this.pluginUI = jPanel;
+        pipenvInstall();
+        InputStream pythonScriptInputStream = TpsRouteDebuggingVisualizer.class.getClassLoader().getResourceAsStream("scripts/single_route_visualizer.py");
+        this.pythonScriptFile = copyToTempFile(pythonScriptInputStream);
+
     }
 
 
     @Override
     public void visualizeFurther(TpsDebugData route) {
-        // todo: process the tps objects here (write logic here)
-        // aka:
-        // call a python script, and build the image here, that should be it.
         try {
             // Extract Python script from resources to a temporary file
-            InputStream pythonScript = TpsRouteDebuggingVisualizer.class.getClassLoader().getResourceAsStream("scripts/single_route_visualizer.py");
             InputStream sample = TpsRouteDebuggingVisualizer.class.getClassLoader().getResourceAsStream("route_model_from_algorithm_sample.json");
-            if (pythonScript != null) {
-                File scriptFile = copyToTempFile(pythonScript, "script", ".py");
-                File sampleFile = copyToTempFile(sample, "sample", ".json");
+            File sampleFile = copyToTempFile(sample, "sample", ".json");
+            ProcessBuilder processBuilder2 = new ProcessBuilder("pipenv", "run", "python3", pythonScriptFile.getAbsolutePath(), "--file_path", sampleFile.getAbsolutePath());
+            String imagePath = runPythonTaskAndGetImagePath(processBuilder2);
+            File fi = new File(imagePath);
+            byte[] pngData = Files.readAllBytes(fi.toPath());
+            final var routeString = route.toString();
+            SharedState.setLastRouteStringRepresentation(routeString);
+            this.addImageToUI(pngData);
 
-                ProcessBuilder processBuilder = new ProcessBuilder("pipenv", "install", "matplotlib");
-                ProcessBuilder processBuilder2 = new ProcessBuilder("pipenv", "run", "python3", scriptFile.getAbsolutePath(), "--file_path", sampleFile.getAbsolutePath());
-                runPythonTask(processBuilder);
-                String imagePath = runPythonTaskAndGetImagePath(processBuilder2);
-//                Optional<BufferedImage> bufferedImage = loadPng(imagePath);
-                File fi = new File(imagePath);
-                byte[] pngData = Files.readAllBytes(fi.toPath());
-                final var routeString = route.toString();
-                SharedState.setLastRouteStringRepresentation(routeString);
-//                final byte[] pngData = toImage(routeString, FileFormat.PNG);
-                this.addImageToUI(pngData);
-            } else {
-                System.out.println("files not found in resources");
-            }
         } catch (Exception e) {
             e.printStackTrace();
         }
-
-        // read the image saved by the script here
 
 
     }
@@ -164,33 +152,23 @@ public class TpsRouteDebuggingVisualizer extends DebuggingInfoVisualizerBase {
         }
     }
 
-
-    private Optional<BufferedImage> loadPng(String imagePath) {
-        BufferedImage image = null;
+    private File copyToTempFile(InputStream inputStream) {
         try {
-            // Assume you have the path to the image (e.g., from Python script output)
-
-            // Create a File object representing the image path
-            File imageFile = new File(imagePath);
-
-            // Load the image into a BufferedImage object
-            image = ImageIO.read(imageFile);
-
-            if (image != null) {
-                // Successfully loaded the image
-                System.out.println("Image loaded successfully.");
-                System.out.println("Image Width: " + image.getWidth());
-                System.out.println("Image Height: " + image.getHeight());
-
-                // Further processing of the image if needed
-            } else {
-                System.out.println("Failed to load the image.");
-            }
+            return copyToTempFile(inputStream, "script", ".py");
         } catch (IOException e) {
-            // Handle exceptions when reading the image file
-            System.out.println("Error loading the image: " + e.getMessage());
-            e.printStackTrace();
+            throw new RuntimeException(e);
         }
-        return Optional.ofNullable(image);
     }
+
+    private static void pipenvInstall() {
+        ProcessBuilder processBuilder = new ProcessBuilder("pipenv", "install", "matplotlib");
+        try {
+            runPythonTask(processBuilder);
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        } catch (InterruptedException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
 }
