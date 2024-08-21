@@ -1,6 +1,8 @@
 import matplotlib.pyplot as plt
 import json
 import argparse
+import tempfile
+import os
 
 
 def convert_ms_to_datetime(ms):
@@ -26,8 +28,11 @@ def main(file_path):
     #     plt.text(start + duration / 2, i, activities[i],
     #              ha='center', va='center', color='black')
 
-    plt.title('Route Timeline')
-    plt.show()
+    temp_dir = tempfile.gettempdir()
+    image_path = os.path.join(temp_dir, "test.png")
+    plt.savefig(image_path)
+    plt.close()
+    print(image_path)
 
 
 if __name__ == "__main__":

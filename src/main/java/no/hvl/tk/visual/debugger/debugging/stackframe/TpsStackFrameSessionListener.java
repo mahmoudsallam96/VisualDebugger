@@ -19,6 +19,7 @@ import javax.swing.*;
 import no.hvl.tk.visual.debugger.SharedState;
 import no.hvl.tk.visual.debugger.debugging.stackframe.exceptions.StackFrameAnalyzerException;
 import no.hvl.tk.visual.debugger.debugging.visualization.DebuggingInfoVisualizer;
+import no.hvl.tk.visual.debugger.debugging.visualization.TpsDebugData;
 import no.hvl.tk.visual.debugger.debugging.visualization.TpsRouteDebuggingVisualizer;
 import no.hvl.tk.visual.debugger.settings.PluginSettingsState;
 import no.hvl.tk.visual.debugger.ui.VisualDebuggerIcons;
