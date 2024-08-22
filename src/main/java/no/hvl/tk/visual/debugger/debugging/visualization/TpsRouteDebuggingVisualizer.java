@@ -31,7 +31,7 @@ public class TpsRouteDebuggingVisualizer extends DebuggingInfoVisualizerBase {
         this.pluginUI = jPanel;
         pipenvInstall();
         InputStream pythonScriptInputStream = TpsRouteDebuggingVisualizer.class.getClassLoader().getResourceAsStream("scripts/single_route_visualizer.py");
-        this.pythonScriptFile = copyToTempFile(pythonScriptInputStream);
+        this.pythonScriptFile = copyToTempFile(pythonScriptInputStream, "script", ".py");
 
     }
 
@@ -40,14 +40,20 @@ public class TpsRouteDebuggingVisualizer extends DebuggingInfoVisualizerBase {
     public void visualizeFurther(TpsDebugData route) {
         try {
             // Extract Python script from resources to a temporary file
-            InputStream sample = TpsRouteDebuggingVisualizer.class.getClassLoader().getResourceAsStream("route_model_from_algorithm_sample.json");
+//            InputStream sample = TpsRouteDebuggingVisualizer.class.getClassLoader().getResourceAsStream("route_model_from_algorithm_sample.json");
 //            File sampleFile = copyToTempFile(sample, "sample", ".json");
-            ProcessBuilder processBuilder2 = new ProcessBuilder("pipenv", "run", "python3", pythonScriptFile.getAbsolutePath(), "--json", route.copiedScheduleJson());
+            String json = route.copiedScheduleJson();
+            InputStream jsonInputStream = new ByteArrayInputStream(json.getBytes());
+            File jsonFile = copyToTempFile(jsonInputStream, "json", ".json");
+
+//            String escapedJson = StringEscapeUtils.escapeJson(json);
+//
+//            String s = "\"" + escapedJson + "\"";
+            ProcessBuilder processBuilder2 = new ProcessBuilder("pipenv", "run", "python3", pythonScriptFile.getAbsolutePath(), "--file_path", jsonFile.getAbsolutePath());
             String imagePath = runPythonTaskAndGetImagePath(processBuilder2);
             File imageFile = new File(imagePath);
             byte[] pngData = Files.readAllBytes(imageFile.toPath());
-            final var routeString = route.toString();
-            SharedState.setLastRouteStringRepresentation(routeString);
+            SharedState.setLastRouteStringRepresentation(json);
             this.addImageToUI(pngData);
 
         } catch (Exception e) {
@@ -57,7 +63,7 @@ public class TpsRouteDebuggingVisualizer extends DebuggingInfoVisualizerBase {
 
     }
 
-    private static File copyToTempFile(InputStream inputStream, String fileName, String fileType) throws IOException {
+    private static File doCopyToTempFile(InputStream inputStream, String fileName, String fileType) throws IOException {
         File tempFile = File.createTempFile(fileName, fileType);
         Files.copy(inputStream, tempFile.toPath(), StandardCopyOption.REPLACE_EXISTING);
         return tempFile;
@@ -95,9 +101,16 @@ public class TpsRouteDebuggingVisualizer extends DebuggingInfoVisualizerBase {
         Process process = processBuilder.start();
         process.waitFor();
 
-        InputStream stdout = process.getInputStream();
-        BufferedReader stdInput = new BufferedReader(new InputStreamReader(stdout));
+        BufferedReader stdInput = new BufferedReader(new InputStreamReader(process.getInputStream()));
 
+        BufferedReader errorInput = new BufferedReader(new InputStreamReader(process.getErrorStream()));
+
+
+        System.out.println("Error Output:");
+        String s;
+        while ((s = errorInput.readLine()) != null) {
+            System.out.println(s);
+        }
 
         String imagePath;
         System.out.println("Standard Output:");
@@ -105,6 +118,8 @@ public class TpsRouteDebuggingVisualizer extends DebuggingInfoVisualizerBase {
             System.out.println(imagePath);
             return imagePath;
         }
+
+
         return null;
     }
 
@@ -149,9 +164,9 @@ public class TpsRouteDebuggingVisualizer extends DebuggingInfoVisualizerBase {
         }
     }
 
-    private File copyToTempFile(InputStream inputStream) {
+    private File copyToTempFile(InputStream inputStream, String fileName, String fileType) {
         try {
-            return copyToTempFile(inputStream, "script", ".py");
+            return doCopyToTempFile(inputStream, fileName, fileType);
         } catch (IOException e) {
             throw new RuntimeException(e);
         }

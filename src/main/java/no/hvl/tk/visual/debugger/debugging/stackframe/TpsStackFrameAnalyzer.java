@@ -10,7 +10,7 @@ import no.hvl.tk.visual.debugger.debugging.visualization.TpsDebugData;
 import no.hvl.tk.visual.debugger.debugging.visualization.TpsRouteDebuggingVisualizer;
 
 public class TpsStackFrameAnalyzer {
-    private static final String EVALUATE_SCHEDULE_JSON_COMMAND = "new com.fasterxml.jackson.databind.ObjectMapper().writeValueAsString(copiedSchedule.getRouteById())";
+    private static final String EVALUATE_SCHEDULE_JSON_COMMAND = "new com.picnic.config.GeneralConfig().objectMapper(true).writeValueAsString(copiedSchedule.getRouteById())";
     private final XDebugSession debugSession;
     private final TpsRouteDebuggingVisualizer tpsRouteDebuggingVisualizer;
 
@@ -32,7 +32,7 @@ public class TpsStackFrameAnalyzer {
                             public void evaluated(XValue result) {
                                 var copiedScheduleJson = ((JavaValue) result).getDescriptor().getValue().toString();
                                 // probably should draw here
-                                tpsRouteDebuggingVisualizer.visualizeFurther(new TpsDebugData(copiedScheduleJson));
+                                tpsRouteDebuggingVisualizer.visualizeFurther(new TpsDebugData(trimJson(copiedScheduleJson)));
                             }
 
                             @Override
