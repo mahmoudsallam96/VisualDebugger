@@ -22,9 +22,6 @@ import no.hvl.tk.visual.debugger.ui.CopyPlantUMLDialog;
 
 public class TpsRouteDebuggingVisualizer extends DebuggingInfoVisualizerBase {
     private static final Logger LOGGER = Logger.getInstance(TpsRouteDebuggingVisualizer.class);
-    private static final String NULL = "null";
-    private static final String KEY = "key";
-    private static final String VALUE = "value";
 
     private final JPanel pluginUI;
     private JLabel imgLabel;
@@ -44,11 +41,11 @@ public class TpsRouteDebuggingVisualizer extends DebuggingInfoVisualizerBase {
         try {
             // Extract Python script from resources to a temporary file
             InputStream sample = TpsRouteDebuggingVisualizer.class.getClassLoader().getResourceAsStream("route_model_from_algorithm_sample.json");
-            File sampleFile = copyToTempFile(sample, "sample", ".json");
-            ProcessBuilder processBuilder2 = new ProcessBuilder("pipenv", "run", "python3", pythonScriptFile.getAbsolutePath(), "--file_path", sampleFile.getAbsolutePath());
+//            File sampleFile = copyToTempFile(sample, "sample", ".json");
+            ProcessBuilder processBuilder2 = new ProcessBuilder("pipenv", "run", "python3", pythonScriptFile.getAbsolutePath(), "--json", route.copiedScheduleJson());
             String imagePath = runPythonTaskAndGetImagePath(processBuilder2);
-            File fi = new File(imagePath);
-            byte[] pngData = Files.readAllBytes(fi.toPath());
+            File imageFile = new File(imagePath);
+            byte[] pngData = Files.readAllBytes(imageFile.toPath());
             final var routeString = route.toString();
             SharedState.setLastRouteStringRepresentation(routeString);
             this.addImageToUI(pngData);

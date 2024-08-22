@@ -28,6 +28,7 @@ dependencies {
         bundledPlugin('com.intellij.java')
     }
 
+
     implementation 'org.python:jython-standalone:2.7.2'
 
 
@@ -100,6 +101,8 @@ sonar {
         property 'sonar.host.url', 'https://sonarcloud.io'
     }
 }
+
+
 
 tasks.compileTestJava {
     // Ignore manuel tests.

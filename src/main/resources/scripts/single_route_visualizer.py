@@ -10,11 +10,10 @@ def convert_ms_to_datetime(ms):
     return ms / 1000
 
 
-def main(file_path):
-    with open(file_path) as route_json:
-        route = json.load(route_json)
-    nodes = route['nodes']
-    activities = [node['node_type'] for node in nodes]
+def main(route_by_id):
+    route_by_id = json.loads(route_by_id)
+    nodes = route_by_id['1']['nodes']
+    activities = [node['nodeType'] for node in nodes]
 
     start_times = [convert_ms_to_datetime(node['service_start_time']) for node in nodes]
     durations = [node["adjusted_service_duration"] / 1000.0 for node in nodes]
@@ -37,8 +36,8 @@ def main(file_path):
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description="Plot route timeline from a json file")
-    parser.add_argument('--file_path', type=str, help='Path to the sample file')
+    parser.add_argument('--json', type=str, help='route by id json')
 
     args = parser.parse_args()
 
-    main(args.file_path)
+    main(args.json)

@@ -92,7 +92,7 @@
 //            debuggingVisualizer.addMetadata(fileName, line, stackFrameAnalyzer);
 //        }
 //
-//        this.debuggingVisualizer.doVisualization(stackFrameAnalyzer.analyze());
+//        this.debuggingVisualizer.doVisualization(stackFrameAnalyzer.extractTpsDebugData());
 //    }
 //
 //    @NotNull
