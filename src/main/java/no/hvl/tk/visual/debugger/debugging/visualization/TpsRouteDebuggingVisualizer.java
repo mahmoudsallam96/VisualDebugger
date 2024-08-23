@@ -3,21 +3,15 @@ package no.hvl.tk.visual.debugger.debugging.visualization;
 import com.intellij.openapi.diagnostic.Logger;
 import com.intellij.ui.components.JBScrollPane;
 import java.awt.*;
-import java.io.BufferedReader;
 import java.io.ByteArrayInputStream;
-import java.io.ByteArrayOutputStream;
 import java.io.File;
 import java.io.IOException;
-import java.io.InputStream;
-import java.io.InputStreamReader;
 import java.nio.file.Files;
-import java.nio.file.StandardCopyOption;
+import java.util.Map;
 import javax.imageio.ImageIO;
 import javax.swing.*;
-import net.sourceforge.plantuml.FileFormat;
-import net.sourceforge.plantuml.FileFormatOption;
-import net.sourceforge.plantuml.SourceStringReader;
 import no.hvl.tk.visual.debugger.SharedState;
+import no.hvl.tk.visual.debugger.domain.TpsDebugData;
 import no.hvl.tk.visual.debugger.ui.CopyPlantUMLDialog;
 
 public class TpsRouteDebuggingVisualizer extends DebuggingInfoVisualizerBase {
@@ -25,102 +19,31 @@ public class TpsRouteDebuggingVisualizer extends DebuggingInfoVisualizerBase {
 
     private final JPanel pluginUI;
     private JLabel imgLabel;
-    private final File pythonScriptFile;
+    private String currentImageRouteId;
+
 
     public TpsRouteDebuggingVisualizer(final JPanel jPanel) {
         this.pluginUI = jPanel;
-        pipenvInstall();
-        InputStream pythonScriptInputStream = TpsRouteDebuggingVisualizer.class.getClassLoader().getResourceAsStream("scripts/single_route_visualizer.py");
-        this.pythonScriptFile = copyToTempFile(pythonScriptInputStream, "script", ".py");
-
     }
 
 
     @Override
-    public void visualizeFurther(TpsDebugData route) {
+    public void visualize(TpsDebugData routes) {
         try {
-            // Extract Python script from resources to a temporary file
-//            InputStream sample = TpsRouteDebuggingVisualizer.class.getClassLoader().getResourceAsStream("route_model_from_algorithm_sample.json");
-//            File sampleFile = copyToTempFile(sample, "sample", ".json");
-            String json = route.copiedScheduleJson();
-            InputStream jsonInputStream = new ByteArrayInputStream(json.getBytes());
-            File jsonFile = copyToTempFile(jsonInputStream, "json", ".json");
-
-//            String escapedJson = StringEscapeUtils.escapeJson(json);
-//
-//            String s = "\"" + escapedJson + "\"";
-            ProcessBuilder processBuilder2 = new ProcessBuilder("pipenv", "run", "python3", pythonScriptFile.getAbsolutePath(), "--file_path", jsonFile.getAbsolutePath());
-            String imagePath = runPythonTaskAndGetImagePath(processBuilder2);
-            File imageFile = new File(imagePath);
-            byte[] pngData = Files.readAllBytes(imageFile.toPath());
-            SharedState.setLastRouteStringRepresentation(json);
-            this.addImageToUI(pngData);
+            SharedState.setLastRouteStringRepresentation(routes.toString());
+            createButtonsAsManyAsThereAreRoutes(routes);
+            // there can be an existing image from previous debug step, if so we need to update it
+            if (currentImageRouteId != null) {
+                String imagePath = routes.getRouteImageById().get(currentImageRouteId);
+                byte[] image = createImage(imagePath);
+                addOrUpdateImageOnUi(image, currentImageRouteId);
+            }
 
         } catch (Exception e) {
             e.printStackTrace();
         }
 
 
-    }
-
-    private static File doCopyToTempFile(InputStream inputStream, String fileName, String fileType) throws IOException {
-        File tempFile = File.createTempFile(fileName, fileType);
-        Files.copy(inputStream, tempFile.toPath(), StandardCopyOption.REPLACE_EXISTING);
-        return tempFile;
-    }
-
-    private static void runPythonTask(ProcessBuilder processBuilder) throws IOException, InterruptedException {
-        Process process = processBuilder.start();
-        // Capture the output if needed
-        process.waitFor();
-        System.out.println();
-
-
-        // Read standard output from the script (stdout)
-        InputStream stdout = process.getInputStream();
-        BufferedReader stdInput = new BufferedReader(new InputStreamReader(stdout));
-
-        // Read standard error from the script (stderr)
-        InputStream stderr = process.getErrorStream();
-        BufferedReader stdError = new BufferedReader(new InputStreamReader(stderr));
-
-        String s;
-        System.out.println("Standard Output:");
-        while ((s = stdInput.readLine()) != null) {
-            System.out.println(s);
-        }
-
-        System.out.println("Error Output (if any):");
-        while ((s = stdError.readLine()) != null) {
-            System.out.println(s);
-        }
-        System.out.println();
-    }
-
-    private static String runPythonTaskAndGetImagePath(ProcessBuilder processBuilder) throws IOException, InterruptedException {
-        Process process = processBuilder.start();
-        process.waitFor();
-
-        BufferedReader stdInput = new BufferedReader(new InputStreamReader(process.getInputStream()));
-
-        BufferedReader errorInput = new BufferedReader(new InputStreamReader(process.getErrorStream()));
-
-
-        System.out.println("Error Output:");
-        String s;
-        while ((s = errorInput.readLine()) != null) {
-            System.out.println(s);
-        }
-
-        String imagePath;
-        System.out.println("Standard Output:");
-        while ((imagePath = stdInput.readLine()) != null) {
-            System.out.println(imagePath);
-            return imagePath;
-        }
-
-
-        return null;
     }
 
 
@@ -136,15 +59,21 @@ public class TpsRouteDebuggingVisualizer extends DebuggingInfoVisualizerBase {
         // NOOP
     }
 
-    private void addImageToUI(final byte[] pngData) throws IOException {
+    private void addOrUpdateImageOnUi(final byte[] pngData, String routeId) {
         final var input = new ByteArrayInputStream(pngData);
-        final var imageIcon = new ImageIcon(ImageIO.read(input));
+        final ImageIcon imageIcon;
+        try {
+            imageIcon = new ImageIcon(ImageIO.read(input));
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
 
         if (this.imgLabel == null) {
             this.createImageAndAddToUI(imageIcon);
         } else {
             this.imgLabel.setIcon(imageIcon);
         }
+        this.currentImageRouteId = routeId;
         this.pluginUI.revalidate();
     }
 
@@ -154,33 +83,64 @@ public class TpsRouteDebuggingVisualizer extends DebuggingInfoVisualizerBase {
         this.pluginUI.add(scrollPane);
     }
 
+    private void createButtonsAsManyAsThereAreRoutes(final TpsDebugData routes) {
+        // Create a panel to hold the buttons
+        JPanel buttonPanel = new JPanel();
+        buttonPanel.setLayout(new BoxLayout(buttonPanel, BoxLayout.X_AXIS));
 
-    public static byte[] toImage(final String plantUMLDescription, final FileFormat format)
-            throws IOException {
-        final var reader = new SourceStringReader(plantUMLDescription);
-        try (final var outputStream = new ByteArrayOutputStream()) {
-            reader.outputImage(outputStream, new FileFormatOption(format));
-            return outputStream.toByteArray();
+        // Add buttons to the panel
+        for (Map.Entry<String, String> routeIdAndImagePath : routes.getRouteImageById().entrySet()) {
+            String routeId = routeIdAndImagePath.getKey();
+            JButton routeButton = new JButton(routeId);
+
+            routeButton.addActionListener(actionEvent ->
+                    addOrUpdateImageOnUi(createImage(routeIdAndImagePath.getValue()), routeId));
+
+            buttonPanel.add(routeButton);
+            buttonPanel.add(Box.createRigidArea(new Dimension(10, 0)));  // 10px horizontal space
         }
+
+        // Create a scroll pane to make the button panel scrollable
+        JScrollPane scrollPane = new JScrollPane(buttonPanel);
+        scrollPane.setHorizontalScrollBarPolicy(JScrollPane.HORIZONTAL_SCROLLBAR_ALWAYS); // Always show horizontal scrollbar
+        scrollPane.setVerticalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_NEVER); // Hide vertical scrollbar
+
+        // Set the preferred size of the scroll pane
+        scrollPane.setPreferredSize(new Dimension(800, 100)); // Example fixed size (width x height)
+
+        // Remove previous components from pluginUI and add the scroll pane
+        this.pluginUI.removeAll();
+        this.pluginUI.setLayout(new BorderLayout());
+        this.pluginUI.add(scrollPane, BorderLayout.CENTER);
+
+        this.pluginUI.revalidate();
+        this.pluginUI.repaint();
     }
 
-    private File copyToTempFile(InputStream inputStream, String fileName, String fileType) {
+
+    private static byte[] createImage(String imagePath) {
+        File imageFile = new File(imagePath);
         try {
-            return doCopyToTempFile(inputStream, fileName, fileType);
+            byte[] pngData = Files.readAllBytes(imageFile.toPath());
+            return pngData;
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
     }
 
-    private static void pipenvInstall() {
-        ProcessBuilder processBuilder = new ProcessBuilder("pipenv", "install", "matplotlib");
-        try {
-            runPythonTask(processBuilder);
-        } catch (IOException e) {
-            throw new RuntimeException(e);
-        } catch (InterruptedException e) {
-            throw new RuntimeException(e);
+    public void removeButtons() {
+        for (Component comp : pluginUI.getComponents()) {
+            if (comp instanceof JButton) {
+                pluginUI.remove(comp);
+            }
         }
     }
 
+    public void clearImage() {
+        if (imgLabel != null && imgLabel.getIcon() != null) {
+            imgLabel.setIcon(null);
+            currentImageRouteId = null;
+            pluginUI.repaint();
+        }
+    }
 }

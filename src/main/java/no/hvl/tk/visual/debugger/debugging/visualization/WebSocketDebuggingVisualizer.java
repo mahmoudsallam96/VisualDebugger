@@ -30,7 +30,7 @@
 //  }
 //
 ////  @Override
-////  public void visualizeFurther(ObjectDiagram diagram) {
+////  public void visualize(ObjectDiagram diagram) {
 ////    if (SharedState.getDebugAPIServer() == null) {
 ////      return;
 ////    }
@@ -52,7 +52,7 @@
 ////  }
 //
 //  @Override
-//  protected void visualizeFurther(Route route) {
+//  protected void visualize(Route route) {
 //    throw new UnsupportedOperationException();
 //  }
 //

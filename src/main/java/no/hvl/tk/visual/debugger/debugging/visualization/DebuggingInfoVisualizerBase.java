@@ -1,12 +1,13 @@
 package no.hvl.tk.visual.debugger.debugging.visualization;
 
 import no.hvl.tk.visual.debugger.SharedState;
+import no.hvl.tk.visual.debugger.domain.TpsDebugData;
 
 public abstract class DebuggingInfoVisualizerBase implements DebuggingInfoVisualizer {
-    private TpsDebugData route;
+    private TpsDebugData tpsDebugData;
 
     protected DebuggingInfoVisualizerBase() {
-        this.route = new TpsDebugData("adsf");
+        this.tpsDebugData = new TpsDebugData();
     }
 
     @Override
@@ -16,22 +17,15 @@ public abstract class DebuggingInfoVisualizerBase implements DebuggingInfoVisual
     }
 
     public void reprintRoute() {
-        this.visualizeFurther(route);
+        this.visualize(tpsDebugData);
     }
 
 
-    protected abstract void visualizeFurther(TpsDebugData route);
+    protected abstract void visualize(TpsDebugData route);
 
 
     @Override
     public void sessionStopped() {
         SharedState.getManuallyExploredObjects().clear();
-    }
-
-
-    // todo: implement
-    public void visualize(TpsDebugData route) {
-        this.route = route;
-        this.visualizeFurther(route);
     }
 }

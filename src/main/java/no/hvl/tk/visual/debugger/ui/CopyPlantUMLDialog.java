@@ -4,10 +4,13 @@ import com.intellij.openapi.diagnostic.Logger;
 import com.intellij.openapi.ui.DialogWrapper;
 import java.awt.*;
 import java.awt.datatransfer.StringSelection;
+import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 import java.nio.charset.StandardCharsets;
 import javax.swing.*;
 import net.sourceforge.plantuml.FileFormat;
+import net.sourceforge.plantuml.FileFormatOption;
+import net.sourceforge.plantuml.SourceStringReader;
 import no.hvl.tk.visual.debugger.SharedState;
 import no.hvl.tk.visual.debugger.debugging.visualization.TpsRouteDebuggingVisualizer;
 import org.jetbrains.annotations.Nullable;
@@ -64,11 +67,20 @@ public class CopyPlantUMLDialog extends DialogWrapper {
   private static String getSVGData() {
     try {
       return new String(
-          TpsRouteDebuggingVisualizer.toImage(SharedState.getLastPlantUMLDiagram(), FileFormat.SVG),
+          CopyPlantUMLDialog.toImage(SharedState.getLastPlantUMLDiagram(), FileFormat.SVG),
           StandardCharsets.UTF_8);
     } catch (final IOException e) {
       LOGGER.error(e);
     }
     return "Error loading SVG-Data. Check IDE log.";
+  }
+
+  public static byte[] toImage(final String plantUMLDescription, final FileFormat format)
+          throws IOException {
+    final var reader = new SourceStringReader(plantUMLDescription);
+    try (final var outputStream = new ByteArrayOutputStream()) {
+      reader.outputImage(outputStream, new FileFormatOption(format));
+      return outputStream.toByteArray();
+    }
   }
 }

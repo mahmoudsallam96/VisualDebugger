@@ -21,6 +21,7 @@ import no.hvl.tk.visual.debugger.domain.ODAttributeValue;
 import no.hvl.tk.visual.debugger.domain.ODLink;
 import no.hvl.tk.visual.debugger.domain.ODObject;
 import no.hvl.tk.visual.debugger.domain.ObjectDiagram;
+import no.hvl.tk.visual.debugger.domain.TpsDebugData;
 import no.hvl.tk.visual.debugger.ui.CopyPlantUMLDialog;
 
 public class PlantUmlDebuggingVisualizer extends DebuggingInfoVisualizerBase {
@@ -48,7 +49,7 @@ public class PlantUmlDebuggingVisualizer extends DebuggingInfoVisualizerBase {
     }
 
     @Override
-    protected void visualizeFurther(TpsDebugData route) {
+    protected void visualize(TpsDebugData route) {
         // todo: make better
         throw new UnsupportedOperationException();
     }
